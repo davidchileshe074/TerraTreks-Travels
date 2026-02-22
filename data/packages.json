@@ -1,0 +1,80 @@
+[
+    {
+        "id": "1",
+        "title": "The Great Luangwa Safari",
+        "location": "South Luangwa National Park",
+        "duration": "7 Days / 6 Nights",
+        "price": "From $4,200",
+        "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=800",
+        "tag": "Luxury Expedition",
+        "categories": [
+            "Luxury",
+            "Adventure"
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Victoria Falls Retreat",
+        "location": "Livingstone, Zambia",
+        "duration": "4 Days / 3 Nights",
+        "price": "From $1,850",
+        "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=800",
+        "tag": "Romantic Escape",
+        "categories": [
+            "Honeymoon",
+            "Luxury"
+        ]
+    },
+    {
+        "id": "3",
+        "title": "Kafue Wild Explorer",
+        "location": "Kafue National Park",
+        "duration": "5 Days / 4 Nights",
+        "price": "From $2,900",
+        "image": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=800",
+        "tag": "Adventure",
+        "categories": [
+            "Adventure",
+            "Family"
+        ]
+    },
+    {
+        "id": "4",
+        "title": "Lower Zambezi Odyssey",
+        "location": "Lower Zambezi National Park",
+        "duration": "6 Days / 5 Nights",
+        "price": "From $3,600",
+        "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+        "tag": "River Safari",
+        "categories": [
+            "Adventure",
+            "Luxury"
+        ]
+    },
+    {
+        "id": "5",
+        "title": "Exclusive Cape Town & Wine",
+        "location": "Cape Town, South Africa",
+        "duration": "5 Days / 4 Nights",
+        "price": "From $2,400",
+        "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800",
+        "tag": "City & Wine",
+        "categories": [
+            "Luxury",
+            "Family"
+        ]
+    },
+    {
+        "id": "6",
+        "title": "Okavango Delta Luxury",
+        "location": "Botswana",
+        "duration": "8 Days / 7 Nights",
+        "price": "From $5,800",
+        "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=800",
+        "tag": "Pristine Wild",
+        "categories": [
+            "Luxury",
+            "Honeymoon"
+        ]
+    }
+]

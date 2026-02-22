@@ -1,26 +1,218 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+
+  /* ── LOGO BRANDED PALETTE ── */
+  --color-primary: #41807D;
+  --color-gold: #C9A14A;
+  --color-midnight: #111D23;
+  --color-sand: #F6F1EB;
+  --color-sunset: #E07A3F;
+
+  /* ── SEMANTIC ALIASES ── */
+  --color-secondary: #C9A14A;
+  --color-accent: #E07A3F;
+  --color-savannah: #F6F1EB;
+  --color-earth: #0E3D2F;
+
+  --breakpoint-xs: 480px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F6F1EB;
+  --foreground: #0B0F14;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ═══════════════════════════════════════
+   BASE LAYER
+   ═══════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply font-sans bg-sand text-midnight overflow-x-hidden;
+    font-feature-settings: "kern" 1, "liga" 1;
+    animation: pageFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes pageFadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(201, 161, 74, 0.25);
+    color: #0B0F14;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-tight leading-[1.05];
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ═══════════════════════════════════════
+   CINEMATIC OVERLAYS
+   ═══════════════════════════════════════ */
+.hero-overlay {
+  background: radial-gradient(circle at center, transparent 0%, rgba(5, 10, 15, 0.3) 60%, rgba(5, 10, 15, 0.85) 100%),
+    linear-gradient(to bottom, rgba(5, 10, 15, 0.2) 0%, transparent 30%, transparent 70%, rgba(5, 10, 15, 0.9) 100%);
+}
+
+.hero-overlay-light {
+  background: linear-gradient(to bottom, rgba(11, 29, 35, 0.3) 0%, transparent 50%, rgba(11, 29, 35, 0.7) 100%);
+}
+
+/* ═══════════════════════════════════════
+   GLASSMORPHISM
+   ═══════════════════════════════════════ */
+.glass-nav {
+  @apply backdrop-blur-2xl border-b border-white/[0.08];
+  background: rgba(246, 241, 235, 0.8);
+}
+
+.glass-dark {
+  @apply backdrop-blur-2xl border border-white/[0.06];
+  background: rgba(11, 15, 20, 0.6);
+}
+
+.glass-card {
+  @apply backdrop-blur-xl border border-white/[0.08];
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 24px rgba(11, 15, 20, 0.04);
+}
+
+.glass-mobile-menu {
+  @apply backdrop-blur-xl;
+  background: rgba(246, 241, 235, 0.95);
+}
+
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════ */
+.text-edge-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+  color: transparent;
+}
+
+.text-label {
+  @apply text-[11px] font-bold tracking-[0.3em] uppercase font-sans;
+}
+
+/* ═══════════════════════════════════════
+   TRANSITIONS & ANIMATIONS
+   ═══════════════════════════════════════ */
+.transition-luxury {
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.transition-smooth {
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift {
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  @apply hover:-translate-y-2 hover:shadow-[0_20px_60px_-15px_#111d231a];
+}
+
+.img-pan {
+  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+  @apply group-hover:scale-105;
+}
+
+/* ═══════════════════════════════════════
+   SCROLLBAR (Hidden globally)
+   ═══════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* ═══════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+/* Film grain texture overlay — using a subtle radial gradient noise instead of external image to avoid CORB */
+.film-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.012;
+  /* Reduced from 0.02 for cleaner look */
+  pointer-events: none;
+  background-image: radial-gradient(#000 0.5px, transparent 0);
+  /* Smaller noise */
+  background-size: 2px 2px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.premium-shadow {
+  box-shadow: 0 20px 80px -15px rgba(0, 0, 0, 0.08);
+}
+
+.button-hover-effect {
+  transition: all 0.5s ease;
+}
+
+.button-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+.mask-fade-right {
+  mask-image: linear-gradient(to right, black 0%, black 80%, transparent 100%);
+}
+
+.mask-fade-left {
+  mask-image: linear-gradient(to left, black 0%, black 80%, transparent 100%);
+}
+
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
