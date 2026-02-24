@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { Heart, Stars, Moon, Sparkles, MapPin, ArrowRight } from "lucide-react";
@@ -30,7 +29,7 @@ export default function RomanticPage() {
 
     return (
         <main className="relative min-h-screen">
-            <Navbar />
+
 
             {/* Cinematic Romantic Hero */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">

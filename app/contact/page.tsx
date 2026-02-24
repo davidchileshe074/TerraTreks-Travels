@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -10,7 +9,7 @@ import { ContactForm } from "@/components/marketing/contact-form";
 export default function ContactPage() {
     return (
         <main className="relative min-h-screen">
-            <Navbar variant="solid" />
+
 
             {/* Background Texture */}
             <div className="fixed inset-0 bg-sand -z-10" />

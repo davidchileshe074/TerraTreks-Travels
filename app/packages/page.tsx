@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import packages from "@/data/packages.json";
@@ -21,7 +20,7 @@ export default function PackagesPage() {
 
     return (
         <main className="relative min-h-screen">
-            <Navbar />
+
 
             {/* Hero Header */}
             <section className="relative h-[80vh] flex items-end overflow-hidden bg-midnight">
@@ -64,8 +63,7 @@ export default function PackagesPage() {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="text-white/95 text-lg font-normal max-w-md leading-relaxed"
-                        >
+                            className="text-white/95 text-la
                             Discover meticulously curated experiences that blend
                             raw wilderness with absolute luxury.
                         </motion.p>

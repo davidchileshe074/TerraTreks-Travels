@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/marketing/navbar";
 import { cn } from "@/lib/utils";
 
 const cormorant = Cormorant_Garamond({
@@ -134,9 +135,10 @@ export default function RootLayout({
         className={cn(
           cormorant.variable,
           manrope.variable,
-          "font-sans antialiased overflow-x-hidden"
+          "font-sans antialiased overflow-x-hidden pt-0"
         )}
       >
+        <Navbar />
         {children}
       </body>
     </html>

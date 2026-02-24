@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Hero } from "@/components/marketing/hero";
 import { PackagesSection } from "@/components/marketing/packages-section";
 import { ServicesGrid } from "@/components/marketing/services-grid";
@@ -64,7 +63,7 @@ const destinations = [
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <Navbar />
+
       <Hero />
 
       {/* ── SIGNATURE JOURNEYS ── */}

@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { MapPin, ArrowUpRight, Search, X } from "lucide-react";
@@ -77,7 +76,7 @@ export default function DestinationsPage() {
 
     return (
         <main className="relative min-h-screen">
-            <Navbar />
+
 
             {/* Hero */}
             <section className="relative h-[60vh] flex items-end overflow-hidden">

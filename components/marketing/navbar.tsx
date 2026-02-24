@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Instagram, Facebook, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -17,25 +18,33 @@ const navLinks = [
     { name: "Contact", href: "/contact" },
 ];
 
-export const Navbar = ({ variant = "transparent" }: { variant?: "transparent" | "solid" }) => {
+export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
+    const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 50);
+        const handleScroll = () => setIsScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
+        // Reset scroll state on pathname change
+        setIsScrolled(window.scrollY > 20);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [pathname]);
 
-    const isSolid = variant === "solid" || isScrolled;
+    // Close mobile menu on route change
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
+
+    const isSolid = variant === "solid" || isScrolled || isMobileMenuOpen || pathname === "/contact";
 
     return (
         <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-6 md:px-10",
+                "fixed top-0 left-0 right-0 z-[100] transition-all duration-700 px-6 md:px-10",
                 isSolid
-                    ? "glass-nav md:glass-nav py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] bg-transparent md:bg-savannah/80"
-                    : "bg-transparent py-4 md:py-6"
+                    ? "glass-nav py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+                    : "bg-transparent py-4 md:py-8"
             )}
         >
             <div className="max-w-[1400px] mx-auto flex items-center justify-between pointer-events-auto">

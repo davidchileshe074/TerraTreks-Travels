@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { Briefcase, Users, Star, Globe, Shield, Clock, ArrowRight } from "lucide-react";
@@ -28,7 +27,7 @@ export default function CorporatePage() {
 
     return (
         <main className="relative min-h-screen">
-            <Navbar />
+
 
             {/* Cinematic Hero */}
             <section className="relative h-[85vh] flex items-end overflow-hidden bg-midnight">
