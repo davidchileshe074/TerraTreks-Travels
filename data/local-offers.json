@@ -1,0 +1,110 @@
+[
+    {
+        "id": "avani-vic-falls",
+        "title": "Avani Victoria Falls Resort",
+        "location": "Livingstone, Zambia",
+        "description": "Experience comfort, convenience, and adventure at Avani Victoria Falls Resort, perfectly located just moments from the majestic Victoria Falls. Whether you’re planning a romantic escape, a family getaway, or a relaxing weekend break — this is where adventure meets comfort.",
+        "image": "/images/victoria-falls.png",
+        "tag": "Adventure Meets Comfort",
+        "currency": "ZMW",
+        "rates": [
+            {
+                "type": "Garden View Room",
+                "price": "3,975 (Single) | 4,555 (Double)"
+            },
+            {
+                "type": "Family Room (2 Adults + 2 Children)",
+                "price": "5,155"
+            },
+            {
+                "type": "Superior Lagoon View",
+                "price": "9,190 (Single) | 9,470 (Double)"
+            },
+            {
+                "type": "Superior Pool View",
+                "price": "10,330 (Single) | 10,915 (Double)"
+            }
+        ],
+        "inclusions": [
+            "Accommodation with breakfast",
+            "Unlimited access to Victoria Falls",
+            "Complimentary Wi-Fi",
+            "24-hour fitness centre access",
+            "Kids Club access (in-house guest rates apply)",
+            "Digital newspaper access"
+        ],
+        "exclusions": [
+            "Airport & other transfers"
+        ],
+        "footerText": "Adventure awaits today"
+    },
+    {
+        "id": "nsofu-lodge",
+        "title": "Nsofu Lodge Escape",
+        "location": "Lower Zambezi, Zambia",
+        "description": "Slow mornings. Open skies. The quiet rhythm of the river. Nsofu Lodge invites you to step away from the rush and reconnect with nature in one of Zambia’s most breathtaking wilderness settings.",
+        "image": "/images/lower-zambezi.png",
+        "tag": "Reconnect with Nature",
+        "currency": "ZMW",
+        "rates": [
+            {
+                "type": "Fisherman Cabin (2 pax)",
+                "price": "3,075 per night"
+            },
+            {
+                "type": "Luxury Chalet (2 pax)",
+                "price": "2,975 per night"
+            },
+            {
+                "type": "River Experience (All meals + 1 activity)",
+                "price": "9,690 per night"
+            },
+            {
+                "type": "Safari Experience (All meals + 1 game drive)",
+                "price": "9,390 per night"
+            }
+        ],
+        "experiences": [
+            "River safaris",
+            "Sunset cruises",
+            "Sandbank meals",
+            "Boat hire",
+            "Full-day game drives into Lower Zambezi National Park"
+        ],
+        "footerText": "This is where time slows and memories are made."
+    },
+    {
+        "id": "mwamfushi-valentines",
+        "title": "Valentine’s In The Wild",
+        "location": "Mwamfushi Safari Lodge, Kafue",
+        "description": "This year, don’t just celebrate love. Escape with it. Deep in Kafue National Park, where sunsets glow longer and the only interruptions are birdsong and distant wildlife, romance finds its perfect setting.",
+        "image": "/images/safari-sunset.jpg",
+        "tag": "Valentine's Special",
+        "currency": "K",
+        "rates": [
+            {
+                "type": "2 Nights",
+                "price": "9,050"
+            },
+            {
+                "type": "3 Nights",
+                "price": "11,050"
+            },
+            {
+                "type": "4 Nights",
+                "price": "13,050"
+            },
+            {
+                "type": "5 Nights",
+                "price": "15,050"
+            }
+        ],
+        "inclusions": [
+            "Luxury accommodation",
+            "All meals (Breakfast, Lunch & Dinner)",
+            "One safari activity per night stayed"
+        ],
+        "note": "Limited availability. Confirmation on first payment basis.",
+        "footerText": "This Valentine’s, choose something unforgettable. Adventure Awaits Today — TerraTreks Travel"
+    }
+]

@@ -31,47 +31,79 @@ const steps = [
 
 export const ProcessSteps = () => {
     return (
-        <section className="py-32 px-6 md:px-10 bg-primary overflow-hidden relative">
-            {/* Gradient accent */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/[0.03] to-transparent pointer-events-none" />
+        <section className="section-padding bg-midnight overflow-hidden relative">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-gold/[0.05] via-transparent to-transparent pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-[40rem] h-[40rem] bg-gold/[0.02] rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="max-w-[1400px] mx-auto relative z-10 space-y-20">
+            <div className="container-wide relative z-10 space-y-32">
                 {/* Header */}
-                <div className="max-w-2xl space-y-5">
-                    <p className="text-label text-gold/70">
-                        How It Works
-                    </p>
-                    <h2 className="text-4xl md:text-6xl font-serif text-white leading-[0.95]">
-                        Your Journey,
-                        <br />
-                        <span className="text-gold italic">Four Steps</span>
-                    </h2>
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 border-b border-white/10 pb-16">
+                    <div className="max-w-2xl space-y-6">
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="section-label text-gold/60"
+                        >
+                            The Methodology
+                        </motion.p>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="section-title text-white"
+                        >
+                            Orchestrating
+                            <br />
+                            <span className="text-gold italic font-light">Excellence</span>
+                        </motion.h2>
+                    </div>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="section-desc text-white/40 max-w-sm mb-2"
+                    >
+                        A seamless, four-phase transition from aspiration to reality, handled with precision and local insight.
+                    </motion.p>
                 </div>
 
-                {/* Steps */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Steps Horizontal Connection */}
+                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                    {/* Continuous horizontal line for LG screens */}
+                    <div className="absolute top-10 left-0 w-full h-px bg-white/10 hidden lg:block" />
+
                     {steps.map((step, idx) => (
                         <motion.div
                             key={step.number}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{
-                                delay: idx * 0.12,
-                                duration: 0.7,
+                                delay: idx * 0.15,
+                                duration: 1,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="group p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-gold/20 transition-all duration-700 space-y-5"
+                            className="group relative space-y-10"
                         >
-                            <span className="text-5xl font-serif font-bold text-gold/20 group-hover:text-gold/40 transition-colors duration-500">
-                                {step.number}
-                            </span>
-                            <h3 className="text-xl font-serif text-white font-semibold">
-                                {step.title}
-                            </h3>
-                            <p className="text-white/80 text-sm leading-relaxed font-normal">
-                                {step.description}
-                            </p>
+                            {/* Connector Circle */}
+                            <div className="relative z-10 w-20 h-20 rounded-full bg-midnight border border-white/10 flex items-center justify-center group-hover:border-gold group-hover:shadow-[0_0_30px_rgba(182,152,89,0.2)] transition-all duration-700">
+                                <span className="text-2xl font-serif font-bold text-white group-hover:text-gold transition-colors">
+                                    {step.number}
+                                </span>
+                            </div>
+
+                            {/* Content */}
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-serif text-white group-hover:text-gold transition-colors">
+                                    {step.title}
+                                </h3>
+                                <p className="text-white/40 text-sm leading-relaxed font-sans font-medium">
+                                    {step.description}
+                                </p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

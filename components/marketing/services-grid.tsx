@@ -23,26 +23,46 @@ const services = [
 
 export const ServicesGrid = () => {
     return (
-        <section className="py-32 px-6 md:px-10 bg-white overflow-hidden relative">
-            <div className="max-w-[1400px] mx-auto space-y-20 relative z-10">
-                {/* Header */}
-                <div className="max-w-2xl mx-auto text-center space-y-5">
-                    <p className="text-label text-gold">
-                        What We Do
-                    </p>
-                    <h2 className="text-5xl md:text-[4.5rem] font-serif text-midnight leading-[0.95]">
-                        Comprehensive
-                        <br />
-                        <span className="text-primary italic">Solutions</span>
-                    </h2>
-                    <p className="text-midnight/85 text-base leading-relaxed font-normal max-w-lg mx-auto">
-                        End-to-end travel excellence for individuals, families and
-                        corporate clients.
-                    </p>
+        <section className="section-padding px-6 md:px-10 bg-white overflow-hidden relative">
+            {/* Artistic Background Element */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-[#fcfbf7] -skew-x-12 translate-x-1/2 pointer-events-none" />
+
+            <div className="container-wide space-y-24 relative z-10">
+                {/* Header with Side Label */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+                    <div className="max-w-xl space-y-6">
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="section-label"
+                        >
+                            Our Expertise
+                        </motion.p>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="section-title"
+                        >
+                            End-to-End
+                            <br />
+                            <span className="text-primary italic font-light">Management</span>
+                        </motion.h2>
+                    </div>
+                    <motion.p
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="section-desc max-w-sm mb-2"
+                    >
+                        Beyond simple bookings, we provide a holistic travel ecosystem powered by expertise and local insight.
+                    </motion.p>
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
@@ -50,20 +70,20 @@ export const ServicesGrid = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{
-                                delay: index * 0.04,
-                                duration: 0.7,
+                                delay: index * 0.05,
+                                duration: 0.8,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="group p-8 rounded-2xl border border-midnight/[0.04] hover:border-gold/20 bg-sand/30 hover:bg-sand transition-all duration-500 space-y-5"
+                            className="group p-10 rounded-[2rem] bg-[#F9F7F2]/50 hover:bg-white border border-midnight/[0.03] hover:border-gold/10 hover:shadow-[0_30px_60px_rgba(182,152,89,0.06)] transition-all duration-700 flex flex-col items-start gap-8"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-primary/[0.06] flex items-center justify-center text-primary group-hover:bg-gold group-hover:text-midnight transition-all duration-500">
-                                <service.icon className="w-5 h-5" strokeWidth={1.5} />
+                            <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-gold group-hover:text-midnight transition-colors duration-500">
+                                <service.icon className="w-6 h-6" strokeWidth={1.2} />
                             </div>
-                            <div className="space-y-2">
-                                <h3 className="text-lg font-serif font-semibold text-midnight group-hover:text-primary transition-colors duration-300">
+                            <div className="space-y-3">
+                                <h3 className="text-xl font-serif text-midnight transition-colors group-hover:text-primary">
                                     {service.title}
                                 </h3>
-                                <p className="text-midnight/80 text-sm leading-relaxed font-normal">
+                                <p className="text-midnight/50 text-xs leading-relaxed font-sans font-medium tracking-wide">
                                     {service.description}
                                 </p>
                             </div>

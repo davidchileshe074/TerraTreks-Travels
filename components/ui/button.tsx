@@ -2,15 +2,17 @@
 
 import * as React from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
     variant?: "primary" | "secondary" | "outline" | "ghost";
     size?: "sm" | "md" | "lg";
+    asChild?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant = "primary", size = "md", ...props }, ref) => {
+    ({ className, variant = "primary", size = "md", asChild = false, ...props }, ref) => {
         const variants = {
             primary: "bg-primary text-white hover:bg-primary/90",
             secondary: "bg-gold text-midnight hover:bg-gold/90",
@@ -25,8 +27,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             lg: "px-10 py-5 text-[13px] font-semibold",
         };
 
+        const Component = asChild ? motion(Slot) : motion.button;
+
         return (
-            <motion.button
+            <Component
                 ref={ref}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

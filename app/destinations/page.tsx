@@ -11,55 +11,55 @@ const destinations = [
     {
         name: "Victoria Falls",
         country: "Zambia / Zimbabwe",
-        img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/victoria-falls.png",
         desc: "Experience the Smoke that Thunders, one of the seven natural wonders of the world.",
     },
     {
         name: "South Luangwa",
         country: "Zambia",
-        img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/south-luangwa.png",
         desc: "Home of the walking safari and an incredible density of leopards and elephants.",
     },
     {
         name: "Lower Zambezi",
         country: "Zambia",
-        img: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/lower-zambezi.png",
         desc: "A riverine paradise where the mountains meet the water, perfect for canoe safaris.",
     },
     {
         name: "Kafue Plains",
         country: "Zambia",
-        img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/safari-sunset.jpg",
         desc: "Zambia's oldest and largest park, offering vast landscapes and diverse wildlife.",
     },
     {
         name: "Cape Town",
         country: "South Africa",
-        img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/corporate-travel.png",
         desc: "A stunning coastal city with world-class dining, mountains, and vineyards.",
     },
     {
         name: "Okavango Delta",
         country: "Botswana",
-        img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/safari-sunset.jpg",
         desc: "A massive inland delta known for its expansive grassy plains and waterways.",
     },
     {
         name: "Serengeti",
         country: "Tanzania",
-        img: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/safari-sunset.jpg",
         desc: "The theater of the great migration, where vast savannahs meet the horizon.",
     },
     {
         name: "Maasai Mara",
         country: "Kenya",
-        img: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/safari-sunset.jpg",
         desc: "Premium wildlife sightings and cultural encounters in the heart of Kenya.",
     },
     {
         name: "Sossusvlei",
         country: "Namibia",
-        img: "https://images.unsplash.com/photo-1504173010664-32509aaefe4e?auto=format&fit=crop&q=80&w=1200",
+        img: "/images/lower-zambezi.png",
         desc: "Towering red dunes and surreal landscapes in the ancient Namib Desert.",
     },
 ];
@@ -81,19 +81,19 @@ export default function DestinationsPage() {
             {/* Hero */}
             <section className="relative h-[60vh] flex items-end overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2400"
+                    src="/images/victoria-falls.png"
                     alt="Destinations Hero"
                     fill
                     priority
                     className="object-cover"
                 />
                 <div className="absolute inset-0 hero-overlay" />
-                <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-16">
+                <div className="relative z-10 container-wide pb-16">
                     <div className="max-w-xl space-y-5">
                         <motion.p
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-label text-gold"
+                            className="section-label"
                         >
                             Explore Our World
                         </motion.p>
@@ -101,19 +101,19 @@ export default function DestinationsPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-4xl md:text-8xl font-serif text-white leading-[0.9]"
+                            className="hero-title"
                         >
                             Extraordinary
                             <br />
-                            <span className="text-gold italic">Destinations</span>
+                            <span className="text-gold italic font-light">Destinations</span>
                         </motion.h1>
                     </div>
                 </div>
             </section>
 
             {/* Search and Grid */}
-            <section className="py-20 px-6 md:px-10 bg-sand">
-                <div className="max-w-[1400px] mx-auto space-y-16">
+            <section className="section-padding bg-sand">
+                <div className="container-wide space-y-16">
                     {/* Search Bar */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -171,11 +171,11 @@ export default function DestinationsPage() {
 
                                         <div className="absolute bottom-0 left-0 right-0 p-8">
                                             <div className="space-y-3">
-                                                <span className="flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] uppercase text-white/70 font-sans">
+                                                <span className="card-meta text-white/70">
                                                     <MapPin className="w-3.5 h-3.5 text-gold" />
                                                     {dest.country}
                                                 </span>
-                                                <h3 className="text-3xl font-serif text-white">
+                                                <h3 className="text-3xl font-serif text-white font-medium">
                                                     {dest.name}
                                                 </h3>
                                                 <p className="text-white/90 text-sm max-w-xs font-normal leading-relaxed opacity-100 lg:opacity-0 lg:translate-y-3 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-500">

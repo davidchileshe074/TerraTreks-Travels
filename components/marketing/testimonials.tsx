@@ -30,43 +30,54 @@ export const Testimonials = () => {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="py-32 px-6 md:px-10 bg-midnight text-white overflow-hidden relative">
-            {/* Subtle gradient */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/[0.03] rounded-full blur-[120px]" />
+        <section className="section-padding bg-midnight text-white overflow-hidden relative">
+            {/* Cinematic background depth */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold/[0.04] rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
 
-            <div className="max-w-[1400px] mx-auto relative z-10">
-                <div className="max-w-4xl mx-auto text-center space-y-16">
-                    <div className="space-y-5">
-                        <p className="text-label text-gold/80">
-                            Guest Voices
-                        </p>
-                        <h2 className="text-5xl md:text-6xl font-serif leading-[0.95]">
-                            Stories From
+            <div className="container-wide relative z-10">
+                <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-20">
+                    <div className="space-y-6">
+                        <motion.p
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            className="section-label text-gold/60"
+                        >
+                            The Guest Perspective
+                        </motion.p>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="section-title text-white text-5xl md:text-7xl"
+                        >
+                            Echoes from
                             <br />
-                            <span className="text-gold italic">the Wild</span>
-                        </h2>
+                            <span className="text-gold italic font-light">the Horizon</span>
+                        </motion.h2>
                     </div>
 
-                    {/* Quote */}
-                    <div className="relative min-h-[200px]">
-                        <Quote className="w-10 h-10 text-gold/20 mx-auto mb-8" />
+                    {/* Main Quote Display */}
+                    <div className="relative w-full min-h-[400px] md:min-h-[300px] flex flex-col items-center justify-center">
+                        <Quote className="absolute -top-10 left-0 w-24 h-24 text-gold/[0.05] pointer-events-none" />
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active}
-                                initial={{ opacity: 0, scale: 0.98, y: 10 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
-                                exit={{ opacity: 0, scale: 1.02, y: -10 }}
-                                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                                className="space-y-8"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                                className="space-y-12"
                             >
-                                <p className="text-2xl md:text-3xl font-serif italic text-white/90 leading-relaxed max-w-3xl mx-auto font-normal">
+                                <p className="text-2xl md:text-4xl font-serif italic text-white/90 leading-tight max-w-4xl mx-auto font-light">
                                     &ldquo;{testimonials[active].quote}&rdquo;
                                 </p>
                                 <div className="space-y-2">
-                                    <p className="text-white/90 font-semibold text-sm font-sans">
+                                    <p className="text-gold font-bold text-sm font-sans tracking-[0.2em] uppercase">
                                         {testimonials[active].name}
                                     </p>
-                                    <p className="text-white/85 text-xs font-normal font-sans tracking-wide">
+                                    <p className="text-white/40 text-[10px] font-bold tracking-widest uppercase font-sans">
                                         {testimonials[active].role}
                                     </p>
                                 </div>
@@ -74,24 +85,26 @@ export const Testimonials = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Avatars as selector */}
-                    <div className="flex justify-center gap-4">
+                    {/* Custom Navigators */}
+                    <div className="flex items-center gap-6">
                         {testimonials.map((t, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActive(idx)}
-                                className={`w-14 h-14 rounded-full overflow-hidden border-2 transition-all duration-500 ${active === idx
-                                    ? "border-gold scale-110"
-                                    : "border-white/10 opacity-40 hover:opacity-70"
-                                    }`}
+                                className="group relative flex flex-col items-center gap-4 focus:outline-none"
                             >
-                                <Image
-                                    src={t.image}
-                                    alt={t.name}
-                                    width={56}
-                                    height={56}
-                                    className="w-full h-full object-cover"
-                                />
+                                <div className={`w-16 h-16 rounded-full overflow-hidden border-2 transition-all duration-700 ${active === idx
+                                    ? "border-gold scale-115 shadow-[0_0_30px_rgba(182,152,89,0.3)]"
+                                    : "border-white/10 opacity-30 group-hover:opacity-60"
+                                    }`}>
+                                    <Image
+                                        src={t.image}
+                                        alt={t.name}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className={`h-1 rounded-full transition-all duration-700 ${active === idx ? "w-8 bg-gold" : "w-0 bg-white/20"}`} />
                             </button>
                         ))}
                     </div>

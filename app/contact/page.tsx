@@ -5,6 +5,7 @@ import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/marketing/contact-form";
+import { Suspense } from "react";
 
 export default function ContactPage() {
     return (
@@ -18,8 +19,8 @@ export default function ContactPage() {
             {/* Spacer for Navbar */}
             <div className="h-28 md:h-36" />
 
-            <section className="py-20 px-6 md:px-10">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <section className="section-padding px-6 md:px-10">
+                <div className="container-wide grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
                     {/* Left Side: Editorial Text */}
                     <div className="space-y-16">
                         <motion.div
@@ -28,14 +29,14 @@ export default function ContactPage() {
                             transition={{ duration: 1 }}
                             className="space-y-8"
                         >
-                            <p className="text-label text-gold">Get in Touch</p>
+                            <p className="section-label">Get in Touch</p>
                             <div className="space-y-4">
-                                <h1 className="text-6xl md:text-8xl font-serif text-midnight leading-[0.9]">
+                                <h1 className="hero-title text-midnight">
                                     Begin the
                                     <br />
-                                    <span className="text-primary italic">Conversation</span>
+                                    <span className="text-primary italic font-light">Conversation</span>
                                 </h1>
-                                <p className="text-midnight/90 text-lg md:text-xl max-w-md font-normal leading-relaxed font-sans">
+                                <p className="section-desc max-w-md font-sans">
                                     Our journey designers are ready to assist you in crafting an exceptional travel experience across Southern Africa.
                                 </p>
                             </div>
@@ -57,7 +58,7 @@ export default function ContactPage() {
                                 {
                                     icon: MapPin,
                                     label: "Visit Us",
-                                    values: ["Kankasa Office Block", "Mushitala, Solwezi, Zambia"]
+                                    values: ["Plot No. 2954, Kankasa Office Block", "Buffalo Wings, Mushitala", "Kansanshi Road, Solwezi, Zambia"]
                                 }
                             ].map((item, idx) => (
                                 <motion.div
@@ -81,6 +82,50 @@ export default function ContactPage() {
                                 </motion.div>
                             ))}
                         </div>
+
+                        {/* Banking & Payments */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.6 }}
+                            className="p-10 rounded-[32px] bg-white border border-midnight/[0.04] shadow-xl space-y-8"
+                        >
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-serif text-midnight">Banking Options</h3>
+                                <p className="text-midnight/60 text-sm font-sans">For secure direct transfers and official payments.</p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-4">
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold font-sans">Bank</p>
+                                        <p className="text-sm font-semibold text-midnight">FNB (Solwezi Branch)</p>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold font-sans">Account Name</p>
+                                        <p className="text-sm font-semibold text-midnight uppercase tracking-tight">TERRATREKS TRAVELS</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold font-sans">Account Number</p>
+                                        <p className="text-sm font-semibold text-midnight font-mono">63112834626</p>
+                                    </div>
+                                    <div className="space-y-1">
+                                        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold font-sans">SWIFT Code</p>
+                                        <p className="text-sm font-semibold text-midnight font-mono">FIRNZMLX</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="pt-6 border-t border-midnight/[0.04] flex flex-wrap gap-6 items-center">
+                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-midnight/40 font-sans">Mobile Payments Accepted:</p>
+                                <div className="flex gap-4 items-center">
+                                    <span className="px-3 py-1 rounded bg-sand text-[10px] font-bold text-midnight/60 uppercase font-sans">PayToCell</span>
+                                    <span className="px-3 py-1 rounded bg-sand text-[10px] font-bold text-midnight/60 uppercase font-sans">MTN MoMo</span>
+                                    <span className="px-3 py-1 rounded bg-sand text-[10px] font-bold text-midnight/60 uppercase font-sans">Airtel Money</span>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
 
                     {/* Right Side: Contact Form */}
@@ -89,14 +134,16 @@ export default function ContactPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
                     >
-                        <ContactForm />
+                        <Suspense fallback={<div className="h-96 w-full animate-pulse bg-white/50 rounded-[40px]" />}>
+                            <ContactForm />
+                        </Suspense>
                     </motion.div>
                 </div>
             </section>
 
             {/* Immersive Map Section */}
-            <section className="py-24 px-6 md:px-10">
-                <div className="max-w-[1400px] mx-auto">
+            <section className="section-padding px-6 md:px-10">
+                <div className="container-wide">
                     <div className="h-[600px] w-full rounded-[48px] overflow-hidden border border-midnight/[0.06] shadow-2xl relative">
                         <div className="absolute inset-0 bg-midnight/5 -z-10" />
                         <iframe

@@ -8,13 +8,10 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 const heroImages = [
-    "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2400", // Elephant Close-up
-    "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=2400", // African Sunset Leopard
-    "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=2400", // Lion in Grass
-    "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&q=80&w=2400", // Victoria Falls Panoramic
-    "https://images.unsplash.com/photo-1523805081326-6468447d9688?auto=format&fit=crop&q=80&w=2400", // Giraffes at Sunset
-    "https://images.unsplash.com/photo-1519066629447-267fffa62d4b?auto=format&fit=crop&q=80&w=2400", // Zebra Herd
-    "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=2400", // Open Savannah
+    "/images/victoria-falls.png",
+    "/images/south-luangwa.png",
+    "/images/lower-zambezi.png",
+    "/images/corporate-travel.png",
 ];
 
 export const Hero = () => {
@@ -33,75 +30,109 @@ export const Hero = () => {
             <AnimatePresence mode="popLayout">
                 <motion.div
                     key={current}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 2, ease: "easeInOut" }}
                     className="absolute inset-0 z-0"
                 >
-                    <Image
-                        src={heroImages[current]}
-                        alt="Safari Background"
-                        fill
-                        priority
-                        sizes="100vw"
-                        className="object-cover"
-                    />
+                    <motion.div
+                        initial={{ scale: 1, x: 0, y: 0 }}
+                        animate={{
+                            scale: 1.15,
+                            x: [0, -20, 0],
+                            y: [0, 10, 0]
+                        }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="relative w-full h-full"
+                    >
+                        <Image
+                            src={heroImages[current]}
+                            alt="Safari Background"
+                            fill
+                            priority
+                            sizes="100vw"
+                            className="object-cover"
+                        />
+                    </motion.div>
                 </motion.div>
             </AnimatePresence>
 
-            {/* Cinematic Overlay */}
-            <div className="absolute inset-0 hero-overlay z-[1]" />
+            {/* Cinematic Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-midnight/40 via-transparent to-midnight/90 z-[1]" />
+            <div className="absolute inset-0 film-grain z-[2] opacity-30" />
 
-            {/* Film grain */}
-            <div className="absolute inset-0 film-grain z-[2]" />
-
-            {/* Content — Bottom-aligned like ROAR Africa */}
+            {/* Content — Bottom-aligned */}
             <div className="relative z-10 w-full">
-                <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-16 md:pb-28">
-                    <div className="max-w-3xl space-y-6 md:space-y-8">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                            className="space-y-6 md:space-y-8"
-                        >
-                            <p className="text-label text-gold">
-                                Zambia&apos;s Finest Travel Agency
-                            </p>
+                <div className="container-wide pb-16 md:pb-28">
+                    <div className="max-w-4xl space-y-12">
+                        <div className="space-y-8">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1.2 }}
+                            >
+                                <p className="section-label text-gold/80 mb-0">
+                                    Zambia&apos;s Finest Travel Agency
+                                </p>
+                            </motion.div>
 
-                            <h1 className="text-[clamp(2.5rem,10vw,8rem)] font-serif text-white leading-[0.9] tracking-[-0.03em]">
-                                <span className="block">Adventure</span>
-                                <span className="block text-gold italic">Awaits</span>
-                            </h1>
+                            <motion.h1
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                className="hero-title"
+                            >
+                                <span className="block overflow-hidden">
+                                    <motion.span
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ duration: 1.2, delay: 0.4 }}
+                                        className="inline-block"
+                                    >
+                                        Adventure
+                                    </motion.span>
+                                </span>
+                                <span className="block overflow-hidden">
+                                    <motion.span
+                                        initial={{ y: "100%" }}
+                                        animate={{ y: 0 }}
+                                        transition={{ duration: 1.2, delay: 0.6 }}
+                                        className="inline-block text-gold italic font-light pb-2 ml-1"
+                                    >
+                                        Awaits Today
+                                    </motion.span>
+                                </span>
+                            </motion.h1>
 
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ delay: 1.2, duration: 1 }}
-                                className="text-white/95 text-base md:text-xl max-w-lg leading-relaxed font-normal font-sans"
+                                transition={{ delay: 1.4, duration: 1.2 }}
+                                className="text-white/85 text-lg md:text-2xl max-w-xl leading-relaxed font-light italic"
                             >
-                                Bespoke safari experiences, seamless corporate travel, and
-                                unforgettable journeys — curated by those who know Africa best.
+                                &ldquo;Crafting the intersection of untamed wilderness and absolute refinement.&rdquo;
                             </motion.p>
-                        </motion.div>
+                        </div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 15 }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 1.5 }}
-                            className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 pt-2"
+                            transition={{ duration: 1.2, delay: 1.6 }}
+                            className="flex flex-col sm:flex-row items-stretch sm:items-start gap-6"
                         >
                             <Link
                                 href="/packages"
-                                className="inline-flex items-center justify-center rounded-full px-10 py-5 text-[13px] font-sans font-bold tracking-[0.08em] uppercase bg-gold text-midnight hover:bg-gold/90 transition-all duration-500 button-hover-effect h-14 sm:h-auto"
+                                className="group relative inline-flex items-center justify-center rounded-full px-12 py-6 text-[13px] font-bold tracking-[0.2em] uppercase bg-gold text-midnight hover:bg-white transition-all duration-700 shadow-2xl overflow-hidden"
                             >
-                                Explore Journeys <ArrowRight className="ml-2 w-4 h-4" />
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Explore Journeys <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </span>
                             </Link>
 
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full px-10 py-5 text-[13px] font-sans font-bold tracking-[0.08em] uppercase border border-white/15 text-white hover:bg-white/10 transition-all duration-500 button-hover-effect h-14 sm:h-auto"
+                                className="inline-flex items-center justify-center rounded-full px-12 py-6 text-[13px] font-bold tracking-[0.2em] uppercase border border-white/20 text-white hover:bg-white hover:text-midnight transition-all duration-700 backdrop-blur-md"
                             >
                                 Begin the Conversation
                             </Link>
@@ -109,36 +140,37 @@ export const Hero = () => {
                     </div>
                 </div>
 
-                {/* Bottom Stats Strip */}
+                {/* Bottom Stats Strip - Glassmorphism */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 2, duration: 1 }}
-                    className="border-t border-white/[0.08] py-6 overflow-hidden"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.2, duration: 1.2 }}
+                    className="border-t border-white/10 bg-midnight/40 backdrop-blur-xl py-8"
                 >
-                    <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between text-white/50">
-                        <div className="flex items-center gap-8 md:gap-16 overflow-x-auto no-scrollbar mask-fade-right pr-10">
+                    <div className="container-wide flex items-center justify-between text-white/50">
+                        <div className="flex items-center gap-12 md:gap-20 overflow-x-auto no-scrollbar mask-fade-right pr-10">
                             {[
-                                { value: "Est. 2024", label: "Solwezi" },
-                                { value: "500+", label: "Guests Yearly" },
-                                { value: "24/7", label: "Support" },
+                                { value: "Bespoke", label: "Travel Strategies" },
+                                { value: "Pure", label: "Wilderness Immersion" },
+                                { value: "24/7", label: "Executive Concierge" },
                             ].map((stat) => (
-                                <div key={stat.label} className="flex items-center gap-3 shrink-0">
-                                    <span className="text-white/90 font-serif text-sm font-semibold whitespace-nowrap">
+                                <div key={stat.label} className="flex flex-col gap-1 shrink-0">
+                                    <span className="text-white/90 font-serif text-lg italic whitespace-nowrap">
                                         {stat.value}
                                     </span>
-                                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase font-sans hidden xs:block whitespace-nowrap">
+                                    <span className="text-[9px] font-bold tracking-[0.3em] uppercase font-sans whitespace-nowrap opacity-60">
                                         {stat.label}
                                     </span>
                                 </div>
                             ))}
                         </div>
                         {/* Slide Indicators */}
-                        <div className="hidden md:flex items-center gap-2 shrink-0">
+                        <div className="hidden md:flex items-center gap-3 shrink-0">
                             {heroImages.map((_, idx) => (
-                                <div
+                                <button
                                     key={idx}
-                                    className={`h-1 rounded-full transition-all duration-1000 ${current === idx ? "w-8 bg-gold" : "w-2 bg-white/20"
+                                    onClick={() => setCurrent(idx)}
+                                    className={`h-[2px] transition-all duration-1000 ${current === idx ? "w-12 bg-gold" : "w-4 bg-white/20 hover:bg-white/40"
                                         }`}
                                 />
                             ))}
@@ -150,16 +182,16 @@ export const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2.5, duration: 1 }}
-                    className="absolute right-6 md:right-10 bottom-40 z-20 flex flex-col items-center gap-10"
+                    transition={{ delay: 3, duration: 1 }}
+                    className="absolute right-6 md:right-12 bottom-48 z-20 hidden lg:flex flex-col items-center gap-12"
                 >
-                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40 vertical-text origin-bottom rotate-180">
-                        Scroll
+                    <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-white/30 vertical-text origin-bottom rotate-180">
+                        Scroll to explore
                     </span>
                     <motion.div
-                        animate={{ y: [0, 15, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-[1px] h-16 bg-gradient-to-b from-gold/50 to-transparent"
+                        animate={{ y: [0, 20, 0] }}
+                        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-px h-24 bg-gradient-to-b from-gold via-gold/50 to-transparent"
                     />
                 </motion.div>
             </div>

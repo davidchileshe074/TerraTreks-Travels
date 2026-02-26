@@ -92,7 +92,7 @@ export default function RootLayout({
     "telephone": "+260979189370",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "President Avenue",
+      "streetAddress": "Plot No. 2954, Kankasa Office Block, Kansanshi Road",
       "addressLocality": "Solwezi",
       "addressRegion": "North-Western Province",
       "addressCountry": "ZM"

@@ -5,11 +5,30 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import Image from "next/image";
+import { Sparkles, Quote, Globe, Shield, Award } from "lucide-react";
 
 const aboutImages = [
-    "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=2400", // Elephant Close-up
-    "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=2400", // Sunset Leopard
-    "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=2400", // Savannah Vista
+    "/images/kkia-jump.jpg",
+    "/images/kkia-outside.jpg",
+    "/images/kkia-terminal.jpg",
+];
+
+const pillars = [
+    {
+        icon: Globe,
+        title: "Local Wisdom",
+        desc: "Deeply rooted in Zambian heritage with global delivery standards."
+    },
+    {
+        icon: Shield,
+        title: "Absolute Safety",
+        desc: "Uncompromising focus on guest security and operational excellence."
+    },
+    {
+        icon: Award,
+        title: "Elite Partners",
+        desc: "Affiliated with the world's most prestigious safari lodges and airlines."
+    }
 ];
 
 export default function AboutPage() {
@@ -23,23 +42,21 @@ export default function AboutPage() {
     }, []);
 
     return (
-        <main className="relative min-h-screen">
-
-
-            {/* Cinematic Hero */}
-            <section className="relative h-[85vh] flex items-end overflow-hidden bg-midnight">
+        <main className="relative min-h-screen bg-white">
+            {/* Cinematic Background Slider */}
+            <section className="relative h-screen flex items-end overflow-hidden bg-midnight">
                 <AnimatePresence mode="popLayout">
                     <motion.div
                         key={current}
-                        initial={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, scale: 1.15 }}
+                        animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 2, ease: "easeInOut" }}
+                        transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
                         className="absolute inset-0 z-0"
                     >
                         <Image
                             src={aboutImages[current]}
-                            alt="About Hero"
+                            alt="TerraTreks Heritage"
                             fill
                             priority
                             className="object-cover"
@@ -47,214 +64,159 @@ export default function AboutPage() {
                     </motion.div>
                 </AnimatePresence>
 
-                {/* Cinematic Layers */}
-                <div className="absolute inset-0 hero-overlay z-10" />
-                <div className="absolute inset-0 film-grain opacity-20 z-10" />
+                {/* Cinematic Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent z-[1]" />
+                <div className="absolute inset-0 film-grain opacity-20 z-[2]" />
 
-                <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-10 pb-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.2, delay: 0.2 }}
-                        className="max-w-3xl space-y-6"
-                    >
-                        <p className="text-label text-gold uppercase tracking-[0.3em]">Our Legacy</p>
-                        <h1 className="text-4xl md:text-9xl font-serif text-white leading-[0.85]">
-                            Terra<span className="text-gold italic">Treks</span>
-                        </h1>
-                        <p className="text-white/85 text-lg font-normal max-w-lg leading-relaxed font-sans mt-4 italic">
-                            &ldquo;Curating the intersection of untamed Africa and absolute refinement.&rdquo;
-                        </p>
-                    </motion.div>
+                <div className="relative z-10 container-wide pb-32">
+                    <div className="max-w-4xl space-y-10">
+                        <div className="space-y-6">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1.2 }}
+                            >
+                                <span className="section-label text-gold/80">Established 2024</span>
+                            </motion.div>
+                            <motion.h1
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                className="text-6xl md:text-[9rem] font-serif text-white tracking-tighter leading-[0.85]"
+                            >
+                                The Soul of
+                                <br />
+                                <span className="text-gold italic font-light">Adventure</span>
+                            </motion.h1>
+                        </div>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.8, duration: 1.5 }}
+                            className="text-white/40 text-lg md:text-2xl font-serif italic max-w-2xl"
+                        >
+                            "TerraTreks was founded on a singular vision: to architect the intersection of untamed wilderness and absolute refinement."
+                        </motion.p>
+                    </div>
                 </div>
             </section>
 
-            {/* About Content */}
-            <section className="py-32 px-6 md:px-10 bg-sand">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -25 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2 }}
-                        className="space-y-10"
-                    >
-                        <div className="space-y-5">
-                            <p className="text-label text-gold/80">Est. 2024</p>
-                            <h2 className="text-4xl md:text-7xl font-serif text-midnight leading-[0.95]">
+            {/* Narrated Section */}
+            <section className="section-padding bg-[#F9F7F2] relative overflow-hidden">
+                <div className="absolute top-20 right-0 opacity-[0.03] pointer-events-none select-none">
+                    <span className="text-[25rem] font-serif font-black italic">Heritage</span>
+                </div>
+
+                <div className="container-wide grid grid-cols-1 lg:grid-cols-12 gap-24 lg:gap-32 items-center relative z-10">
+                    <div className="lg:col-span-6 space-y-16">
+                        <div className="space-y-6">
+                            <p className="section-label">Our Philosophy</p>
+                            <h2 className="section-title">
                                 Professional
                                 <br />
-                                <span className="text-primary italic">Excellence</span>
+                                <span className="text-primary italic font-light">Excellence</span>
                             </h2>
-                        </div>
-                        <div className="space-y-6 text-midnight/80 text-lg leading-relaxed font-normal font-sans max-w-xl">
-                            <p>
-                                TerraTreks Travels is a premier boutique travel agency
-                                established in 2024. We specialize in meticulously
-                                personalized, end-to-end safari and luxury travel solutions.
-                            </p>
-                            <p>
-                                By marrying deep local expertise with prestigious global
-                                partnerships, we orchestrate seamless journeys that span
-                                from private aviation to the most exclusive lodges in
-                                Southern Africa.
-                            </p>
-                        </div>
-                        <div className="pt-4">
-                            <button className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-midnight hover:text-gold transition-colors duration-300">
-                                Discover Our Vision <div className="w-10 h-px bg-gold/30" />
-                            </button>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5 }}
-                        className="grid grid-cols-2 gap-6"
-                    >
-                        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)]">
-                            <Image
-                                src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=1200"
-                                alt="Zambian Landscape"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-6">
-                            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)]">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1523805081326-6468447d9688?auto=format&fit=crop&q=80&w=1200"
-                                    alt="Safari Dining"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.12)]">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=1200"
-                                    alt="Lion Majesty"
-                                    fill
-                                    className="object-cover"
-                                />
+                            <div className="space-y-8 text-midnight/70 text-lg leading-relaxed font-sans font-medium max-w-xl">
+                                <p>
+                                    TerraTreks Travels is a professional travel agency
+                                    specialising in personalised, end-to-end travel solutions. We bridge the gap between local wisdom and global delivery standards.
+                                </p>
+                                <p>
+                                    By orchestrating seamless flight bookings, luxury accommodation, and complete itinerary management, we ensure that every journey is handled with the precision of a master architect.
+                                </p>
                             </div>
                         </div>
-                        <div className="col-span-2 bg-midnight p-10 rounded-3xl text-white relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                            <p className="text-xl italic font-serif font-normal leading-relaxed text-white/90 relative z-10">
-                                &ldquo;To connect global travelers to the soul of Africa through experiences that exceed every expectation.&rdquo;
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
 
-            {/* Mission & Vision */}
-            <section className="py-32 px-6 md:px-10 bg-white relative overflow-hidden">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="p-12 md:p-16 rounded-3xl bg-sand border border-midnight/[0.04] space-y-6 group hover:border-gold/15 transition-all duration-700 font-sans"
-                    >
-                        <div className="w-14 h-14 bg-primary/[0.06] rounded-2xl flex items-center justify-center text-primary group-hover:bg-gold group-hover:text-midnight transition-all duration-500">
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={1.5}
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                />
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={1.5}
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                />
-                            </svg>
+                        {/* Pillar Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-10 border-t border-midnight/5">
+                            {pillars.map((pillar) => (
+                                <div key={pillar.title} className="space-y-4">
+                                    <pillar.icon className="w-8 h-8 text-gold opacity-50" strokeWidth={1.5} />
+                                    <h4 className="text-sm font-bold tracking-widest uppercase text-midnight">{pillar.title}</h4>
+                                    <p className="text-[10px] uppercase tracking-wider text-midnight/40 leading-relaxed font-bold">{pillar.desc}</p>
+                                </div>
+                            ))}
                         </div>
-                        <h3 className="text-3xl font-serif text-midnight">
-                            Our Vision
-                        </h3>
-                        <p className="text-midnight/90 leading-relaxed font-normal text-xl italic font-serif">
-                            &ldquo;To transform travel experiences through
-                            personalised expertise and genuine passion for
-                            discovery.&rdquo;
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.15 }}
-                        className="p-12 md:p-16 rounded-3xl bg-primary text-white space-y-6 relative overflow-hidden group font-sans"
-                    >
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-gold/[0.06] blur-3xl rounded-full transition-transform duration-700 group-hover:scale-150" />
-                        <div className="w-14 h-14 bg-white/[0.06] rounded-2xl flex items-center justify-center text-gold relative z-10">
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={1.5}
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="text-3xl font-serif relative z-10">
-                            Our Mission
-                        </h3>
-                        <p className="text-white/90 leading-relaxed font-medium text-xl italic font-serif relative z-10">
-                            &ldquo;To connect people to destinations, cultures and
-                            experiences exceeding expectations through expert
-                            guidance, excellent service and reliable support.&rdquo;
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Clients */}
-            <section className="py-32 px-6 md:px-10 bg-sand">
-                <div className="max-w-[1400px] mx-auto space-y-16">
-                    <div className="text-center space-y-5 max-w-xl mx-auto">
-                        <p className="text-label text-gold">Trusted Partnerships</p>
-                        <h2 className="text-3xl md:text-5xl font-serif text-midnight">Key Relationships</h2>
-                        <p className="text-midnight/80 font-normal">Industry leaders we support across Southern Africa.</p>
                     </div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div className="lg:col-span-6">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5 }}
+                            className="relative aspect-square rounded-[3rem] overflow-hidden shadow-3xl"
+                        >
+                            <Image
+                                src="/images/air-botswana.jpg"
+                                alt="Zambian Majesty"
+                                fill
+                                className="object-cover transition-transform duration-[5s] hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-midnight/10" />
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mission / Vision High Impact */}
+            <section className="section-padding bg-midnight relative overflow-hidden">
+                <div className="absolute inset-0 noise-overlay opacity-20" />
+                <div className="container-wide relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5 border border-white/5 rounded-[4rem] overflow-hidden">
+                    <div className="p-16 md:p-24 space-y-10 hover:bg-white/[0.02] transition-colors duration-700">
+                        <Quote className="w-16 h-16 text-gold/20" />
+                        <div className="space-y-6">
+                            <h3 className="text-4xl font-serif text-white">Our Vision</h3>
+                            <p className="text-2xl font-serif text-white/50 italic leading-snug">
+                                "To transform travel experiences through personalised expertise and genuine passion for discovery."
+                            </p>
+                        </div>
+                    </div>
+                    <div className="p-16 md:p-24 space-y-10 hover:bg-white/[0.02] transition-colors duration-700 border-l border-white/5">
+                        <Sparkles className="w-16 h-16 text-gold/20" />
+                        <div className="space-y-6">
+                            <h3 className="text-4xl font-serif text-white">Our Mission</h3>
+                            <p className="text-2xl font-serif text-white/50 italic leading-snug">
+                                "To connect global travelers to the soul of Africa through experiences that exceed every expectation."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Partners Table / Grid */}
+            <section className="section-padding bg-white relative overflow-hidden">
+                <div className="container-wide space-y-24 h-full">
+                    <div className="text-center space-y-6">
+                        <p className="section-label">The Network</p>
+                        <h2 className="section-title">Institutional <span className="text-gold italic font-light">Partners</span></h2>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                         {[
-                            "Sarens Zambia", "Southin", "Batati Innovations", "North Western Chamber",
-                            "United Church of Zambia", "Atutonke Investments", "NetFlow Energies",
-                            "Reeluka Investments", "Happy Anna Farms", "Trident College",
-                            "Martin House School", "International School of Lusaka", "ITS Southin",
-                            "SANVIC Mining", "Bwacha Mining", "Cefao"
+                            "Sarens Zambia", "Southin", "Batati", "NW Chamber",
+                            "Trident", "ISL", "SANVIC", "Cefao",
+                            "UCZ", "Atutonke", "NetFlow", "Reeluka"
                         ].map((client, idx) => (
                             <motion.div
                                 key={client}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: idx * 0.04 }}
-                                className="flex items-center justify-center p-8 bg-white rounded-2xl border border-midnight/[0.04] hover:border-gold/15 transition-all duration-500 group"
+                                transition={{ delay: idx * 0.05 }}
+                                className="group h-32 flex items-center justify-center p-8 bg-sand rounded-3xl border border-midnight/[0.02] hover:bg-white hover:border-gold/20 hover:shadow-2xl transition-all duration-700"
                             >
-                                <span className="text-[10px] font-bold text-midnight/50 tracking-[0.14em] uppercase text-center font-sans group-hover:text-gold transition-colors">
+                                <span className="text-[10px] font-bold text-midnight/30 tracking-[0.2em] uppercase text-center group-hover:text-midnight transition-colors">
                                     {client}
                                 </span>
                             </motion.div>
                         ))}
+                    </div>
+
+                    <div className="pt-20 text-center">
+                        <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20 max-w-2xl mx-auto leading-relaxed">
+                            TerraTreks Travels operates in full compliance with Zambian travel regulations and is an active member of recognised travel industry bodies.
+                        </p>
                     </div>
                 </div>
             </section>

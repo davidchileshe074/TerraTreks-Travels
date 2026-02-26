@@ -1,139 +1,123 @@
 import Link from "next/link";
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 import Image from "next/image";
 
 export const Footer = () => {
     return (
-        <footer className="bg-midnight pt-20 md:pt-28 pb-10 px-6 md:px-10 text-white relative overflow-hidden">
-            <div className="max-w-[1400px] mx-auto relative z-10">
-                {/* Top — Brand + Columns */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-                    {/* Brand */}
-                    <div className="space-y-8 lg:col-span-1">
-                        <Link href="/" className="inline-block">
+        <footer className="footer-padding bg-midnight pt-32 pb-16 text-white relative overflow-hidden">
+            {/* Background Texture/Art */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gold/[0.02] skew-x-12 translate-x-1/2 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-px bg-white/5" />
+
+            <div className="container-wide relative z-10">
+                {/* Branding & Overlay Text */}
+                <div className="absolute top-0 left-0 opacity-[0.03] pointer-events-none select-none -translate-y-1/2">
+                    <span className="text-[25rem] font-serif font-black italic tracking-tighter">Odyssey</span>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-32 mb-32 relative">
+                    {/* Brand Identity */}
+                    <div className="lg:col-span-5 space-y-12">
+                        <Link href="/" className="inline-block transition-transform duration-500 hover:scale-105">
                             <Image
                                 src="/terratreks-logo.png"
                                 alt="TerraTreks Travel"
-                                width={160}
-                                height={80}
+                                width={240}
+                                height={100}
                                 className="h-20 w-auto object-contain brightness-0 invert"
                             />
                         </Link>
-                        <p className="text-white/70 text-sm leading-relaxed font-normal max-w-xs">
-                            Curating luxury safari experiences and professional travel
-                            solutions in the heart of Zambia and beyond.
+                        <p className="text-white/40 text-lg md:text-xl font-serif italic leading-relaxed max-w-md">
+                            "Crafting the intersection of untamed wilderness and absolute refinement, one journey at a time."
                         </p>
-                        <div className="flex gap-3">
+                        <div className="flex gap-4">
                             {[Instagram, Facebook, Twitter].map((Icon, i) => (
                                 <Link
                                     key={i}
                                     href="#"
-                                    className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-500 text-white/70 hover:text-midnight"
+                                    className="group w-14 h-14 rounded-2xl bg-white/[0.02] border border-white/[0.05] flex items-center justify-center hover:bg-gold transition-all duration-700 hover:shadow-2xl"
                                 >
-                                    <Icon className="w-4 h-4" />
+                                    <Icon className="w-5 h-5 text-white/40 group-hover:text-midnight transition-colors" />
                                 </Link>
                             ))}
                         </div>
                     </div>
 
-                    {/* Navigation */}
-                    <div className="space-y-8">
-                        <h4 className="text-label text-gold">Explore</h4>
-                        <ul className="space-y-4">
-                            {[
-                                { name: "Safari Journeys", href: "/packages" },
-                                { name: "Destinations", href: "/destinations" },
-                                { name: "Corporate Travel", href: "/corporate" },
-                                { name: "Romantic Escapes", href: "/romantic" },
-                                { name: "About Us", href: "/about" },
-                            ].map((item) => (
-                                <li key={item.name}>
-                                    <Link
-                                        href={item.href}
-                                        className="text-white/70 hover:text-gold transition-colors duration-300 text-sm font-normal"
-                                    >
-                                        {item.name}
+                    {/* Quick Navigation */}
+                    <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-16 md:gap-24">
+                        <div className="space-y-10">
+                            <h4 className="section-label text-gold/60 mb-0">Navigate</h4>
+                            <ul className="space-y-6">
+                                {[
+                                    { name: "Home", href: "/" },
+                                    { name: "About Us", href: "/about" },
+                                    { name: "Services", href: "/services" },
+                                    { name: "Packages Listing", href: "/packages" },
+                                    { name: "Tours", href: "/packages" },
+                                    { name: "Booking", href: "/contact" },
+                                    { name: "Contact", href: "/contact" },
+                                ].map((item) => (
+                                    <li key={item.name}>
+                                        <Link
+                                            href={item.href}
+                                            className="text-white/40 hover:text-white transition-luxury text-xs font-bold tracking-[0.2em] uppercase"
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="space-y-10">
+                            <h4 className="section-label text-gold/60 mb-0">Contact</h4>
+                            <div className="space-y-8">
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold tracking-widest text-white/20 uppercase">Inquiries</span>
+                                    <a href="mailto:travel@terratrekstravel.com" className="block text-sm text-white/60 hover:text-gold transition-colors">travel@terratrekstravel.com</a>
+                                </div>
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold tracking-widest text-white/20 uppercase">WhatsApp</span>
+                                    <a href="tel:+260979189370" className="block text-sm text-white/60 hover:text-gold transition-colors">+260 97 918 9370</a>
+                                </div>
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold tracking-widest text-white/20 uppercase">Location</span>
+                                    <p className="text-sm text-white/60">Buffalo Wings, Solwezi, Zambia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-10">
+                            <h4 className="section-label text-gold/60 mb-0">Experience</h4>
+                            <div className="space-y-8">
+                                <div className="p-8 rounded-[2rem] bg-white/[0.02] border border-white/[0.05] space-y-6 hover:border-gold/20 transition-all duration-700 group/bank">
+                                    <div className="space-y-2">
+                                        <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/20">Official Account</span>
+                                        <p className="text-sm font-serif text-white/80">FNB Solwezi</p>
+                                        <p className="text-xs font-mono text-gold/80 italic">6311 2834 626</p>
+                                    </div>
+                                    <Link href="/contact" className="inline-flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-white/40 group-hover/bank:text-gold transition-colors">
+                                        Secure Booking <ArrowUp className="w-3 h-3 rotate-45" />
                                     </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="space-y-8">
-                        <h4 className="text-label text-gold">Contact</h4>
-                        <ul className="space-y-5">
-                            <li className="flex gap-4 items-start">
-                                <MapPin className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                                <span className="text-white/80 text-sm font-normal leading-relaxed">
-                                    Kankasa Office Block, Buffalo Wings,
-                                    <br />
-                                    Mushitala, Solwezi, Zambia
-                                </span>
-                            </li>
-                            <li className="flex gap-4 items-start">
-                                <Phone className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                                <span className="text-white/80 text-sm font-normal leading-relaxed">
-                                    +260 97 918 9370
-                                    <br />
-                                    +260 76 417 8388
-                                </span>
-                            </li>
-                            <li className="flex gap-4 items-start">
-                                <Mail className="w-4 h-4 text-gold mt-0.5 shrink-0" />
-                                <span className="text-white/80 text-sm font-normal">
-                                    travel@terratrekstravel.com
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Banking */}
-                    <div className="space-y-8">
-                        <h4 className="text-label text-gold">Payments</h4>
-                        <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/[0.05] space-y-5">
-                            <div className="space-y-1">
-                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gold font-sans">
-                                    FNB (Solwezi)
-                                </p>
-                                <p className="text-sm font-mono text-white/60">
-                                    6311 2834 626
-                                </p>
+                                </div>
                             </div>
-                            <div className="space-y-1">
-                                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/60 font-sans">
-                                    Swift Code
-                                </p>
-                                <p className="text-sm font-mono text-white/90 uppercase">
-                                    FIRNZMLX
-                                </p>
-                            </div>
-                            <div className="h-px bg-white/[0.05]" />
-                            <p className="text-[11px] text-white/60 font-normal">
-                                MoMo & Airtel Money accepted
-                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/60 font-sans">
-                        &copy; {new Date().getFullYear()} TerraTreks Travels &bull; Est.
-                        2024
-                    </p>
-                    <div className="flex gap-10 text-[10px] font-bold tracking-[0.2em] uppercase text-white/60 font-sans">
-                        <Link
-                            href="#"
-                            className="hover:text-gold transition-colors duration-300"
-                        >
-                            Privacy
-                        </Link>
-                        <Link
-                            href="#"
-                            className="hover:text-gold transition-colors duration-300"
-                        >
-                            Terms
-                        </Link>
+                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex items-center gap-6">
+                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/20">
+                            &copy; {new Date().getFullYear()} TerraTreks Travels &bull; EST. 2024
+                        </span>
+                    </div>
+
+                    <div className="flex gap-12">
+                        <Link href="#" className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/20 hover:text-white transition-colors">Legal</Link>
+                        <Link href="#" className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/20 hover:text-white transition-colors">Privacy</Link>
+                        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-[10px] font-bold tracking-[0.3em] uppercase text-gold hover:text-white transition-colors flex items-center gap-2">
+                            Back to Top <ArrowUp className="w-3 h-3" />
+                        </button>
                     </div>
                 </div>
             </div>
