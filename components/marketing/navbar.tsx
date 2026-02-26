@@ -13,9 +13,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Packages Listing", href: "/packages" },
-    { name: "Tours", href: "/packages" },
-    { name: "Booking", href: "/contact" },
+    { name: "Tour Packages", href: "/packages" },
     { name: "Contact", href: "/contact" },
 ];
 
@@ -145,8 +143,8 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                     >
                         <div className="absolute inset-0 noise-overlay opacity-30" />
 
-                        <div className="relative z-10 h-full flex flex-col p-10 pt-40">
-                            <div className="flex flex-col gap-8">
+                        <div className="relative z-10 h-full flex flex-col p-8 pt-24 shrink-0 overflow-y-auto">
+                            <div className="flex flex-col gap-6">
                                 <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20">Navigation</span>
                                 {navLinks.map((link, idx) => (
                                     <motion.div
@@ -157,11 +155,11 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                                     >
                                         <Link
                                             href={link.href}
-                                            className="text-4xl font-serif text-midnight/90 hover:text-gold transition-luxury flex items-center justify-between group"
+                                            className="text-2xl font-serif text-midnight/90 hover:text-gold transition-luxury flex items-center justify-between group"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             <span className={cn(pathname === link.href && "text-gold italic underline underline-offset-8 decoration-gold/30")}>{link.name}</span>
-                                            <ArrowRight className="w-8 h-8 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-gold" />
+                                            <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-gold" />
                                         </Link>
                                     </motion.div>
                                 ))}
@@ -173,7 +171,7 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                                 transition={{ delay: 0.8, duration: 1 }}
                                 className="mt-auto space-y-12 border-t border-midnight/5 pt-12"
                             >
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div className="grid grid-cols-1 gap-8">
                                     <div className="space-y-4">
                                         <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20">Inquiries</span>
                                         <div className="space-y-2">
