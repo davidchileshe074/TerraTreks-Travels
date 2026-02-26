@@ -52,14 +52,14 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
             className={cn(
                 "fixed top-0 left-0 right-0 z-[100] transition-all duration-700",
                 isSolid
-                    ? "glass-nav py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
-                    : "bg-transparent py-6 md:py-10"
+                    ? "glass-nav py-3 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+                    : "bg-transparent py-4 md:py-6"
             )}
         >
             <div className="container-wide flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center group relative z-50 transition-transform duration-500 hover:scale-105" aria-label="TerraTreks Travel Home">
-                    <div className="relative w-36 h-10 md:w-56 md:h-14 transition-all duration-500">
+                    <div className="relative w-32 h-8 md:w-48 md:h-12 transition-all duration-500">
                         <Image
                             src="/terratreks-logo.png"
                             alt="TerraTreks Travel"
@@ -143,9 +143,9 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                     >
                         <div className="absolute inset-0 noise-overlay opacity-30" />
 
-                        <div className="relative z-10 h-full flex flex-col p-8 pt-24 shrink-0 overflow-y-auto">
-                            <div className="flex flex-col gap-6">
-                                <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20">Navigation</span>
+                        <div className="relative z-10 h-full flex flex-col p-6 pt-20 shrink-0 overflow-y-auto">
+                            <div className="flex flex-col gap-4">
+                                <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Navigation</span>
                                 {navLinks.map((link, idx) => (
                                     <motion.div
                                         key={link.name}
@@ -155,11 +155,11 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                                     >
                                         <Link
                                             href={link.href}
-                                            className="text-2xl font-serif text-midnight/90 hover:text-gold transition-luxury flex items-center justify-between group"
+                                            className="text-xl font-serif text-midnight/90 hover:text-gold transition-luxury flex items-center justify-between group"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            <span className={cn(pathname === link.href && "text-gold italic underline underline-offset-8 decoration-gold/30")}>{link.name}</span>
-                                            <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-gold" />
+                                            <span className={cn(pathname === link.href && "text-gold italic underline underline-offset-4 decoration-gold/30")}>{link.name}</span>
+                                            <ArrowRight className="w-5 h-5 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-gold" />
                                         </Link>
                                     </motion.div>
                                 ))}
@@ -171,16 +171,16 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                                 transition={{ delay: 0.8, duration: 1 }}
                                 className="mt-auto space-y-12 border-t border-midnight/5 pt-12"
                             >
-                                <div className="grid grid-cols-1 gap-8">
-                                    <div className="space-y-4">
-                                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20">Inquiries</span>
-                                        <div className="space-y-2">
-                                            <a href="mailto:travel@terratrekstravel.com" className="block text-lg font-sans font-medium hover:text-gold transition-colors">travel@terratrekstravel.com</a>
-                                            <a href="tel:+260979189370" className="block text-lg font-sans font-medium hover:text-gold transition-colors">+260 97 918 9370</a>
+                                <div className="grid grid-cols-1 gap-6">
+                                    <div className="space-y-3">
+                                        <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Inquiries</span>
+                                        <div className="space-y-1">
+                                            <a href="mailto:travel@terratrekstravel.com" className="block text-base font-sans font-medium hover:text-gold transition-colors">travel@terratrekstravel.com</a>
+                                            <a href="tel:+260979189370" className="block text-base font-sans font-medium hover:text-gold transition-colors">+260 97 918 9370</a>
                                         </div>
                                     </div>
-                                    <div className="space-y-4">
-                                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-midnight/20">Social</span>
+                                    <div className="space-y-3">
+                                        <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Social</span>
                                         <div className="flex gap-6">
                                             <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-gold transition-colors">Instagram</a>
                                             <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-gold transition-colors">Facebook</a>
