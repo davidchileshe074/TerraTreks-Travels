@@ -2,16 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Hero } from "@/components/marketing/hero";
-import { PackagesSection } from "@/components/marketing/packages-section";
-import { LocalOffersSection } from "@/components/marketing/local-offers-section";
-import { ServicesGrid } from "@/components/marketing/services-grid";
-import { WhyChooseUs } from "@/components/marketing/why-choose-us";
-import { ProcessSteps } from "@/components/marketing/process-steps";
-import { Testimonials } from "@/components/marketing/testimonials";
-import { TrustBadges } from "@/components/marketing/trust-badges";
 import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -69,10 +61,10 @@ export default function Home() {
       <Hero />
 
       {/* ── SIGNATURE JOURNEYS ── */}
-      <PackagesSection />
+
 
       {/* ── LOCAL RESIDENT SPECIALS ── */}
-      <LocalOffersSection />
+
 
 
       <section className="section-padding px-6 md:px-10 bg-white overflow-hidden relative">
@@ -92,7 +84,7 @@ export default function Home() {
                 <br />
                 <span className="text-primary italic font-light">Southern Africa</span>
               </h2>
-              <p className="section-desc max-w-md">
+              <p className="section-desc max-w-md text-bold text-white-500">
                 A curated collection of the continent's most whispered-about landmarks and untamed horizons.
               </p>
             </div>
@@ -164,14 +156,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
-      <ServicesGrid />
 
-      {/* ── HOW IT WORKS ── */}
-      <ProcessSteps />
-
-      {/* ── WHY CHOOSE US ── */}
-      <WhyChooseUs />
 
       <section className="section-padding px-6 md:px-10 bg-midnight relative overflow-hidden">
         {/* Full-width parallax image */}
@@ -267,7 +252,6 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <Testimonials />
 
       <section className="py-32 bg-midnight overflow-hidden relative">
         {/* Cinematic Film Strip Effect */}
@@ -424,8 +408,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUST ── */}
-      <TrustBadges />
+
 
       <section className="section-padding bg-midnight overflow-hidden relative">
         {/* Immersive Background */}

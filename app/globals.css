@@ -196,7 +196,7 @@
    SEMANTIC DESIGN SYSTEM
    ═══════════════════════════════════════ */
 .section-label {
-  @apply text-label text-gold inline-block mb-3;
+  @apply text-label text-white inline-block mb-3;
 }
 
 .section-title {

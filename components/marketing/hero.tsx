@@ -72,7 +72,7 @@ export const Hero = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 1.2 }}
                             >
-                                <p className="section-label text-gold/80 mb-0">
+                                <p className="section-label text-white mb-0">
                                     Zambia&apos;s Finest Travel Agency
                                 </p>
                             </motion.div>
@@ -98,7 +98,7 @@ export const Hero = () => {
                                         initial={{ y: "100%" }}
                                         animate={{ y: 0 }}
                                         transition={{ duration: 1.2, delay: 0.6 }}
-                                        className="inline-block text-gold italic font-light pb-2 ml-1"
+                                        className="inline-block text-white italic font-light pb-2 ml-1"
                                     >
                                         Awaits Today
                                     </motion.span>
