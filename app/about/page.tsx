@@ -75,8 +75,8 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/20 to-transparent z-[1]" />
                 <div className="absolute inset-0 film-grain opacity-20 z-[2]" />
 
-                <div className="relative z-10 container-wide pb-32">
-                    <div className="max-w-4xl space-y-10">
+                <div className="relative z-10 container-wide pt-[25vh] pb-24">
+                    <div className="max-w-4xl space-y-8 md:space-y-10">
                         <div className="space-y-6">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -89,7 +89,7 @@ export default function AboutPage() {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="text-6xl md:text-[9rem] font-serif text-white tracking-tighter leading-[0.85]"
+                                className="text-5xl sm:text-6xl md:text-[9rem] font-serif text-white tracking-tighter leading-[0.85]"
                             >
                                 The Soul of
                                 <br />

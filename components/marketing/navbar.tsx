@@ -77,14 +77,14 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                     isSolid && !isScrolled ? "bg-white py-6" : ""
                 )}
             >
-                <div className="container-wide flex items-center justify-between gap-8">
+                <div className="container-wide flex items-center justify-between gap-4 md:gap-8">
                     {/* Logo */}
                     <Link href="/" className="flex items-center group relative z-50 transition-transform duration-500 hover:scale-[1.02]" aria-label="TerraTreks Travel Home">
                         <div className={cn(
                             "relative transition-all duration-700 ease-in-out shrink-0",
                             isScrolled
-                                ? "w-40 h-10"
-                                : "w-52 h-14 md:w-72 md:h-20"
+                                ? "w-32 h-8 md:w-40 md:h-10"
+                                : "w-36 h-9 sm:w-48 sm:h-12 md:w-52 md:h-14 lg:w-72 lg:h-20"
                         )}>
                             <Image
                                 src="/terratreks-logo.png"
@@ -140,7 +140,7 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="lg:hidden relative z-[110] p-2 group"
+                        className="lg:hidden relative z-[110] p-2 -mr-2 group"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                     >

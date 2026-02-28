@@ -64,8 +64,8 @@ export const Hero = () => {
 
             {/* Content — Bottom-aligned */}
             <div className="relative z-10 w-full">
-                <div className="container-wide pb-16 md:pb-28">
-                    <div className="max-w-4xl space-y-12">
+                <div className="container-wide pt-[25vh] pb-12 md:pb-28">
+                    <div className="max-w-4xl space-y-8 md:space-y-12">
                         <div className="space-y-8">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
@@ -81,7 +81,7 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="text-6xl md:text-[7rem] lg:text-[8.5rem] font-serif text-white leading-[0.85] tracking-tight"
+                                className="text-5xl sm:text-6xl md:text-[7rem] lg:text-[8.5rem] font-serif text-white leading-[0.85] tracking-tight"
                             >
                                 <span className="block italic font-normal opacity-90">Experience</span>
                                 <span className="block">Southern Africa</span>
