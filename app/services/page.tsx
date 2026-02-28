@@ -90,7 +90,7 @@ export default function ServicesPage() {
     return (
         <main className="relative min-h-screen bg-white">
             {/* Cinematic Hero */}
-            <section className="relative h-[80vh] flex items-end overflow-hidden bg-midnight">
+            <section className="relative h-[80vh] flex items-end overflow-hidden bg-primary">
                 <motion.div
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -107,7 +107,7 @@ export default function ServicesPage() {
                 </motion.div>
 
                 {/* Cinematic Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/60 to-transparent z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent z-[1]" />
                 <div className="absolute inset-0 noise-overlay opacity-30 z-[2]" />
 
                 <div className="relative z-10 container-wide pb-32">
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 1.2 }}
                             >
-                                <span className="section-label text-gold/80">360° Travel Ecosystem</span>
+                                <span className="text-xs font-bold tracking-[0.4em] uppercase text-white/80">360° Travel Ecosystem</span>
                             </motion.div>
                             <motion.h1
                                 initial={{ opacity: 0, y: 50 }}
@@ -128,7 +128,7 @@ export default function ServicesPage() {
                             >
                                 Professional
                                 <br />
-                                <span className="text-gold italic font-light">Ecosystem</span>
+                                <span className="italic font-normal opacity-80">Ecosystem</span>
                             </motion.h1>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Services Grid - Modern Mosaic */}
-            <section className="section-padding bg-[#F9F7F2] relative overflow-hidden">
+            <section className="section-padding bg-white relative overflow-hidden">
                 <div className="absolute top-20 left-0 opacity-[0.03] pointer-events-none select-none">
                     <span className="text-[20rem] font-serif font-black italic">Solutions</span>
                 </div>
@@ -150,25 +150,25 @@ export default function ServicesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.05, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                                className="group relative bg-white p-12 rounded-[2.5rem] border border-midnight/[0.03] hover:bg-white hover:border-gold/20 hover:shadow-3xl transition-all duration-700 flex flex-col"
+                                className="group relative bg-white p-12 rounded-none border border-midnight/[0.05] hover:bg-white hover:border-primary/20 hover:shadow-2xl transition-all duration-700 flex flex-col"
                             >
                                 <div className="space-y-8 flex-1">
                                     <div className="flex justify-between items-start">
-                                        <div className="w-16 h-16 bg-[#F9F7F2] rounded-2xl flex items-center justify-center text-midnight group-hover:bg-gold group-hover:text-midnight transition-all duration-700">
+                                        <div className="w-16 h-16 bg-primary/5 rounded-none flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-700">
                                             <service.icon strokeWidth={1} className="w-8 h-8" />
                                         </div>
-                                        <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-midnight/20">{service.tag}</span>
+                                        <span className="text-xs font-bold tracking-[0.2em] uppercase text-midnight/20">{service.tag}</span>
                                     </div>
                                     <div className="space-y-4">
                                         <h3 className="text-2xl font-serif text-midnight leading-tight group-hover:text-primary transition-colors">{service.title}</h3>
-                                        <p className="text-midnight/40 text-[11px] leading-relaxed font-bold tracking-wider uppercase">
+                                        <p className="text-midnight/90 text-sm leading-relaxed font-bold tracking-wider uppercase">
                                             {service.description}
                                         </p>
                                     </div>
                                 </div>
                                 <div className="pt-10 flex items-center justify-between border-t border-midnight/5">
-                                    <Link href="/contact" className="text-[10px] font-bold tracking-[0.2em] uppercase text-midnight hover:text-gold transition-colors">Enquire Now</Link>
-                                    <ArrowRight className="w-4 h-4 text-midnight/20 group-hover:text-gold group-hover:translate-x-1 transition-all" />
+                                    <Link href="/contact" className="text-xs font-bold tracking-[0.2em] uppercase text-midnight hover:text-primary transition-colors">Enquire Now</Link>
+                                    <ArrowRight className="w-4 h-4 text-midnight/20 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                                 </div>
                             </motion.div>
                         ))}
@@ -177,26 +177,26 @@ export default function ServicesPage() {
             </section>
 
             {/* High Impact Consultation CTA */}
-            <section className="py-40 bg-midnight relative overflow-hidden">
+            <section className="py-40 bg-primary relative overflow-hidden">
                 <div className="absolute inset-0 noise-overlay opacity-30" />
                 <div className="container-wide text-center relative z-10 space-y-12">
-                    <Sparkles className="w-16 h-16 text-gold/20 mx-auto" />
+                    <Sparkles className="w-16 h-16 text-white/90 mx-auto" />
                     <h2 className="text-5xl md:text-8xl font-serif text-white tracking-tighter leading-[0.85] max-w-5xl mx-auto">
                         Your Strategy,
                         <br />
-                        <span className="text-gold italic font-light">Individually Architected</span>
+                        <span className="italic font-normal opacity-80">Individually Architected</span>
                     </h2>
-                    <p className="section-desc max-w-2xl mx-auto text-white/40 mb-12">
+                    <p className="section-desc max-w-2xl mx-auto text-white/70 mb-12">
                         We don't just provide travel services; we design travel strategies. Our consultants are ready to handle the logistics so you can focus on the journey.
                     </p>
                     <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-8">
                         <Link
                             href="/contact"
-                            className="bg-gold text-midnight rounded-full px-12 py-6 text-[11px] font-bold tracking-[0.3em] uppercase hover:bg-white transition-all duration-700 w-full sm:w-auto shadow-2xl"
+                            className="bg-white text-primary rounded-none px-12 py-6 text-sm font-bold tracking-[0.3em] uppercase hover:bg-midnight hover:text-white transition-all duration-700 w-full sm:w-auto shadow-2xl"
                         >
                             Schedule a Consultation
                         </Link>
-                        <a href="tel:+260979189370" className="text-white/40 hover:text-white transition-colors text-[10px] font-bold tracking-[0.4em] uppercase">Speak to an Expert</a>
+                        <a href="tel:+260979189370" className="text-white/70 hover:text-white transition-colors text-xs font-bold tracking-[0.4em] uppercase">Speak to an Expert</a>
                     </div>
                 </div>
             </section>

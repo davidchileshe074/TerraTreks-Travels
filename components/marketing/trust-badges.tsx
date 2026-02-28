@@ -33,15 +33,15 @@ export const TrustBadges = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                            className="group relative p-12 rounded-[2.5rem] bg-[#F9F7F2]/60 hover:bg-white border border-midnight/[0.03] hover:border-gold/20 transition-all duration-700 text-center space-y-4"
+                            className="group relative p-12 rounded-none bg-white/60 hover:bg-white border border-midnight/[0.05] hover:border-primary/20 transition-all duration-700 text-center space-y-4"
                         >
-                            <span className="block text-5xl md:text-7xl font-serif text-midnight/10 group-hover:text-gold/20 transition-colors duration-700 absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+                            <span className="block text-5xl md:text-7xl font-serif text-midnight/10 group-hover:text-primary/10 transition-colors duration-700 absolute inset-0 flex items-center justify-center pointer-events-none select-none">
                                 {stat.value}
                             </span>
                             <span className="relative z-10 block text-4xl md:text-5xl font-serif text-midnight tracking-tight">
                                 {stat.value}
                             </span>
-                            <span className="relative z-10 block text-[10px] font-bold tracking-[0.3em] uppercase text-midnight/40 font-sans">
+                            <span className="relative z-10 block text-xs font-bold tracking-[0.3em] uppercase text-midnight/90 font-sans">
                                 {stat.label}
                             </span>
                         </motion.div>
@@ -52,7 +52,7 @@ export const TrustBadges = () => {
                 <div className="space-y-16">
                     <div className="flex items-center gap-10">
                         <div className="h-px flex-1 bg-midnight/5" />
-                        <p className="section-label mb-0 text-midnight/40">Trusted Partnerships</p>
+                        <p className="section-label mb-0 text-midnight/90">Trusted Partnerships</p>
                         <div className="h-px flex-1 bg-midnight/5" />
                     </div>
 
@@ -66,7 +66,7 @@ export const TrustBadges = () => {
                                 transition={{ delay: idx * 0.05, duration: 1 }}
                                 className="flex items-center justify-center opacity-40 hover:opacity-100 transition-opacity duration-500"
                             >
-                                <span className="text-[10px] font-bold text-midnight tracking-widest uppercase text-center font-sans">
+                                <span className="text-xs font-bold text-midnight tracking-widest uppercase text-center font-sans">
                                     {client}
                                 </span>
                             </motion.div>

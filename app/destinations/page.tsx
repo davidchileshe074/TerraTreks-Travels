@@ -87,13 +87,13 @@ export default function DestinationsPage() {
                     priority
                     className="object-cover"
                 />
-                <div className="absolute inset-0 hero-overlay" />
+                <div className="absolute inset-0 bg-primary/40" />
                 <div className="relative z-10 container-wide pb-16">
                     <div className="max-w-xl space-y-5">
                         <motion.p
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="section-label"
+                            className="text-xs font-bold tracking-[0.4em] uppercase text-white/80"
                         >
                             Explore Our World
                         </motion.p>
@@ -101,18 +101,18 @@ export default function DestinationsPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="hero-title"
+                            className="text-6xl md:text-8xl font-serif text-white leading-none tracking-tight"
                         >
                             Extraordinary
                             <br />
-                            <span className="text-gold italic font-light">Destinations</span>
+                            <span className="italic font-normal opacity-80">Destinations</span>
                         </motion.h1>
                     </div>
                 </div>
             </section>
 
             {/* Search and Grid */}
-            <section className="section-padding bg-sand">
+            <section className="section-padding bg-white">
                 <div className="container-wide space-y-16">
                     {/* Search Bar */}
                     <motion.div
@@ -122,18 +122,18 @@ export default function DestinationsPage() {
                         className="max-w-2xl"
                     >
                         <div className="relative group">
-                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-midnight/30 group-focus-within:text-gold transition-colors duration-300" />
+                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-midnight/30 group-focus-within:text-primary transition-colors duration-300" />
                             <input
                                 type="text"
                                 placeholder="Search by destination or country..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full bg-white border border-midnight/[0.08] rounded-2xl px-16 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none text-midnight font-sans premium-shadow"
+                                className="w-full bg-white border border-midnight/[0.08] rounded-none px-16 py-5 focus:ring-4 focus:ring-primary/5 focus:border-primary/30 transition-all outline-none text-midnight font-sans"
                             />
                             {searchQuery && (
                                 <button
                                     onClick={() => setSearchQuery("")}
-                                    className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-midnight/30 hover:text-midnight transition-colors"
+                                    className="absolute right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-midnight/30 hover:text-primary transition-colors"
                                 >
                                     <X className="w-full h-full" />
                                 </button>
@@ -159,7 +159,7 @@ export default function DestinationsPage() {
                                             duration: 0.6,
                                             ease: [0.22, 1, 0.36, 1]
                                         }}
-                                        className="group relative aspect-[3/4] rounded-3xl overflow-hidden cursor-pointer"
+                                        className="group relative aspect-[3/4] rounded-none overflow-hidden cursor-pointer"
                                     >
                                         <Image
                                             src={dest.img}
@@ -172,7 +172,7 @@ export default function DestinationsPage() {
                                         <div className="absolute bottom-0 left-0 right-0 p-8">
                                             <div className="space-y-3">
                                                 <span className="card-meta text-white/70">
-                                                    <MapPin className="w-3.5 h-3.5 text-gold" />
+                                                    <MapPin className="w-3.5 h-3.5 text-white/80" />
                                                     {dest.country}
                                                 </span>
                                                 <h3 className="text-3xl font-serif text-white font-medium">
@@ -182,7 +182,7 @@ export default function DestinationsPage() {
                                                     {dest.desc}
                                                 </p>
                                                 <div className="pt-3 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500">
-                                                    <button className="inline-flex items-center gap-2 text-gold text-[10px] font-bold uppercase tracking-[0.15em] font-sans group/btn">
+                                                    <button className="inline-flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-[0.15em] font-sans group/btn">
                                                         Explore
                                                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                                     </button>
@@ -201,12 +201,12 @@ export default function DestinationsPage() {
                                         <Search className="w-8 h-8 text-midnight/20" />
                                     </div>
                                     <h3 className="text-2xl font-serif text-midnight">No Destinations Found</h3>
-                                    <p className="text-midnight/60 font-light max-w-xs mx-auto">
+                                    <p className="text-midnight/90 font-normal max-w-xs mx-auto">
                                         We couldn&apos;t find any destinations matching &quot;{searchQuery}&quot;. Please try a different search.
                                     </p>
                                     <button
                                         onClick={() => setSearchQuery("")}
-                                        className="text-gold font-bold text-[10px] uppercase tracking-[0.15em] font-sans pt-4 border-b border-gold pb-0.5"
+                                        className="text-primary font-bold text-xs uppercase tracking-[0.15em] font-sans pt-4 border-b border-primary pb-0.5"
                                     >
                                         Clear Search
                                     </button>

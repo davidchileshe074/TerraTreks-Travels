@@ -31,10 +31,10 @@ const steps = [
 
 export const ProcessSteps = () => {
     return (
-        <section className="section-padding bg-midnight overflow-hidden relative">
+        <section className="section-padding bg-primary overflow-hidden relative">
             {/* Background elements */}
-            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-gold/[0.05] via-transparent to-transparent pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-[40rem] h-[40rem] bg-gold/[0.02] rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-white/[0.05] via-transparent to-transparent pointer-events-none" />
+            <div className="absolute -bottom-20 -left-20 w-[40rem] h-[40rem] bg-white/[0.02] rounded-none blur-[120px] pointer-events-none" />
 
             <div className="container-wide relative z-10 space-y-32">
                 {/* Header */}
@@ -44,7 +44,7 @@ export const ProcessSteps = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="section-label text-gold/60"
+                            className="text-xs font-bold tracking-[0.4em] uppercase text-white/80"
                         >
                             The Methodology
                         </motion.p>
@@ -56,7 +56,7 @@ export const ProcessSteps = () => {
                         >
                             Orchestrating
                             <br />
-                            <span className="text-gold italic font-light">Excellence</span>
+                            <span className="italic font-normal opacity-80">Excellence</span>
                         </motion.h2>
                     </div>
                     <motion.p
@@ -64,7 +64,7 @@ export const ProcessSteps = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="section-desc text-white/40 max-w-sm mb-2"
+                        className="section-desc text-white/70 max-w-sm mb-2"
                     >
                         A seamless, four-phase transition from aspiration to reality, handled with precision and local insight.
                     </motion.p>
@@ -89,18 +89,18 @@ export const ProcessSteps = () => {
                             className="group relative space-y-10"
                         >
                             {/* Connector Circle */}
-                            <div className="relative z-10 w-20 h-20 rounded-full bg-midnight border border-white/10 flex items-center justify-center group-hover:border-gold group-hover:shadow-[0_0_30px_rgba(182,152,89,0.2)] transition-all duration-700">
-                                <span className="text-2xl font-serif font-bold text-white group-hover:text-gold transition-colors">
+                            <div className="relative z-10 w-20 h-20 rounded-none bg-primary border border-white/10 flex items-center justify-center group-hover:border-white group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all duration-700">
+                                <span className="text-2xl font-serif font-bold text-white transition-colors">
                                     {step.number}
                                 </span>
                             </div>
 
                             {/* Content */}
                             <div className="space-y-4">
-                                <h3 className="text-2xl font-serif text-white group-hover:text-gold transition-colors">
+                                <h3 className="text-2xl font-serif text-white transition-colors">
                                     {step.title}
                                 </h3>
-                                <p className="text-white/40 text-sm leading-relaxed font-sans font-medium">
+                                <p className="text-white/70 text-sm leading-relaxed font-sans font-medium">
                                     {step.description}
                                 </p>
                             </div>

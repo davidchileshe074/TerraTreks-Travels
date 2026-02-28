@@ -25,7 +25,7 @@ export const ServicesGrid = () => {
     return (
         <section className="section-padding px-6 md:px-10 bg-white overflow-hidden relative">
             {/* Artistic Background Element */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-[#fcfbf7] -skew-x-12 translate-x-1/2 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/[0.01] -skew-x-12 translate-x-1/2 pointer-events-none" />
 
             <div className="container-wide space-y-24 relative z-10">
                 {/* Header with Side Label */}
@@ -47,7 +47,7 @@ export const ServicesGrid = () => {
                         >
                             End-to-End
                             <br />
-                            <span className="text-primary italic font-light">Management</span>
+                            <span className="text-primary italic font-normal">Management</span>
                         </motion.h2>
                     </div>
                     <motion.p
@@ -74,16 +74,16 @@ export const ServicesGrid = () => {
                                 duration: 0.8,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="group p-10 rounded-[2rem] bg-[#F9F7F2]/50 hover:bg-white border border-midnight/[0.03] hover:border-gold/10 hover:shadow-[0_30px_60px_rgba(182,152,89,0.06)] transition-all duration-700 flex flex-col items-start gap-8"
+                            className="group p-10 rounded-none bg-white hover:bg-primary border border-midnight/[0.05] hover:shadow-2xl transition-all duration-700 flex flex-col items-start gap-8"
                         >
-                            <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-gold group-hover:text-midnight transition-colors duration-500">
+                            <div className="w-14 h-14 rounded-none bg-primary/5 flex items-center justify-center text-primary group-hover:bg-white transition-colors duration-500">
                                 <service.icon className="w-6 h-6" strokeWidth={1.2} />
                             </div>
                             <div className="space-y-3">
-                                <h3 className="text-xl font-serif text-midnight transition-colors group-hover:text-primary">
+                                <h3 className="text-xl font-serif text-midnight transition-colors group-hover:text-white">
                                     {service.title}
                                 </h3>
-                                <p className="text-midnight/50 text-xs leading-relaxed font-sans font-medium tracking-wide">
+                                <p className="text-midnight/80 text-xs leading-relaxed font-sans font-medium tracking-wide group-hover:text-white/90">
                                     {service.description}
                                 </p>
                             </div>

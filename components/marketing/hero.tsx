@@ -59,7 +59,7 @@ export const Hero = () => {
             </AnimatePresence>
 
             {/* Cinematic Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-midnight/40 via-transparent to-midnight/90 z-[1]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/90 z-[1]" />
             <div className="absolute inset-0 film-grain z-[2] opacity-30" />
 
             {/* Content — Bottom-aligned */}
@@ -72,8 +72,8 @@ export const Hero = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 1.2 }}
                             >
-                                <p className="section-label text-white mb-0">
-                                    Zambia&apos;s Finest Travel Agency
+                                <p className="text-xs font-bold tracking-[0.4em] uppercase text-white/80 mb-0">
+                                    Trusted Expert Safaris
                                 </p>
                             </motion.div>
 
@@ -81,38 +81,25 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="hero-title"
+                                className="text-6xl md:text-[7rem] lg:text-[8.5rem] font-serif text-white leading-[0.85] tracking-tight"
                             >
-                                <span className="block overflow-hidden">
-                                    <motion.span
-                                        initial={{ y: "100%" }}
-                                        animate={{ y: 0 }}
-                                        transition={{ duration: 1.2, delay: 0.4 }}
-                                        className="inline-block"
-                                    >
-                                        Adventure
-                                    </motion.span>
-                                </span>
-                                <span className="block overflow-hidden">
-                                    <motion.span
-                                        initial={{ y: "100%" }}
-                                        animate={{ y: 0 }}
-                                        transition={{ duration: 1.2, delay: 0.6 }}
-                                        className="inline-block text-white italic font-light pb-2 ml-1"
-                                    >
-                                        Awaits Today
-                                    </motion.span>
-                                </span>
+                                <span className="block italic font-normal opacity-90">Experience</span>
+                                <span className="block">Southern Africa</span>
                             </motion.h1>
 
-                            <motion.p
+                            <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 1.4, duration: 1.2 }}
-                                className="text-white/85 text-lg md:text-2xl max-w-xl leading-relaxed font-light italic"
+                                className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12"
                             >
-                                &ldquo;Crafting the intersection of untamed wilderness and absolute refinement.&rdquo;
-                            </motion.p>
+                                <div className="max-w-md">
+                                    <p className="text-white/80 text-lg md:text-xl leading-relaxed font-normal italic border-l-2 border-primary pl-6 py-2">
+                                        &ldquo;Our journey with TerraTreks was beyond spectacular. Every detail was curated to perfection.&rdquo;
+                                        <span className="block text-xs font-bold tracking-widest uppercase mt-4 text-white/70">— Recent Guest Review</span>
+                                    </p>
+                                </div>
+                            </motion.div>
                         </div>
 
                         <motion.div
@@ -123,18 +110,18 @@ export const Hero = () => {
                         >
                             <Link
                                 href="/packages"
-                                className="group relative inline-flex items-center justify-center rounded-full px-12 py-6 text-[13px] font-bold tracking-[0.2em] uppercase bg-gold text-midnight hover:bg-white transition-all duration-700 shadow-2xl overflow-hidden"
+                                className="group relative inline-flex items-center justify-center rounded-none px-12 py-6 text-sm font-bold tracking-[0.2em] uppercase bg-primary text-white hover:bg-white hover:text-primary transition-all duration-700 shadow-2xl overflow-hidden"
                             >
                                 <span className="relative z-10 flex items-center gap-2">
-                                    Explore Journeys <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                    Explore Itineraries <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </span>
                             </Link>
 
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center justify-center rounded-full px-12 py-6 text-[13px] font-bold tracking-[0.2em] uppercase border border-white/20 text-white hover:bg-white hover:text-midnight transition-all duration-700 backdrop-blur-md"
+                                className="inline-flex items-center justify-center rounded-none px-12 py-6 text-sm font-bold tracking-[0.2em] uppercase border border-white/20 text-white hover:bg-white hover:text-primary transition-all duration-700 backdrop-blur-md"
                             >
-                                Begin the Conversation
+                                Make an Enquiry
                             </Link>
                         </motion.div>
                     </div>
@@ -145,9 +132,9 @@ export const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.2, duration: 1.2 }}
-                    className="border-t border-white/10 bg-midnight/40 backdrop-blur-xl py-8"
+                    className="border-t border-white/10 bg-primary/40 backdrop-blur-xl py-8"
                 >
-                    <div className="container-wide flex items-center justify-between text-white/50">
+                    <div className="container-wide flex items-center justify-between text-white/80">
                         <div className="flex items-center gap-12 md:gap-20 overflow-x-auto no-scrollbar mask-fade-right pr-10">
                             {[
                                 { value: "Bespoke", label: "Travel Strategies" },
@@ -158,7 +145,7 @@ export const Hero = () => {
                                     <span className="text-white/90 font-serif text-lg italic whitespace-nowrap">
                                         {stat.value}
                                     </span>
-                                    <span className="text-[9px] font-bold tracking-[0.3em] uppercase font-sans whitespace-nowrap opacity-60">
+                                    <span className="text-xs font-bold tracking-[0.3em] uppercase font-sans whitespace-nowrap opacity-60">
                                         {stat.label}
                                     </span>
                                 </div>
@@ -170,7 +157,7 @@ export const Hero = () => {
                                 <button
                                     key={idx}
                                     onClick={() => setCurrent(idx)}
-                                    className={`h-[2px] transition-all duration-1000 ${current === idx ? "w-12 bg-gold" : "w-4 bg-white/20 hover:bg-white/40"
+                                    className={`h-[2px] transition-all duration-1000 ${current === idx ? "w-12 bg-white" : "w-4 bg-white/20 hover:bg-white/40"
                                         }`}
                                 />
                             ))}
@@ -185,13 +172,13 @@ export const Hero = () => {
                     transition={{ delay: 3, duration: 1 }}
                     className="absolute right-6 md:right-12 bottom-48 z-20 hidden lg:flex flex-col items-center gap-12"
                 >
-                    <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-white/30 vertical-text origin-bottom rotate-180">
+                    <span className="text-xs font-bold tracking-[0.5em] uppercase text-white/30 vertical-text origin-bottom rotate-180">
                         Scroll to explore
                     </span>
                     <motion.div
                         animate={{ y: [0, 20, 0] }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-px h-24 bg-gradient-to-b from-gold via-gold/50 to-transparent"
+                        className="w-px h-24 bg-gradient-to-b from-white via-white/50 to-transparent"
                     />
                 </motion.div>
             </div>

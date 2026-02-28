@@ -4,25 +4,28 @@
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
 
-  /* ── LOGO BRANDED PALETTE ── */
-  --color-primary: #41807D;
-  --color-gold: #C9A14A;
-  --color-midnight: #111D23;
-  --color-sand: #F6F1EB;
-  --color-sunset: #E07A3F;
+  /* ── LUCIANO INSPIRED PALETTE ── */
+  --color-primary: #00204A;
+  /* Deep Navy Blue */
+  --color-gold: #D4AF37;
+  /* Metallic Gold */
+  --color-midnight: #001A3D;
+  --color-sand: #F9F9F9;
+  /* Off-white/Light Gray for subtle sections */
+  --color-sunset: #CD7F32;
 
   /* ── SEMANTIC ALIASES ── */
-  --color-secondary: #C9A14A;
-  --color-accent: #E07A3F;
-  --color-savannah: #F6F1EB;
-  --color-earth: #0E3D2F;
+  --color-secondary: #D4AF37;
+  --color-accent: #CD7F32;
+  --color-savannah: #FFFFFF;
+  --color-earth: #00204A;
 
   --breakpoint-xs: 480px;
 }
 
 :root {
-  --background: #F6F1EB;
-  --foreground: #0B0F14;
+  --background: #FFFFFF;
+  --foreground: #001A3D;
 }
 
 /* ═══════════════════════════════════════
@@ -38,7 +41,7 @@
   }
 
   body {
-    @apply font-sans bg-sand text-midnight overflow-x-hidden;
+    @apply font-sans bg-white text-midnight overflow-x-hidden;
     font-feature-settings: "kern" 1, "liga" 1;
     animation: pageFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
@@ -131,7 +134,7 @@
 }
 
 @utility text-label {
-  @apply text-[11px] font-bold tracking-[0.3em] uppercase font-sans;
+  @apply text-xs font-bold tracking-[0.3em] uppercase font-sans;
 }
 
 /* ═══════════════════════════════════════
@@ -204,7 +207,7 @@
 }
 
 .section-desc {
-  @apply text-midnight/70 text-base md:text-lg leading-relaxed font-light max-w-lg;
+  @apply text-midnight/90 text-lg md:text-xl leading-relaxed font-normal max-w-lg;
 }
 
 .hero-title {
@@ -212,7 +215,7 @@
 }
 
 .card-tag {
-  @apply glass-dark px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-[0.12em] text-white/70 font-sans;
+  @apply glass-dark px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-[0.12em] text-white/70 font-sans;
 }
 
 .card-title {
@@ -220,7 +223,7 @@
 }
 
 .card-meta {
-  @apply flex items-center gap-1.5 text-[10px] font-bold tracking-[0.1em] uppercase font-sans text-midnight/80;
+  @apply flex items-center gap-1.5 text-xs font-bold tracking-[0.1em] uppercase font-sans text-midnight/80;
 }
 
 .container-wide {

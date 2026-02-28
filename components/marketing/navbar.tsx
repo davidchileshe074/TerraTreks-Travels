@@ -49,12 +49,32 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
 
     return (
         <>
+            {/* Top Bar - Luciano Style */}
+            <div className={cn(
+                "fixed top-0 left-0 right-0 z-[110] bg-white border-b border-black/5 py-2 transition-all duration-500 overflow-hidden hidden md:block",
+                isScrolled ? "h-0 opacity-0 py-0" : "h-10 opacity-100"
+            )}>
+                <div className="container-wide flex justify-between items-center h-full">
+                    <div className="flex items-center gap-6">
+                        <a href="tel:+260979189370" className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-midnight/90 hover:text-primary transition-colors">
+                            <Phone className="w-3 h-3 text-primary" /> +260 97 918 9370
+                        </a>
+                        <a href="mailto:travel@terratrekstravel.com" className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-midnight/90 hover:text-primary transition-colors">
+                            <Mail className="w-3 h-3 text-primary" /> travel@terratrekstravel.com
+                        </a>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <a href="#" className="text-midnight/90 hover:text-primary transition-colors"><Instagram className="w-3.5 h-3.5" /></a>
+                        <a href="#" className="text-midnight/90 hover:text-primary transition-colors"><Facebook className="w-3.5 h-3.5" /></a>
+                    </div>
+                </div>
+            </div>
+
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-[100] transition-all duration-700",
-                    isSolid
-                        ? "glass-nav py-2 md:py-3 shadow-[1px_1px_1px_0_rgba(0,0,0,0.04)]"
-                        : "bg-transparent py-4 md:py-8"
+                    "fixed left-0 right-0 z-[100] transition-all duration-700",
+                    isScrolled ? "top-0 py-3 glass-nav shadow-sm" : "md:top-10 top-0 py-6 bg-transparent",
+                    isSolid && !isScrolled ? "bg-white py-6" : ""
                 )}
             >
                 <div className="container-wide flex items-center justify-between gap-8">
@@ -63,37 +83,37 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                         <div className={cn(
                             "relative transition-all duration-700 ease-in-out shrink-0",
                             isScrolled
-                                ? "w-32 h-7 md:w-48 md:h-10"
-                                : "w-[240px] h-[48px] md:w-[600px] md:h-[120px]"
+                                ? "w-40 h-10"
+                                : "w-52 h-14 md:w-72 md:h-20"
                         )}>
                             <Image
                                 src="/terratreks-logo.png"
                                 alt="TerraTreks Travel"
-                                width={600}
-                                height={120}
+                                width={300}
+                                height={80}
                                 priority
                                 className={cn(
                                     "w-full h-full object-contain object-left transition-all duration-700",
-                                    !isSolid && !isMobileMenuOpen ? "brightness-0 invert opacity-100" : ""
+                                    !isScrolled && !isSolid && !isMobileMenuOpen ? "brightness-0 invert opacity-100" : ""
                                 )} />
                         </div>
                     </Link>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden lg:flex items-center gap-12">
+                    <nav className="hidden lg:flex items-center gap-10">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
                                 className={cn(
-                                    "text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:text-gold relative group font-sans",
-                                    isSolid ? "text-midnight/70" : "text-white/80",
-                                    pathname === link.href && "text-gold"
+                                    "text-xs font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:text-primary relative group font-sans",
+                                    isScrolled || isSolid ? "text-midnight" : "text-white/90",
+                                    pathname === link.href && "text-primary"
                                 )}
                             >
                                 {link.name}
                                 <span className={cn(
-                                    "absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-gold transition-all duration-700 group-hover:w-full",
+                                    "absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-primary transition-all duration-700 group-hover:w-full",
                                     pathname === link.href && "w-full"
                                 )} />
                             </Link>
@@ -104,16 +124,15 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                     <div className="hidden lg:block">
                         <Link href="/contact">
                             <Button
-                                variant={isSolid ? "primary" : "outline"}
                                 size="sm"
                                 className={cn(
-                                    "rounded-full px-10 py-6 text-[11px] font-bold tracking-[0.2em] uppercase shadow-xl transition-luxury hover:scale-105 active:scale-95",
-                                    !isSolid &&
-                                    "border-white/20 text-white hover:bg-white hover:text-midnight"
+                                    "rounded-none px-8 py-6 text-xs font-bold tracking-[0.2em] uppercase shadow-md transition-luxury hover:scale-105 active:scale-95 bg-primary text-white hover:bg-midnight",
+                                    !isScrolled && !isSolid &&
+                                    "border border-white/20 bg-transparent text-white hover:bg-white hover:text-primary"
                                 )}
                             >
                                 <span className="flex items-center gap-2">
-                                    Inquire <ArrowRight className="w-3.5 h-3.5" />
+                                    Make an Enquiry <ArrowRight className="w-3.5 h-3.5" />
                                 </span>
                             </Button>
                         </Link>
@@ -152,7 +171,7 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
 
                         <div className="relative z-10 h-full flex flex-col p-6 pt-20 shrink-0 overflow-y-auto">
                             <div className="flex flex-col gap-4">
-                                <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Navigation</span>
+                                <span className="text-xs font-bold tracking-[0.4em] uppercase text-midnight/90">Navigation</span>
                                 {navLinks.map((link, idx) => (
                                     <motion.div
                                         key={link.name}
@@ -162,11 +181,11 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                                     >
                                         <Link
                                             href={link.href}
-                                            className="text-xl font-serif text-midnight/90 hover:text-gold transition-luxury flex items-center justify-between group"
+                                            className="text-xl font-serif text-midnight/90 hover:text-primary transition-luxury flex items-center justify-between group"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            <span className={cn(pathname === link.href && "text-gold italic underline underline-offset-4 decoration-gold/30")}>{link.name}</span>
-                                            <ArrowRight className="w-5 h-5 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-gold" />
+                                            <span className={cn(pathname === link.href && "text-primary italic underline underline-offset-4 decoration-primary/30")}>{link.name}</span>
+                                            <ArrowRight className="w-5 h-5 opacity-0 -translate-x-4 transition-luxury group-hover:opacity-100 group-hover:translate-x-0 text-primary" />
                                         </Link>
                                     </motion.div>
                                 ))}
@@ -180,23 +199,23 @@ export const Navbar = ({ variant }: { variant?: "transparent" | "solid" }) => {
                             >
                                 <div className="grid grid-cols-1 gap-6">
                                     <div className="space-y-3">
-                                        <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Inquiries</span>
+                                        <span className="text-xs font-bold tracking-[0.4em] uppercase text-midnight/90">Inquiries</span>
                                         <div className="space-y-1">
-                                            <a href="mailto:travel@terratrekstravel.com" className="block text-base font-sans font-medium hover:text-gold transition-colors">travel@terratrekstravel.com</a>
-                                            <a href="tel:+260979189370" className="block text-base font-sans font-medium hover:text-gold transition-colors">+260 97 918 9370</a>
+                                            <a href="mailto:travel@terratrekstravel.com" className="block text-base font-sans font-medium hover:text-primary transition-colors">travel@terratrekstravel.com</a>
+                                            <a href="tel:+260979189370" className="block text-base font-sans font-medium hover:text-primary transition-colors">+260 97 918 9370</a>
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <span className="text-[9px] font-bold tracking-[0.4em] uppercase text-midnight/40">Social</span>
+                                        <span className="text-xs font-bold tracking-[0.4em] uppercase text-midnight/90">Social</span>
                                         <div className="flex gap-6">
-                                            <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-gold transition-colors">Instagram</a>
-                                            <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-gold transition-colors">Facebook</a>
+                                            <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors">Instagram</a>
+                                            <a href="#" className="text-sm font-bold tracking-widest uppercase hover:text-primary transition-colors">Facebook</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <Link href="/contact" className="block w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                                    <Button className="w-full py-8 rounded-[2rem] text-[11px] font-bold tracking-[0.3em] uppercase bg-midnight text-white hover:bg-gold transition-luxury shadow-2xl">
+                                    <Button className="w-full py-8 rounded-[2rem] text-sm font-bold tracking-[0.3em] uppercase bg-primary text-white hover:bg-midnight transition-luxury shadow-2xl">
                                         Design My Journey
                                     </Button>
                                 </Link>

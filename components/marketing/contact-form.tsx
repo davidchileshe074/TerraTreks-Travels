@@ -35,7 +35,7 @@ export const ContactForm = () => {
     return (
         <div className="bg-white p-8 md:p-14 rounded-[40px] border border-midnight/[0.04] shadow-[0_32px_80px_-20px_rgba(0,0,0,0.08)] relative z-10 overflow-hidden group">
             {/* Cinematic background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 blur-[100px] -z-10 group-hover:bg-gold/10 transition-colors duration-1000" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -z-10 group-hover:bg-primary/10 transition-colors duration-1000" />
 
             {result?.success ? (
                 <motion.div
@@ -48,11 +48,11 @@ export const ContactForm = () => {
                     </div>
                     <div className="space-y-4">
                         <h3 className="text-4xl font-serif text-midnight">Request Received</h3>
-                        <p className="text-midnight/60 text-lg font-light max-w-sm mx-auto leading-relaxed">{result.message}</p>
+                        <p className="text-midnight/90 text-lg font-normal max-w-sm mx-auto leading-relaxed">{result.message}</p>
                     </div>
                     <button
                         onClick={() => setResult(null)}
-                        className="inline-flex items-center gap-2 text-primary font-bold text-[10px] border-b-2 border-primary/20 hover:border-primary pb-1 tracking-[0.25em] uppercase font-sans mt-10 transition-all"
+                        className="inline-flex items-center gap-2 text-primary font-bold text-xs border-b-2 border-primary/20 hover:border-primary pb-1 tracking-[0.25em] uppercase font-sans mt-10 transition-all"
                     >
                         Send another request
                     </button>
@@ -63,13 +63,13 @@ export const ContactForm = () => {
                         {/* Section 1: Identity */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-3 mb-2">
-                                <span className="w-8 h-[1px] bg-gold/30" />
-                                <span className="section-label mb-0 text-gold lowercase first-letter:uppercase">Identity</span>
+                                <span className="w-8 h-[1px] bg-primary/30" />
+                                <span className="section-label mb-0 text-primary lowercase first-letter:uppercase">Identity</span>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <User className="w-3.5 h-3.5" /> Full Name
                                     </label>
                                     <input
@@ -77,11 +77,11 @@ export const ContactForm = () => {
                                         name="name"
                                         type="text"
                                         placeholder="David Chileshe"
-                                        className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none text-sm font-medium text-midnight"
+                                        className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none text-sm font-medium text-midnight"
                                     />
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <Mail className="w-3.5 h-3.5" /> Email Address
                                     </label>
                                     <input
@@ -89,14 +89,14 @@ export const ContactForm = () => {
                                         name="email"
                                         type="email"
                                         placeholder="david@example.com"
-                                        className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none text-sm font-medium text-midnight"
+                                        className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none text-sm font-medium text-midnight"
                                     />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <Phone className="w-3.5 h-3.5" /> Phone Number
                                     </label>
                                     <input
@@ -104,18 +104,18 @@ export const ContactForm = () => {
                                         name="phone"
                                         type="tel"
                                         placeholder="+260 XXX XXXXXX"
-                                        className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none text-sm font-medium text-midnight"
+                                        className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none text-sm font-medium text-midnight"
                                     />
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <Calendar className="w-3.5 h-3.5" /> Preferred Start Date
                                     </label>
                                     <input
                                         required
                                         name="date"
                                         type="date"
-                                        className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none text-sm font-medium text-midnight uppercase tracking-widest"
+                                        className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none text-sm font-medium text-midnight uppercase tracking-widest"
                                     />
                                 </div>
                             </div>
@@ -124,13 +124,13 @@ export const ContactForm = () => {
                         {/* Section 2: Journey Details */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-3 mb-2">
-                                <span className="w-8 h-[1px] bg-gold/30" />
-                                <span className="section-label mb-0 text-gold lowercase first-letter:uppercase">Journey</span>
+                                <span className="w-8 h-[1px] bg-primary/30" />
+                                <span className="section-label mb-0 text-primary lowercase first-letter:uppercase">Journey</span>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <MapPin className="w-3.5 h-3.5" /> Selected Destination
                                     </label>
                                     <div className="relative">
@@ -138,7 +138,7 @@ export const ContactForm = () => {
                                             name="subject"
                                             value={selectedPackage}
                                             onChange={(e) => setSelectedPackage(e.target.value)}
-                                            className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
+                                            className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
                                         >
                                             <option value="">Select an interest</option>
                                             <option value="Luxury Safari">Luxury Safari</option>
@@ -158,13 +158,13 @@ export const ContactForm = () => {
                                     </div>
                                 </div>
                                 <div className="space-y-3">
-                                    <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                    <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                         <Users className="w-3.5 h-3.5" /> Total Guests
                                     </label>
                                     <div className="relative">
                                         <select
                                             name="guests"
-                                            className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
+                                            className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
                                         >
                                             <option value="1">1 Traveler</option>
                                             <option value="2">2 Travelers</option>
@@ -183,13 +183,13 @@ export const ContactForm = () => {
                             </div>
 
                             <div className="space-y-3">
-                                <label className="text-[11px] font-bold uppercase tracking-wider text-midnight/40 ml-1 flex items-center gap-2">
+                                <label className="text-sm font-bold uppercase tracking-wider text-midnight/90 ml-1 flex items-center gap-2">
                                     <Sparkles className="w-3.5 h-3.5" /> Preferred Experience
                                 </label>
                                 <div className="relative">
                                     <select
                                         name="requirement"
-                                        className="w-full bg-sand/30 border border-midnight/[0.05] rounded-2xl px-7 py-5 focus:ring-4 focus:ring-gold/10 focus:border-gold/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
+                                        className="w-full bg-white border border-midnight/[0.05] rounded-none px-7 py-5 focus:ring-4 focus:ring-primary/10 focus:border-primary/30 transition-all outline-none appearance-none text-sm font-medium text-midnight"
                                     >
                                         <option value="Romantic/Honeymoon">Romantic & Honeymoon Seclusion</option>
                                         <option value="Family Holiday">Family Adventure & Exploration</option>
@@ -209,7 +209,7 @@ export const ContactForm = () => {
 
                     <button
                         disabled={isPending}
-                        className="w-full bg-midnight text-white py-7 rounded-[28px] font-bold text-[13px] tracking-[0.3em] uppercase hover:bg-gold hover:text-midnight transition-all duration-500 flex items-center justify-center gap-5 disabled:opacity-50 font-sans shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] group/btn"
+                        className="w-full bg-primary text-white py-7 rounded-none font-bold text-sm tracking-[0.3em] uppercase hover:bg-white hover:text-primary border border-transparent hover:border-primary transition-all duration-500 flex items-center justify-center gap-5 disabled:opacity-50 font-sans shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] group/btn"
                     >
                         {isPending ? (
                             <>Transmitting Request... <Loader2 className="w-5 h-5 animate-spin" /></>
@@ -219,9 +219,9 @@ export const ContactForm = () => {
                     </button>
 
                     <div className="flex items-center justify-center gap-6 pt-2">
-                        <p className="text-[9px] text-midnight/20 uppercase tracking-[0.3em] font-sans">Secure Booking System</p>
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold/30" />
-                        <p className="text-[9px] text-midnight/20 uppercase tracking-[0.3em] font-sans">Est. Response: 4-8 Hours</p>
+                        <p className="text-xs text-midnight/20 uppercase tracking-[0.3em] font-sans">Secure Booking System</p>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+                        <p className="text-xs text-midnight/20 uppercase tracking-[0.3em] font-sans">Est. Response: 4-8 Hours</p>
                     </div>
                 </form>
             )}

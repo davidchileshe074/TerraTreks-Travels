@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export const PackagesSection = () => {
     return (
-        <section className="section-padding bg-[#F9F7F2] overflow-hidden relative">
+        <section className="section-padding bg-white overflow-hidden relative">
             {/* Background Texture/Text */}
             <div className="absolute top-20 left-0 opacity-[0.03] pointer-events-none">
                 <span className="text-[15rem] font-serif font-black italic select-none">Collection</span>
@@ -35,7 +35,7 @@ export const PackagesSection = () => {
                         >
                             Architected for
                             <br />
-                            <span className="text-primary italic font-light">Discovery</span>
+                            <span className="text-primary italic font-normal">Discovery</span>
                         </motion.h2>
                     </div>
                     <motion.p
@@ -67,7 +67,7 @@ export const PackagesSection = () => {
                                     delay: index * 0.1,
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="group relative flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-700"
+                                className="group relative flex flex-col bg-white rounded-none border border-midnight/[0.05] overflow-hidden shadow-2xl hover:-translate-y-2 transition-all duration-700"
                             >
                                 {/* Image Container */}
                                 <div className="relative h-[420px] overflow-hidden">
@@ -83,7 +83,7 @@ export const PackagesSection = () => {
 
                                     {/* Top Metadata */}
                                     <div className="absolute top-8 left-8 right-8 flex justify-between items-start">
-                                        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold tracking-widest uppercase">
+                                        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase">
                                             {pkg.tag}
                                         </span>
                                         <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -94,12 +94,12 @@ export const PackagesSection = () => {
                                     {/* Bottom Metadata */}
                                     <div className="absolute bottom-10 left-8 right-8 space-y-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
                                         <div className="flex items-center gap-6">
-                                            <span className="flex items-center gap-2 text-white/90 text-[10px] font-bold tracking-widest uppercase">
-                                                <MapPin className="w-3.5 h-3.5 text-gold" />
+                                            <span className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase">
+                                                <MapPin className="w-3.5 h-3.5 text-white/80" />
                                                 {pkg.location}
                                             </span>
-                                            <span className="flex items-center gap-2 text-white/90 text-[10px] font-bold tracking-widest uppercase">
-                                                <Clock className="w-3.5 h-3.5 text-gold" />
+                                            <span className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase">
+                                                <Clock className="w-3.5 h-3.5 text-white/80" />
                                                 {pkg.duration}
                                             </span>
                                         </div>
@@ -112,12 +112,12 @@ export const PackagesSection = () => {
                                 {/* Simplified Bottom Info */}
                                 <div className="p-10 flex items-center justify-between border-t border-midnight/5">
                                     <div className="space-y-1">
-                                        <p className="text-[9px] font-bold tracking-widest text-midnight/30 uppercase">Investment from</p>
+                                        <p className="text-xs font-bold tracking-widest text-midnight/30 uppercase">Investment from</p>
                                         <p className="text-2xl font-serif text-midnight">{pkg.price}</p>
                                     </div>
                                     <Link
                                         href={`/packages/${pkg.id}`}
-                                        className="text-[10px] font-bold tracking-widest uppercase text-midnight border-b border-midnight/10 pb-1 hover:border-gold hover:text-gold transition-all duration-300"
+                                        className="text-xs font-bold tracking-widest uppercase text-midnight border-b border-midnight/10 pb-1 hover:border-primary hover:text-primary transition-all duration-300"
                                     >
                                         View Details
                                     </Link>
@@ -133,11 +133,11 @@ export const PackagesSection = () => {
                         href="/packages"
                         className="group flex flex-col items-center gap-4 py-4"
                     >
-                        <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-midnight/40 group-hover:text-gold transition-colors">
+                        <span className="text-sm font-bold tracking-[0.3em] uppercase text-midnight/90 group-hover:text-primary transition-colors">
                             Explore All Journeys
                         </span>
                         <div className="w-12 h-[1px] bg-midnight/10 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gold translate-x-[-100%] group-hover:translate-x-[0%] transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-[0%] transition-transform duration-700" />
                         </div>
                     </Link>
                 </div>
