@@ -76,22 +76,7 @@ export default function CorporatePage() {
                 </div>
             </section>
 
-            {/* Stats Strip - Glassmorphic */}
-            <section className="relative z-20 -mt-16 container-wide">
-                <div className="glass-dark border border-white/10 p-12 md:p-16 rounded-[3rem] grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20">
-                    {[
-                        { label: "Institutional Clients", value: "150+" },
-                        { label: "Partner Network", value: "1.2k" },
-                        { label: "Global Presence", value: "12" },
-                        { label: "Success Rate", value: "99.9%" }
-                    ].map((stat, idx) => (
-                        <div key={stat.label} className="space-y-2">
-                            <h3 className="text-3xl md:text-5xl font-serif text-white tracking-tighter">{stat.value}</h3>
-                            <p className="text-xs font-bold tracking-[0.3em] uppercase text-white/90 font-sans">{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
+           
 
             {/* Strategic Management Services */}
             <section className="section-padding bg-white relative overflow-hidden">
