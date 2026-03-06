@@ -1,5 +1,70 @@
 [
     {
+        "id": "zanzibar-honeymoon-escape",
+        "title": "Honeymoon Escape Zanzibar",
+        "location": "Zanzibar, Tanzania",
+        "duration": "5 Nights",
+        "price": "K 45,000",
+        "image": "/images/zanzibar-honeymoon.png",
+        "tag": "Honeymoon Special",
+        "categories": [
+            "Romantic",
+            "Beach"
+        ]
+    },
+    {
+        "id": "dubai-luxury-holiday",
+        "title": "Dubai Luxury Holiday",
+        "location": "Dubai, UAE",
+        "duration": "3 Nights",
+        "price": "$ 1,500",
+        "image": "/images/corporate-travel.png",
+        "tag": "Luxury Escapes",
+        "categories": [
+            "Luxury",
+            "City"
+        ]
+    },
+    {
+        "id": "easter-singapore",
+        "title": "Easter Special Singapore",
+        "location": "Singapore",
+        "duration": "4 Nights",
+        "price": "$ 570",
+        "image": "/images/singapore.png",
+        "tag": "Easter Special",
+        "categories": [
+            "City",
+            "Family"
+        ]
+    },
+    {
+        "id": "easter-egypt",
+        "title": "Easter Egypt Experience",
+        "location": "Egypt",
+        "duration": "4 Nights",
+        "price": "$ 780",
+        "image": "/images/egypt.png",
+        "tag": "Easter Special",
+        "categories": [
+            "History",
+            "Adventure"
+        ]
+    },
+    {
+        "id": "easter-qatar",
+        "title": "Easter Discover Qatar",
+        "location": "Qatar",
+        "duration": "4 Nights",
+        "price": "$ 635",
+        "image": "/images/qatar.png",
+        "tag": "Easter Special",
+        "categories": [
+            "City",
+            "Adventure"
+        ]
+    },
+    {
         "id": "avani-vic-falls",
         "title": "Avani Victoria Falls Resort",
         "location": "Livingstone, Zambia",
@@ -22,18 +87,6 @@
         "tag": "Reconnect with Nature",
         "categories": [
             "Luxury"
-        ]
-    },
-    {
-        "id": "mwamfushi-valentines",
-        "title": "Valentine’s In The Wild",
-        "location": "Kafue",
-        "duration": "2 Nights",
-        "price": "K 9,050",
-        "image": "/images/safari-3.jpg",
-        "tag": "Valentine's Special",
-        "categories": [
-            "Romantic"
         ]
     }
 ]
