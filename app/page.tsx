@@ -211,12 +211,16 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20">
             {/* IATA */}
             <div className="flex items-center flex-col gap-2">
-              <div className="text-5xl font-black text-[#002E5D] tracking-widest">IATA</div>
+              <div className="relative w-32 h-16 mb-2">
+                <Image src="/iata-logo.png" alt="IATA Accredited Agent" fill className="object-contain" />
+              </div>
               <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Accredited Agent</span>
             </div>
             {/* TAAZ */}
             <div className="flex items-center flex-col gap-2">
-              <div className="text-5xl font-black text-[#002E5D] tracking-widest">TAAZ</div>
+              <div className="relative w-32 h-16 mb-2">
+                <Image src="/taaz-logo.png" alt="TAAZ Member" fill className="object-contain" />
+              </div>
               <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Member</span>
             </div>
             {/* NWC */}
