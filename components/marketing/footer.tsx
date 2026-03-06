@@ -14,13 +14,23 @@ export const Footer = () => {
                             <MapPin className="w-5 h-5 shrink-0 text-[#Daba34]" />
                             <p className="text-sm">Buffalo Wings, Solwezi,<br />Zambia</p>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <Phone className="w-5 h-5 text-[#Daba34]" />
-                            <a href="tel:+260979189370" className="hover:text-white transition-colors text-sm">+260 97 918 9370</a>
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-3">
+                                <Phone className="w-5 h-5 text-[#Daba34]" />
+                                <div className="flex flex-col">
+                                    <a href="tel:+260979189370" className="hover:text-white transition-colors text-sm">+260 97 918 9370</a>
+                                    <a href="tel:+260764178388" className="hover:text-white transition-colors text-sm">+260 76 417 8388</a>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <Mail className="w-5 h-5 text-[#Daba34]" />
-                            <a href="mailto:travel@terratrekstravel.com" className="hover:text-white transition-colors text-sm">travel@terratrekstravel.com</a>
+                        <div className="flex flex-col gap-3">
+                            <div className="flex items-center gap-3">
+                                <Mail className="w-5 h-5 text-[#Daba34]" />
+                                <div className="flex flex-col">
+                                    <a href="mailto:travel@terratrekstravel.com" className="hover:text-white transition-colors text-sm">travel@terratrekstravel.com</a>
+                                    <a href="mailto:anna@terratrekstravel.com" className="hover:text-white transition-colors text-sm">anna@terratrekstravel.com</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -69,6 +69,30 @@ const packages = [
   }
 ];
 
+const airlinePartners = [
+  { name: "Proflight Zambia", logo: "https://logo.clearbit.com/proflight-zambia.com" },
+  { name: "Qantas", logo: "https://logo.clearbit.com/qantas.com" },
+  { name: "RwandAir", logo: "https://logo.clearbit.com/rwandair.com" },
+  { name: "Hawaiian Airlines", logo: "https://logo.clearbit.com/hawaiianairlines.com" },
+  { name: "Etihad Airways", logo: "https://logo.clearbit.com/etihad.com" },
+  { name: "Air Canada", logo: "https://logo.clearbit.com/aircanada.com" },
+  { name: "Swissair", logo: "https://logo.clearbit.com/swiss.com" },
+  { name: "Qatar Airways", logo: "https://logo.clearbit.com/qatarairways.com" },
+  { name: "Emirates", logo: "https://logo.clearbit.com/emirates.com" },
+  { name: "South African Airways", logo: "https://logo.clearbit.com/flysaa.com" },
+  { name: "Lufthansa", logo: "https://logo.clearbit.com/lufthansa.com" },
+  { name: "Kenya Airways", logo: "https://logo.clearbit.com/kenya-airways.com" },
+  { name: "Singapore Airlines", logo: "https://logo.clearbit.com/singaporeair.com" },
+  { name: "KLM", logo: "https://logo.clearbit.com/klm.com" },
+  { name: "Ryanair", logo: "https://logo.clearbit.com/ryanair.com" },
+  { name: "British Airways", logo: "https://logo.clearbit.com/britishairways.com" },
+  { name: "Egyptair", logo: "https://logo.clearbit.com/egyptair.com" },
+  { name: "Turkish Airlines", logo: "https://logo.clearbit.com/turkishairlines.com" },
+  { name: "Jambojet", logo: "https://logo.clearbit.com/jambojet.com" },
+  { name: "Air Tanzania", logo: "https://logo.clearbit.com/airtanzania.co.tz" },
+  { name: "Airlink", logo: "https://logo.clearbit.com/flyairlink.com" },
+];
+
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-[#F8F9FA] text-[#002E5D] font-sans pb-20">
@@ -95,15 +119,26 @@ export default function Home() {
               className="object-contain"
             />
           </div>
+          <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#Daba34] drop-shadow-lg tracking-widest uppercase">
+            Book Your Domestic and International Flights With us
+          </h2>
           <p className="text-3xl md:text-5xl font-black mb-10 text-white drop-shadow-xl tracking-wide uppercase">
             ADVENTURE AWAITS TODAY
           </p>
-          <Link
-            href="/packages"
-            className="bg-[#002E5D] text-white font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#001b38] transition-all duration-300"
-          >
-            Explore Packages
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/packages"
+              className="bg-[#002E5D] text-white font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#001b38] transition-all duration-300"
+            >
+              Explore Packages
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-[#Daba34] text-black font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#c9a92e] transition-all duration-300 uppercase"
+            >
+              Book Now!!
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -198,42 +233,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── ASSOCIATIONS & PARTNERS ── */}
-      <section className="py-16 px-4 md:px-8 bg-white text-center border-t border-gray-100">
+      {/* ── ASSOCIATIONS ── */}
+      <section className="pt-16 pb-8 px-4 md:px-8 bg-white text-center border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto">
           <h2 className="text-2xl md:text-3xl font-black text-[#002E5D] mb-6 uppercase tracking-wider">
-            Our Associations & Airline Partners
+            Our Associations
           </h2>
           <p className="text-gray-500 text-lg mb-12 max-w-2xl mx-auto">
-            We are proud to be affiliated with globally recognized organizations and work with top airlines to bring you the best travel experiences.
+            We are proud to be affiliated with globally recognized organizations to bring you the best travel experiences.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20">
             {/* IATA */}
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <div className="relative w-32 h-16 mb-2">
                 <Image src="/iata-logo.png" alt="IATA Accredited Agent" fill className="object-contain" />
               </div>
               <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Accredited Agent</span>
             </div>
             {/* TAAZ */}
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <div className="relative w-32 h-16 mb-2">
                 <Image src="/taaz-logo.png" alt="TAAZ Member" fill className="object-contain" />
               </div>
               <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Member</span>
             </div>
             {/* NWC */}
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <div className="text-5xl font-black text-[#002E5D] tracking-widest">NWC</div>
               <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Association</span>
             </div>
-            {/* Air Botswana Example */}
-            <div className="flex items-center flex-col gap-2 opacity-80 mix-blend-multiply">
-              <Image src="/images/air-botswana.jpg" alt="Air Botswana" width={100} height={50} className="object-contain" />
-              <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-2">Airline Partner</span>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── AIRLINE PARTNERS ── */}
+      <section className="py-16 px-4 md:px-8 bg-[#F8F9FA] text-center border-t border-gray-100">
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black text-[#002E5D] mb-4 uppercase tracking-wider">
+            BOOK YOUR FLIGHTS WITH US
+          </h2>
+          <p className="text-gray-500 text-lg mb-12 max-w-2xl mx-auto font-medium">
+            We proudly work directly with over 20+ domestic and international airline partners. Adventure awaits today!
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8 items-center">
+            {airlinePartners.map((airline) => (
+              <div key={airline.name} className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-40 md:h-40 rounded-2xl hover:-translate-y-1 hover:shadow-md transition-all">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={airline.logo}
+                  alt={airline.name}
+                  className="w-full h-full object-contain mb-3 p-1 mix-blend-multiply opacity-90 grayscale hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    // Fallback to text if clearbit logo fails
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    if (target.nextElementSibling) {
+                      (target.nextElementSibling as HTMLElement).style.display = 'block';
+                    }
+                  }}
+                />
+                <span className="hidden text-xs font-bold uppercase text-[#002E5D] text-center leading-snug">
+                  {airline.name}
+                </span>
+                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider opacity-70">Partner</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12 text-sm text-gray-400 font-medium">
+            Flight and accommodation rates are subject to availability and T and Cs apply.
+          </p>
         </div>
       </section>
 
