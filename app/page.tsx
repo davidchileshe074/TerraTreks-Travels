@@ -284,9 +284,8 @@ export default function Home() {
                 <img
                   src={airline.logo}
                   alt={airline.name}
-                  className="w-full h-full object-contain mb-3 p-1 mix-blend-multiply opacity-90 grayscale hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-full object-contain mb-3 p-1 mix-blend-multiply opacity-100 transition-all duration-300"
                   onError={(e) => {
-                    // Fallback to text if clearbit logo fails
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     if (target.nextElementSibling) {
@@ -294,10 +293,10 @@ export default function Home() {
                     }
                   }}
                 />
-                <span className="hidden text-xs font-bold uppercase text-[#002E5D] text-center leading-snug">
+                <span className="block text-[10px] md:text-xs font-bold uppercase text-[#002E5D] text-center leading-tight">
                   {airline.name}
                 </span>
-                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider opacity-70">Partner</span>
+                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider opacity-60">Partner</span>
               </div>
             ))}
           </div>
