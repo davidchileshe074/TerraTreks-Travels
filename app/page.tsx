@@ -70,27 +70,27 @@ const packages = [
 ];
 
 const airlinePartners = [
-  { name: "Proflight Zambia", logo: "https://logo.clearbit.com/proflight-zambia.com" },
-  { name: "Qantas", logo: "https://logo.clearbit.com/qantas.com" },
-  { name: "RwandAir", logo: "https://logo.clearbit.com/rwandair.com" },
-  { name: "Hawaiian Airlines", logo: "https://logo.clearbit.com/hawaiianairlines.com" },
-  { name: "Etihad Airways", logo: "https://logo.clearbit.com/etihad.com" },
-  { name: "Air Canada", logo: "https://logo.clearbit.com/aircanada.com" },
-  { name: "Swissair", logo: "https://logo.clearbit.com/swiss.com" },
-  { name: "Qatar Airways", logo: "https://logo.clearbit.com/qatarairways.com" },
-  { name: "Emirates", logo: "https://logo.clearbit.com/emirates.com" },
-  { name: "South African Airways", logo: "https://logo.clearbit.com/flysaa.com" },
-  { name: "Lufthansa", logo: "https://logo.clearbit.com/lufthansa.com" },
-  { name: "Kenya Airways", logo: "https://logo.clearbit.com/kenya-airways.com" },
-  { name: "Singapore Airlines", logo: "https://logo.clearbit.com/singaporeair.com" },
-  { name: "KLM", logo: "https://logo.clearbit.com/klm.com" },
-  { name: "Ryanair", logo: "https://logo.clearbit.com/ryanair.com" },
-  { name: "British Airways", logo: "https://logo.clearbit.com/britishairways.com" },
-  { name: "Egyptair", logo: "https://logo.clearbit.com/egyptair.com" },
-  { name: "Turkish Airlines", logo: "https://logo.clearbit.com/turkishairlines.com" },
-  { name: "Jambojet", logo: "https://logo.clearbit.com/jambojet.com" },
-  { name: "Air Tanzania", logo: "https://logo.clearbit.com/airtanzania.co.tz" },
-  { name: "Airlink", logo: "https://logo.clearbit.com/flyairlink.com" },
+  { name: "Proflight Zambia", domain: "flyzambia.com" },
+  { name: "Qantas", domain: "qantas.com" },
+  { name: "RwandAir", domain: "rwandair.com" },
+  { name: "Hawaiian Airlines", domain: "hawaiianairlines.com" },
+  { name: "Etihad Airways", domain: "etihad.com" },
+  { name: "Air Canada", domain: "aircanada.com" },
+  { name: "Swissair", domain: "swiss.com" },
+  { name: "Qatar Airways", domain: "qatarairways.com" },
+  { name: "Emirates", domain: "emirates.com" },
+  { name: "South African Airways", domain: "flysaa.com" },
+  { name: "Lufthansa", domain: "lufthansa.com" },
+  { name: "Kenya Airways", domain: "kenya-airways.com" },
+  { name: "Singapore Airlines", domain: "singaporeair.com" },
+  { name: "KLM", domain: "klm.com" },
+  { name: "Ryanair", domain: "ryanair.com" },
+  { name: "British Airways", domain: "britishairways.com" },
+  { name: "Egyptair", domain: "egyptair.com" },
+  { name: "Turkish Airlines", domain: "turkishairlines.com" },
+  { name: "Jambojet", domain: "jambojet.com" },
+  { name: "Air Tanzania", domain: "airtanzania.co.tz" },
+  { name: "Airlink", domain: "flyairlink.com" },
 ];
 
 export default function Home() {
@@ -282,9 +282,9 @@ export default function Home() {
               <div key={airline.name} className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-40 md:h-40 rounded-2xl hover:-translate-y-1 hover:shadow-md transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={airline.logo}
+                  src={`https://www.google.com/s2/favicons?domain=${airline.domain}&sz=128`}
                   alt={airline.name}
-                  className="w-full h-full object-contain mb-3 p-1 mix-blend-multiply opacity-100 transition-all duration-300"
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain mb-3 p-1 mix-blend-multiply transition-all duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
