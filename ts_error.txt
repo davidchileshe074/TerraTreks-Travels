@@ -1,0 +1,2 @@
+app/page.tsx(335,23): error TS2322: Type '{ phone: string; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'phone' does not exist on type 'IntrinsicAttributes'.

@@ -1,78 +1,39 @@
 [
     {
-        "id": "vic-falls-chobe",
-        "title": "Victoria Falls & Chobe Explorer",
-        "location": "Zambia & Botswana",
-        "duration": "7 Days",
-        "price": "K 61,250",
+        "id": "avani-vic-falls",
+        "title": "Avani Victoria Falls Resort",
+        "location": "Livingstone, Zambia",
+        "duration": "1 Night",
+        "price": "ZMW 3,975",
         "image": "/images/victoria-falls.png",
-        "tag": "Classic Safari",
+        "tag": "Adventure Meets Comfort",
         "categories": [
             "Luxury",
             "Family"
         ]
     },
     {
-        "id": "south-luangwa-walking",
-        "title": "South Luangwa Walking Safari",
-        "location": "Zambia",
-        "duration": "5 Days",
-        "price": "K 46,250",
-        "image": "/images/south-luangwa.png",
-        "tag": "Immersive",
-        "categories": [
-            "Adventure"
-        ]
-    },
-    {
-        "id": "lower-zambezi-retreat",
-        "title": "Lower Zambezi River Retreat",
-        "location": "Zambia",
-        "duration": "4 Days",
-        "price": "K 52,500",
+        "id": "nsofu-lodge",
+        "title": "Nsofu Lodge Escape",
+        "location": "Lower Zambezi, Zambia",
+        "duration": "1 Night",
+        "price": "ZMW 2,975",
         "image": "/images/lower-zambezi.png",
-        "tag": "Romantic",
+        "tag": "Reconnect with Nature",
         "categories": [
-            "Luxury",
-            "Honeymoon"
+            "Luxury"
         ]
     },
     {
-        "id": "kafue-wilderness",
-        "title": "Kafue Remote Wilderness",
-        "location": "Zambia",
-        "duration": "6 Days",
-        "price": "K 48,750",
-        "image": "/images/safari-1.jpg",
-        "tag": "Off-Road",
+        "id": "mwamfushi-valentines",
+        "title": "Valentine’s In The Wild",
+        "location": "Kafue",
+        "duration": "2 Nights",
+        "price": "K 9,050",
+        "image": "/images/safari-3.jpg",
+        "tag": "Valentine's Special",
         "categories": [
-            "Adventure"
-        ]
-    },
-    {
-        "id": "serengeti-migration",
-        "title": "Serengeti Great Migration",
-        "location": "Tanzania",
-        "duration": "8 Days",
-        "price": "K 80,000",
-        "image": "/images/safari-2.jpg",
-        "tag": "Bucket List",
-        "categories": [
-            "Luxury",
-            "Adventure"
-        ]
-    },
-    {
-        "id": "cape-town-winelands",
-        "title": "Cape Town & Winelands Luxury",
-        "location": "South Africa",
-        "duration": "6 Days",
-        "price": "K 70,000",
-        "image": "/images/corporate-travel.png",
-        "tag": "Urban Luxury",
-        "categories": [
-            "Luxury",
-            "Honeymoon"
+            "Romantic"
         ]
     }
 ]
