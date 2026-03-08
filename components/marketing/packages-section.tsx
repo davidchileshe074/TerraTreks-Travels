@@ -26,7 +26,7 @@ export const PackagesSection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-serif text-safari-blue leading-tight mb-6"
+                        className="text-3xl md:text-4xl font-serif text-safari-blue leading-tight mb-6"
                     >
                         Signature <span className="italic font-normal">African</span> Experiences
                     </motion.h2>
@@ -35,7 +35,7 @@ export const PackagesSection = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-safari-blue/60 text-lg max-w-xl"
+                        className="text-safari-blue/60 text-base max-w-xl"
                     >
                         Handpicked journeys that blend wild adventure with unparalleled comfort.
                     </motion.p>
@@ -75,13 +75,13 @@ export const PackagesSection = () => {
                                     <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {pkg.location}</span>
                                     <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> {pkg.duration}</span>
                                 </div>
-                                <h3 className="text-2xl font-serif text-safari-blue mb-4 group-hover:text-gold transition-colors">
+                                <h3 className="text-xl font-serif text-safari-blue mb-4 group-hover:text-gold transition-colors">
                                     {pkg.title}
                                 </h3>
                                 <div className="mt-auto pt-6 border-t border-sand flex items-center justify-between">
                                     <div>
                                         <p className="text-[9px] font-bold tracking-widest text-safari-blue/40 uppercase">Starting at</p>
-                                        <p className="text-xl font-serif text-safari-blue">{pkg.price}</p>
+                                        <p className="text-lg font-serif text-safari-blue">{pkg.price}</p>
                                     </div>
                                     <Link
                                         href={`/packages/${pkg.id}`}

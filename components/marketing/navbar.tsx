@@ -55,7 +55,7 @@ export const Navbar = () => {
       {/* Main Navbar */}
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] py-3 md:py-4 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-[100] py-1.5 md:py-2 transition-all duration-300",
           isTransparent
             ? "bg-transparent border-b-0"
             : "bg-white border-b border-gray-100 shadow-sm",
@@ -70,7 +70,7 @@ export const Navbar = () => {
           >
             <div
               className={cn(
-                "relative w-48 h-14 sm:w-64 sm:h-20 md:w-96 md:h-32 flex-shrink-0 rounded-xl transition-all duration-300",
+                "relative w-64 h-20 sm:w-64 sm:h-20 md:w-60 md:h-18 flex-shrink-0 rounded-xl transition-all duration-300",
                 isTransparent ? "bg-white/80 backdrop-blur-xl shadow-lg border border-white/50 px-3 py-1" : ""
               )}
             >
@@ -85,13 +85,13 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-base xl:text-lg font-bold tracking-wide uppercase transition-all relative group",
+                  "text-sm xl:text-base font-bold tracking-wide uppercase transition-all relative group",
                   isTransparent
                     ? pathname === link.href
                       ? "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
@@ -148,7 +148,7 @@ export const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "hidden sm:flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm tracking-wide uppercase transition-colors shadow-sm",
+                "hidden sm:flex items-center gap-2 px-4 py-2 rounded-full font-bold text-xs tracking-wide uppercase transition-colors shadow-sm",
                 isTransparent
                   ? "bg-white text-black hover:bg-gray-200"
                   : "bg-black text-white hover:bg-gray-800",
@@ -194,7 +194,7 @@ export const Navbar = () => {
                     <Link
                       href={link.href}
                       className={cn(
-                        "flex items-center justify-between py-4 text-2xl sm:text-3xl font-semibold tracking-tight transition-colors",
+                        "flex items-center justify-between py-4 text-xl sm:text-2xl font-semibold tracking-tight transition-colors",
                         pathname === link.href
                           ? "text-[#00204A]"
                           : "text-gray-900 hover:text-[#00204A]",

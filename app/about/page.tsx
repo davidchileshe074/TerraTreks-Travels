@@ -105,7 +105,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.4, delay: 0.3 }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-white tracking-tight leading-none drop-shadow-2xl"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-none drop-shadow-2xl"
             >
               The Soul of
               <br />
@@ -119,7 +119,7 @@ export default function AboutPage() {
               className="mt-8 sm:mt-12"
             >
               <div className="max-w-3xl border-l-4 border-[#D4AF37] pl-6 sm:pl-8 py-2 mx-auto">
-                <p className="text-white/95 text-lg sm:text-2xl md:text-3xl font-serif italic leading-relaxed">
+                <p className="text-white/95 text-base sm:text-lg md:text-xl font-serif italic leading-relaxed">
                   “Architecting the intersection of untamed wilderness and absolute refinement.”
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <div className="mt-10 sm:mt-14">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#00204A] font-bold text-base sm:text-lg md:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-full shadow-xl hover:bg-[#b8972e] hover:shadow-2xl transition-all duration-300 group"
+                  className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#00204A] font-bold text-sm sm:text-base md:text-lg px-8 sm:px-10 py-4 sm:py-5 rounded-full shadow-xl hover:bg-[#b8972e] hover:shadow-2xl transition-all duration-300 group"
                 >
                   Start Planning Your Journey
                   <span className="group-hover:translate-x-1.5 transition-transform">→</span>
@@ -145,13 +145,13 @@ export default function AboutPage() {
             <p className="text-sm sm:text-base font-bold tracking-widest uppercase text-[#00204A] mb-4">
               Our Philosophy
             </p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-[#00204A] leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#00204A] leading-tight">
               Professional
               <span className="italic font-normal text-[#D4AF37]"> Excellence</span>
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto text-center text-base sm:text-lg leading-relaxed text-[#00204A]/90 space-y-6 mb-16 md:mb-24">
+          <div className="max-w-3xl mx-auto text-center text-sm sm:text-base leading-relaxed text-[#00204A]/90 space-y-6 mb-16 md:mb-24">
             <p>
               TerraTreks Travels is a professional travel agency specialising in personalised, end-to-end travel solutions — bridging local Zambian insight with international standards.
             </p>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                   <pillar.icon className="w-8 h-8 text-[#D4AF37]" strokeWidth={1.8} />
                 </div>
                 <div className="pt-12">
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">{pillar.title}</h3>
+                  <h3 className="text-lg md:text-xl font-bold mb-4">{pillar.title}</h3>
                   <p className="text-[#00204A]/80">{pillar.desc}</p>
                 </div>
               </motion.div>
@@ -187,15 +187,15 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-[#00204A] text-white">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[#D4AF37]">2024</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">2024</div>
             <p className="mt-3 opacity-80">Founded in Lusaka</p>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[#D4AF37]">IATA / TAAZ</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">IATA / TAAZ</div>
             <p className="mt-3 opacity-80">Accredited & Member</p>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[#D4AF37]">100+</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">100+</div>
             <p className="mt-3 opacity-80">Journeys Crafted</p>
           </div>
         </div>
@@ -213,8 +213,8 @@ export default function AboutPage() {
             <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
               <Quote className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
             </div>
-            <h3 className="text-3xl md:text-4xl font-serif font-bold mb-5">Our Vision</h3>
-            <p className="text-lg md:text-xl font-serif italic text-[#00204A]/90 leading-relaxed">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Vision</h3>
+            <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
               “To transform travel through personalised expertise and genuine passion for discovery.”
             </p>
           </motion.div>
@@ -229,8 +229,8 @@ export default function AboutPage() {
             <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
               <Sparkles className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
             </div>
-            <h3 className="text-3xl md:text-4xl font-serif font-bold mb-5">Our Mission</h3>
-            <p className="text-lg md:text-xl font-serif italic text-[#00204A]/90 leading-relaxed">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Mission</h3>
+            <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
               “To connect global travelers to the soul of Africa through experiences that exceed every expectation.”
             </p>
           </motion.div>
@@ -244,7 +244,7 @@ export default function AboutPage() {
             <p className="text-sm sm:text-base font-bold tracking-widest uppercase text-[#00204A] mb-4">
               Our Network
             </p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#00204A]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#00204A]">
               Institutional{" "}
               <span className="italic font-normal text-[#D4AF37]">Partners</span>
             </h2>

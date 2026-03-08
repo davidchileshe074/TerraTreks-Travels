@@ -59,7 +59,7 @@ export const Hero = () => {
                     <span className="text-white text-[10px] md:text-sm font-bold tracking-[0.5em] uppercase mb-6 block opacity-80">
                         Unveiling the spirit of adventure
                     </span>
-                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white leading-[0.9] tracking-tighter mb-10">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[0.9] tracking-tighter mb-10">
                         Luxury Without <br />
                         <span className="italic font-normal">Compromise.</span>
                     </h1>

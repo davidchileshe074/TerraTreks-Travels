@@ -125,7 +125,6 @@ export default function Home() {
     <main className="relative min-h-screen bg-[#F8F9FA] text-[#00204A] font-sans pb-20">
       {/* ── SLIDING HERO ── */}
       <section className="relative w-full h-[80vh] md:h-screen flex items-center justify-center text-center overflow-hidden">
-        {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
 
         <AnimatePresence>
@@ -147,58 +146,46 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-20 px-6 w-full flex flex-col items-center pt-20 md:pt-24">
+        <div className="relative z-20 px-6 w-full flex flex-col items-center pt-16 md:pt-20">
           <div className="mb-8 text-center flex flex-col items-center">
             <h1
-              className="text-6xl md:text-8xl lg:text-[7.5rem] font-serif font-bold tracking-tighter leading-none flex"
-              style={{
-                textShadow: "0 8px 24px rgba(0,0,0,0.7)",
-              }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tighter leading-none flex items-baseline text-white"
             >
-              <span
-                className="text-[#00204A]"
-                style={{
-                  textShadow:
-                    "0 0 35px rgba(255,255,255,1), 0 0 15px rgba(255,255,255,0.8)",
-                }}
-              >
-                Terra
-              </span>
-              <span className="text-white ml-2">Treks</span>
+              <span>Terra</span>
+              <span className="ml-3">Treks</span>
             </h1>
-            <div className="h-[2px] w-32 bg-[#D4AF37] my-4 shadow-xl" />
+
+            <div className="h-[2px] w-28 bg-[#D4AF37] my-4 shadow-xl" />
+
             <p
-              className="text-2xl md:text-4xl font-sans font-bold tracking-[0.4em] text-white/95 uppercase"
-              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.8)" }}
+              className="text-base sm:text-lg md:text-xl font-sans font-bold tracking-[0.35em] text-white/95 uppercase"
             >
               Travel
             </p>
           </div>
+
           <h2
-            className="text-xl md:text-2xl font-bold mb-4 text-[#D4AF37] tracking-widest uppercase"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
+            className="text-sm sm:text-base md:text-lg font-bold mb-4 text-[#D4AF37] tracking-widest uppercase"
           >
             Book Your Domestic and International Flights With Us
           </h2>
+
           <p
-            className="text-2xl md:text-5xl lg:text-5xl font-bold mb-10 text-white tracking-widest uppercase mt-4"
-            style={{
-              textShadow:
-                "0 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)",
-            }}
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-10 text-white tracking-widest uppercase mt-3"
           >
             Adventure Awaits Today
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             <Link
               href="/packages"
-              className="bg-[#00204A] text-white font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#001533] transition-all duration-300"
+              className="bg-[#00204A] text-white font-bold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full text-sm sm:text-base shadow-md hover:bg-[#001533] transition-all duration-300"
             >
               Explore Packages
             </Link>
             <Link
               href="/contact"
-              className="bg-[#D4AF37] text-black font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#B5952F] transition-all duration-300 uppercase"
+              className="bg-[#D4AF37] text-black font-bold py-3 px-6 sm:py-3.5 sm:px-8 rounded-full text-sm sm:text-base shadow-md hover:bg-[#B5952F] transition-all duration-300 uppercase"
             >
               Book Now
             </Link>
@@ -209,10 +196,10 @@ export default function Home() {
       {/* ── SPECIAL PACKAGES SECTION ── */}
       <section className="py-20 px-4 md:px-8 bg-[#F8F9FA] max-w-[1400px] mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#00204A] mb-6 tracking-tight uppercase">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00204A] mb-6 tracking-tight uppercase">
             FEATURED PACKAGES & TOURS
           </h2>
-          <p className="text-gray-800 text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-gray-800 text-lg font-medium max-w-2xl mx-auto">
             Explore exclusive deals with realistic rates. Choose from our
             curated local and international destinations.
           </p>
@@ -224,7 +211,6 @@ export default function Home() {
               key={idx}
               className="group bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col h-full cursor-pointer rounded-xl overflow-hidden"
             >
-              {/* Image & Badge */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#00204A]">
                 {pkg.img && (
                   <Image
@@ -235,13 +221,11 @@ export default function Home() {
                   />
                 )}
 
-                {/* Blue location badge */}
                 <div className="absolute bottom-4 left-4 bg-[#00204A] text-white font-bold px-4 py-2 flex items-center gap-2 text-sm shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
                   <MapPin className="w-4 h-4" /> {pkg.location}
                 </div>
               </div>
 
-              {/* Card Content */}
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-[#00204A] mb-4 uppercase line-clamp-2">
                   {pkg.name}
@@ -250,7 +234,6 @@ export default function Home() {
                   {pkg.desc}
                 </p>
 
-                {/* Icons row */}
                 <div className="flex items-center gap-6 mt-auto pb-6 border-b border-gray-100">
                   <div className="flex items-center gap-2 text-gray-800">
                     <Moon className="w-5 h-5 text-[#00204A]" />
@@ -266,7 +249,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Price and Button Row */}
                 <div className="pt-6 flex items-center justify-between">
                   <div className="flex flex-col">
                     <span className="text-sm text-[#00204A] font-semibold">
@@ -292,16 +274,15 @@ export default function Home() {
       {/* ── ASSOCIATIONS ── */}
       <section className="py-24 px-4 md:px-8 bg-white text-center border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
             Our Associations
           </h2>
-          <p className="text-gray-700 text-xl font-medium mb-16 max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg font-medium mb-16 max-w-2xl mx-auto">
             We are proud to be affiliated with globally recognized organizations
             to bring you the best travel experiences.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {/* IATA */}
             <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
               <div className="relative w-32 h-16 transition-all duration-300">
                 <Image
@@ -316,7 +297,7 @@ export default function Home() {
                 Accredited Agent
               </span>
             </div>
-            {/* TAAZ */}
+
             <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
               <div className="relative w-32 h-16 transition-all duration-300">
                 <Image
@@ -331,7 +312,7 @@ export default function Home() {
                 Member
               </span>
             </div>
-            {/* NWC */}
+
             <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
               <div className="text-5xl font-serif font-bold text-[#00204A] tracking-tighter">
                 NWC
@@ -348,16 +329,15 @@ export default function Home() {
       {/* ── AIRLINE PARTNERS SLIDER ── */}
       <section className="py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
             BOOK YOUR FLIGHTS WITH US
           </h2>
-          <p className="text-gray-700 text-xl font-medium max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg font-medium max-w-2xl mx-auto">
             We proudly work directly with over 20+ domestic and international
             airline partners. Adventure awaits today!
           </p>
         </div>
 
-        {/* Marquee Container */}
         <div className="relative flex overflow-hidden">
           <motion.div
             className="flex gap-6 md:gap-8 whitespace-nowrap"
@@ -370,20 +350,17 @@ export default function Home() {
               repeat: Infinity,
             }}
           >
-            {/* Double the array for seamless infinite sliding */}
             {[...airlinePartners, ...airlinePartners].map((airline, idx) => (
               <div
                 key={`${airline.name}-${idx}`}
                 className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-44 md:h-44 rounded-2xl flex-shrink-0"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`https://www.google.com/s2/favicons?domain=${airline.domain}&sz=128`}
                   alt={airline.name}
                   className="w-12 h-12 md:w-20 md:h-20 object-contain mb-3"
                   onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
+                    (e.target as HTMLImageElement).style.display = "none";
                   }}
                 />
                 <span className="block text-[10px] md:text-xs font-bold uppercase text-[#00204A] text-center leading-tight">

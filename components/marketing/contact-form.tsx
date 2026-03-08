@@ -172,7 +172,7 @@ export function ContactForm() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-serif font-light leading-tight tracking-tight"
+              className="text-xl sm:text-2xl md:text-3xl font-serif font-light leading-tight tracking-tight"
             >
               Start Your <br />
               <span className="text-[#D4AF37] font-semibold italic">Zambian</span> <br />

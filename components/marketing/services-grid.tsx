@@ -46,7 +46,7 @@ export const ServicesGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.9 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-[#0F2647] leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#0F2647] leading-tight"
           >
             A Symphony of
             <span className="block md:inline italic font-normal text-[#D4AF37] ml-3 md:ml-4">
@@ -74,12 +74,12 @@ export const ServicesGrid = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-serif font-bold text-[#0F2647] mb-3 md:mb-4 group-hover:text-[#D4AF37] transition-colors duration-400">
+              <h3 className="text-lg md:text-xl font-serif font-bold text-[#0F2647] mb-3 md:mb-4 group-hover:text-[#D4AF37] transition-colors duration-400">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 text-base md:text-lg leading-relaxed flex-grow">
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed flex-grow">
                 {service.description}
               </p>
 
