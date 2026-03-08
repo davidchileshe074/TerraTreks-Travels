@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 
 const heroImages = [
+    "/images/zanzibar-resort-aerial.jpg",
     "/images/victoria-falls.png",
     "/images/south-luangwa.png",
     "/images/lower-zambezi.png",
@@ -20,168 +21,120 @@ export const Hero = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % heroImages.length);
-        }, 6000);
+        }, 8000);
         return () => clearInterval(timer);
     }, []);
 
     return (
-        <section className="relative h-screen flex items-end overflow-hidden">
-            {/* Cinematic Slider */}
+        <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+            {/* Background Cinematic Slider */}
             <AnimatePresence mode="popLayout">
                 <motion.div
                     key={current}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
+                    transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
                     className="absolute inset-0 z-0"
                 >
-                    <motion.div
-                        initial={{ scale: 1, x: 0, y: 0 }}
-                        animate={{
-                            scale: 1.15,
-                            x: [0, -20, 0],
-                            y: [0, 10, 0]
-                        }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="relative w-full h-full"
-                    >
-                        <Image
-                            src={heroImages[current]}
-                            alt="Safari Background"
-                            fill
-                            priority
-                            sizes="100vw"
-                            className="object-cover"
-                        />
-                    </motion.div>
+                    <Image
+                        src={heroImages[current]}
+                        alt="Luxury Safari"
+                        fill
+                        priority
+                        className="object-cover"
+                    />
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/40 z-10" />
                 </motion.div>
             </AnimatePresence>
 
-            {/* Cinematic Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-transparent to-primary/90 z-[1]" />
-            <div className="absolute inset-0 film-grain z-[2] opacity-30" />
-
-            {/* Content — Bottom-aligned */}
-            <div className="relative z-10 w-full">
-                <div className="container-wide pt-[25vh] pb-12 md:pb-28">
-                    <div className="max-w-4xl space-y-8 md:space-y-12">
-                        <div className="space-y-8">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 1.2 }}
-                            >
-                                <p className="text-xs font-bold tracking-[0.4em] uppercase text-white/80 mb-0">
-                                    Trusted Expert Safaris
-                                </p>
-                            </motion.div>
-
-                            <motion.h1
-                                initial={{ opacity: 0, y: 50 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                                className="text-5xl sm:text-6xl md:text-[7rem] lg:text-[8.5rem] font-serif text-white leading-[0.85] tracking-tight"
-                            >
-                                <span className="block italic font-normal opacity-90">Experience</span>
-                                <span className="block">Southern Africa</span>
-                            </motion.h1>
-
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 1.4, duration: 1.2 }}
-                                className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12"
-                            >
-                                <div className="max-w-md">
-                                    <p className="text-white/80 text-lg md:text-xl leading-relaxed font-normal italic border-l-2 border-primary pl-6 py-2">
-                                        &ldquo;Our journey with TerraTreks was beyond spectacular. Every detail was curated to perfection.&rdquo;
-                                        <span className="block text-xs font-bold tracking-widest uppercase mt-4 text-white/70">— Recent Guest Review</span>
-                                    </p>
-                                </div>
-                            </motion.div>
-                        </div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, delay: 1.6 }}
-                            className="flex flex-col sm:flex-row items-stretch sm:items-start gap-6"
-                        >
-                            <Link
-                                href="/packages"
-                                className="group relative inline-flex items-center justify-center rounded-none px-12 py-6 text-sm font-bold tracking-[0.2em] uppercase bg-primary text-white hover:bg-white hover:text-primary transition-all duration-700 shadow-2xl overflow-hidden"
-                            >
-                                <span className="relative z-10 flex items-center gap-2">
-                                    Explore Itineraries <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                            </Link>
-
-                            <Link
-                                href="/contact"
-                                className="inline-flex items-center justify-center rounded-none px-12 py-6 text-sm font-bold tracking-[0.2em] uppercase border border-white/20 text-white hover:bg-white hover:text-primary transition-all duration-700 backdrop-blur-md"
-                            >
-                                Make an Enquiry
-                            </Link>
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* Bottom Stats Strip - Glassmorphism */}
+            {/* Content */}
+            <div className="relative z-20 text-center px-6 max-w-5xl">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.2, duration: 1.2 }}
-                    className="border-t border-white/10 bg-primary/40 backdrop-blur-xl py-8"
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <div className="container-wide flex items-center justify-between text-white/80">
-                        <div className="flex items-center gap-12 md:gap-20 overflow-x-auto no-scrollbar mask-fade-right pr-10">
-                            {[
-                                { value: "Bespoke", label: "Travel Strategies" },
-                                { value: "Pure", label: "Wilderness Immersion" },
-                                { value: "24/7", label: "Executive Concierge" },
-                            ].map((stat) => (
-                                <div key={stat.label} className="flex flex-col gap-1 shrink-0">
-                                    <span className="text-white/90 font-serif text-lg italic whitespace-nowrap">
-                                        {stat.value}
-                                    </span>
-                                    <span className="text-xs font-bold tracking-[0.3em] uppercase font-sans whitespace-nowrap opacity-60">
-                                        {stat.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                        {/* Slide Indicators */}
-                        <div className="hidden md:flex items-center gap-3 shrink-0">
-                            {heroImages.map((_, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setCurrent(idx)}
-                                    className={`h-[2px] transition-all duration-1000 ${current === idx ? "w-12 bg-white" : "w-4 bg-white/20 hover:bg-white/40"
-                                        }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </motion.div>
-
-                {/* Vertical Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 3, duration: 1 }}
-                    className="absolute right-6 md:right-12 bottom-48 z-20 hidden lg:flex flex-col items-center gap-12"
-                >
-                    <span className="text-xs font-bold tracking-[0.5em] uppercase text-white/30 vertical-text origin-bottom rotate-180">
-                        Scroll to explore
+                    <span className="text-white text-[10px] md:text-sm font-bold tracking-[0.5em] uppercase mb-6 block opacity-80">
+                        Unveiling the spirit of adventure
                     </span>
-                    <motion.div
-                        animate={{ y: [0, 20, 0] }}
-                        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-px h-24 bg-gradient-to-b from-white via-white/50 to-transparent"
-                    />
+                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white leading-[0.9] tracking-tighter mb-10">
+                        Luxury Without <br />
+                        <span className="italic font-normal">Compromise.</span>
+                    </h1>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <Link
+                            href="/packages"
+                            className="px-10 py-5 bg-gold text-white rounded-full text-xs font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl"
+                        >
+                            Explore Safaris
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="px-10 py-5 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full text-xs font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:bg-white hover:text-safari-blue"
+                        >
+                            Plan Your Trip
+                        </Link>
+                    </div>
                 </motion.div>
             </div>
+
+            {/* Booking Widget Wrapper - Overlapping the bottom */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-6xl px-6 z-30 hidden md:block">
+                <BookingWidget />
+            </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2, duration: 1 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
+            >
+                <span className="text-white/40 text-[10px] font-bold tracking-[0.3em] uppercase">Scroll</span>
+                <div className="w-px h-10 bg-gradient-to-b from-white to-transparent" />
+            </motion.div>
         </section>
+    );
+};
+
+// Simple internal BookingWidget for now, can be moved to separate file later
+const BookingWidget = () => {
+    return (
+        <div className="bg-white rounded-2xl shadow-[0_30px_100px_-15px_rgba(0,0,0,0.1)] p-8 border border-sand">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="space-y-2">
+                    <label className="text-[10px] font-bold tracking-widest uppercase text-gold">Where to?</label>
+                    <select className="w-full bg-transparent border-b border-sand py-2 text-sm text-safari-blue focus:outline-none focus:border-gold">
+                        <option>Select Destination</option>
+                        <option>South Luangwa</option>
+                        <option>Lower Zambezi</option>
+                        <option>Victoria Falls</option>
+                        <option>Kafue National Park</option>
+                    </select>
+                </div>
+                <div className="space-y-2">
+                    <label className="text-[10px] font-bold tracking-widest uppercase text-gold">Travel Style</label>
+                    <select className="w-full bg-transparent border-b border-sand py-2 text-sm text-safari-blue focus:outline-none focus:border-gold">
+                        <option>Select Style</option>
+                        <option>Luxury Safari</option>
+                        <option>Romantic Escape</option>
+                        <option>Corporate Adventure</option>
+                        <option>Family Expedition</option>
+                    </select>
+                </div>
+                <div className="space-y-2">
+                    <label className="text-[10px] font-bold tracking-widest uppercase text-gold">When?</label>
+                    <input type="month" className="w-full bg-transparent border-b border-sand py-2 text-sm text-safari-blue focus:outline-none focus:border-gold" />
+                </div>
+                <div className="flex items-end">
+                    <button className="w-full bg-safari-blue text-white py-4 rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-gold transition-colors duration-300">
+                        Search Experiences
+                    </button>
+                </div>
+            </div>
+        </div>
     );
 };

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
     {
@@ -30,54 +31,45 @@ export const Testimonials = () => {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="section-padding bg-primary text-white overflow-hidden relative">
-            {/* Cinematic background depth */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/[0.04] rounded-none blur-[150px] pointer-events-none" />
-            <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
+        <section className="section-spacing bg-safari-blue text-white overflow-hidden relative">
+            <div className="container-luxury relative z-10">
+                <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-8 block"
+                    >
+                        guest experiences
+                    </motion.span>
 
-            <div className="container-wide relative z-10">
-                <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-20">
-                    <div className="space-y-6">
-                        <motion.p
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="text-xs font-bold tracking-[0.4em] uppercase text-white/80"
-                        >
-                            The Guest Perspective
-                        </motion.p>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-5xl md:text-7xl font-serif tracking-tight text-white"
-                        >
-                            Echoes from
-                            <br />
-                            <span className="italic font-normal opacity-80">the Horizon</span>
-                        </motion.h2>
-                    </div>
-
-                    {/* Main Quote Display */}
-                    <div className="relative w-full min-h-[400px] md:min-h-[300px] flex flex-col items-center justify-center">
-                        <Quote className="absolute -top-10 left-0 w-24 h-24 text-white/[0.05] pointer-events-none" />
+                    <div className="relative mb-12">
+                        <Quote className="absolute -top-12 -left-12 w-24 h-24 text-white/[0.03] pointer-events-none" />
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={active}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 1.05 }}
                                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                                className="space-y-12"
+                                className="space-y-8"
                             >
-                                <p className="text-2xl md:text-4xl font-serif italic text-white/90 leading-tight max-w-4xl mx-auto font-normal">
+                                <p className="text-2xl md:text-4xl font-serif italic text-white/90 leading-tight">
                                     &ldquo;{testimonials[active].quote}&rdquo;
                                 </p>
                                 <div className="space-y-2">
-                                    <p className="text-white font-bold text-sm font-sans tracking-[0.2em] uppercase">
+                                    <div className="w-12 h-12 relative mx-auto rounded-full overflow-hidden mb-4 border border-gold/30">
+                                        <Image
+                                            src={testimonials[active].image}
+                                            alt={testimonials[active].name}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <p className="text-gold font-bold text-xs tracking-[0.2em] uppercase">
                                         {testimonials[active].name}
                                     </p>
-                                    <p className="text-white/70 text-xs font-bold tracking-widest uppercase font-sans">
+                                    <p className="text-white/40 text-[10px] font-bold tracking-widest uppercase">
                                         {testimonials[active].role}
                                     </p>
                                 </div>
@@ -85,26 +77,18 @@ export const Testimonials = () => {
                         </AnimatePresence>
                     </div>
 
-                    {/* Custom Navigators */}
-                    <div className="flex items-center gap-6">
-                        {testimonials.map((t, idx) => (
+                    {/* Dots Navigation */}
+                    <div className="flex items-center gap-4">
+                        {testimonials.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setActive(idx)}
-                                className="group relative flex flex-col items-center gap-4 focus:outline-none"
+                                className="group relative py-4 focus:outline-none"
                             >
-                                <div className={`w-16 h-16 rounded-none overflow-hidden border-2 transition-all duration-700 ${active === idx
-                                    ? "border-white scale-110 shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-                                    : "border-white/10 opacity-30 group-hover:opacity-60"
-                                    }`}>
-                                    <Image
-                                        src={t.image}
-                                        alt={t.name}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div className={`h-1 rounded-none transition-all duration-700 ${active === idx ? "w-8 bg-white" : "w-0 bg-white/20"}`} />
+                                <div className={cn(
+                                    "h-[1px] transition-all duration-500",
+                                    active === idx ? "w-12 bg-gold" : "w-4 bg-white/20 group-hover:bg-white/40"
+                                )} />
                             </button>
                         ))}
                     </div>

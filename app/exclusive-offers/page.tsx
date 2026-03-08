@@ -5,6 +5,9 @@ import { Footer } from "@/components/marketing/footer";
 import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import { LocalOffersSection } from "@/components/marketing/local-offers-section";
 import Image from "next/image";
+import Link from "next/link";
+import { Plane, MapPin, Sparkles, ArrowRight, ArrowUpRight } from "lucide-react";
+
 
 export default function ExclusiveOffersPage() {
   return (
@@ -72,6 +75,124 @@ export default function ExclusiveOffersPage() {
       <div className="bg-primary -mt-1">
         <LocalOffersSection />
       </div>
+
+      {/* Global Flight Specials Section */}
+      <section className="py-24 bg-[#F8F9FA]">
+        <div className="container-wide">
+          <div className="max-w-4xl mx-auto text-center space-y-6 mb-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/10 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase"
+            >
+              <Plane className="w-4 h-4" />
+              Global Partner Specials
+            </motion.div>
+            <h2 className="text-4xl md:text-6xl font-serif text-midnight tracking-tight">
+              Fly Better with <span className="italic">TerraTreks</span>
+            </h2>
+            <p className="text-midnight/60 text-lg max-w-2xl mx-auto font-medium">
+              We&apos;ve secured exclusive rates with our premium airline partners. Explore starting prices from major global hubs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {[
+              {
+                airline: "Emirates",
+                logo: "/images/emirates-special-offer.jpg",
+                tagline: "Experience the World Class",
+                deals: [
+                  { hub: "London Heathrow", code: "LHR", price: "$1,170" },
+                  { hub: "London Gatwick", code: "LGW", price: "$1,133" },
+                  { hub: "Manchester", code: "MAN", price: "$1,251" },
+                  { hub: "Birmingham", code: "BHX", price: "$1,330" },
+                  { hub: "Edinburgh", code: "EDI", price: "$1,392" },
+                ]
+              },
+              {
+                airline: "Qatar Airways",
+                logo: "/images/qatar-airways-offer.jpg",
+                tagline: "The World's Best Airline",
+                deals: [
+                  { hub: "London Gatwick", code: "LGW", price: "$909" },
+                  { hub: "London Heathrow", code: "LHR", price: "$949" },
+                  { hub: "Edinburgh", code: "EDI", price: "$1,174" },
+                  { hub: "Manchester", code: "MAN", price: "$1,197" },
+                  { hub: "Birmingham", code: "BHX", price: "$1,207" },
+                ]
+              },
+              {
+                airline: "Ethiopian Airlines",
+                logo: "/images/ethiopian-airlines-special.jpg",
+                tagline: "The New Spirit of Africa",
+                deals: [
+                  { hub: "London Heathrow", code: "LHR", price: "$962" },
+                  { hub: "London Gatwick", code: "LGW", price: "$1,054" },
+                  { hub: "Manchester", code: "MAN", price: "$1,259" },
+                ]
+              }
+            ].map((airline, idx) => (
+              <motion.div
+                key={airline.airline}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.8 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-xl shadow-midnight/5 border border-midnight/5 flex flex-col group"
+              >
+                {/* Visual Header */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={airline.logo}
+                    alt={`${airline.airline} Special Offer`}
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-serif text-white">{airline.airline}</h3>
+                    <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{airline.tagline}</p>
+                  </div>
+                </div>
+
+                {/* Pricing Table */}
+                <div className="p-8 flex-grow space-y-6">
+                  <div className="flex items-center justify-between pb-4 border-b border-midnight/5">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-midnight/40">Departure Hub</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-midnight/40">From Rate</span>
+                  </div>
+                  <div className="space-y-4">
+                    {airline.deals.map((deal) => (
+                      <div key={deal.code} className="flex items-center justify-between group/line">
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-midnight leading-none">{deal.hub}</span>
+                          <span className="text-[10px] font-medium text-midnight/30 uppercase">{deal.code} Airport</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-lg font-serif text-primary font-bold">{deal.price}</span>
+                          <ArrowUpRight className="w-4 h-4 text-primary/0 group-hover/line:text-primary/100 transition-all" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Footer Action */}
+                <div className="p-6 pt-0">
+                  <Link
+                    href={`/contact?airline=${encodeURIComponent(airline.airline)}`}
+                    className="flex items-center justify-center gap-2 w-full py-4 bg-midnight text-white text-xs font-bold uppercase tracking-[0.2em] rounded-xl hover:bg-primary transition-colors duration-500"
+                  >
+                    Lock in this rate <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Booking Information / T&C Section – Cleaner & more readable */}
       <section className="section-padding py-16 md:py-24 bg-primary border-t border-white/10">

@@ -9,136 +9,98 @@ import { cn } from "@/lib/utils";
 
 export const PackagesSection = () => {
     return (
-        <section className="section-padding bg-white overflow-hidden relative">
-            {/* Background Texture/Text */}
-            <div className="absolute top-20 left-0 opacity-[0.03] pointer-events-none">
-                <span className="text-[15rem] font-serif font-black italic select-none">Collection</span>
-            </div>
-
-            <div className="container-wide space-y-32 relative z-10">
+        <section className="section-spacing bg-white relative overflow-hidden">
+            <div className="container-luxury space-y-16">
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
-                    <div className="max-w-2xl space-y-6">
-                        <motion.p
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="section-label"
-                        >
-                            Signature Journeys
-                        </motion.p>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="section-title"
-                        >
-                            Architected for
-                            <br />
-                            <span className="text-primary italic font-normal">Discovery</span>
-                        </motion.h2>
-                    </div>
+                <div className="max-w-3xl">
+                    <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block"
+                    >
+                        curated collections
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-serif text-safari-blue leading-tight mb-6"
+                    >
+                        Signature <span className="italic font-normal">African</span> Experiences
+                    </motion.h2>
                     <motion.p
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="section-desc max-w-sm mb-2"
+                        className="text-safari-blue/60 text-lg max-w-xl"
                     >
-                        Every itinerary is a masterpiece of logistics and luxury, curated to reveal the soul of Africa.
+                        Handpicked journeys that blend wild adventure with unparalleled comfort.
                     </motion.p>
                 </div>
 
                 {/* Grid */}
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-                >
-                    <AnimatePresence mode="popLayout">
-                        {packages.map((pkg, index) => (
-                            <motion.div
-                                key={pkg.id}
-                                layout
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    duration: 0.8,
-                                    delay: index * 0.1,
-                                    ease: [0.22, 1, 0.36, 1],
-                                }}
-                                className="group relative flex flex-col bg-white rounded-none border border-midnight/[0.05] overflow-hidden shadow-2xl hover:-translate-y-2 transition-all duration-700"
-                            >
-                                {/* Image Container */}
-                                <div className="relative h-[420px] overflow-hidden">
-                                    <Image
-                                        src={pkg.image}
-                                        alt={pkg.title}
-                                        fill
-                                        sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
-                                        className="object-cover transition-transform duration-[2s] group-hover:scale-110"
-                                    />
-                                    {/* Glass Overlay on Hover */}
-                                    <div className="absolute inset-0 bg-midnight/20 group-hover:bg-midnight/40 transition-all duration-700" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {packages.map((pkg, index) => (
+                        <motion.div
+                            key={pkg.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-sand/50"
+                        >
+                            {/* Image Container */}
+                            <div className="relative h-80 overflow-hidden">
+                                <Image
+                                    src={pkg.image}
+                                    alt={pkg.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-safari-blue/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
-                                    {/* Top Metadata */}
-                                    <div className="absolute top-8 left-8 right-8 flex justify-between items-start">
-                                        <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-widest uppercase">
-                                            {pkg.tag}
-                                        </span>
-                                        <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <ArrowRight className="w-4 h-4" />
-                                        </div>
-                                    </div>
-
-                                    {/* Bottom Metadata */}
-                                    <div className="absolute bottom-10 left-8 right-8 space-y-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                                        <div className="flex items-center gap-6">
-                                            <span className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase">
-                                                <MapPin className="w-3.5 h-3.5 text-white/80" />
-                                                {pkg.location}
-                                            </span>
-                                            <span className="flex items-center gap-2 text-white/90 text-xs font-bold tracking-widest uppercase">
-                                                <Clock className="w-3.5 h-3.5 text-white/80" />
-                                                {pkg.duration}
-                                            </span>
-                                        </div>
-                                        <h3 className="text-3xl font-serif text-white leading-tight">
-                                            {pkg.title}
-                                        </h3>
-                                    </div>
+                                <div className="absolute top-4 left-4">
+                                    <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-bold tracking-widest uppercase rounded-full">
+                                        {pkg.tag}
+                                    </span>
                                 </div>
+                            </div>
 
-                                {/* Simplified Bottom Info */}
-                                <div className="p-10 flex items-center justify-between border-t border-midnight/5">
-                                    <div className="space-y-1">
-                                        <p className="text-xs font-bold tracking-widest text-midnight/30 uppercase">Investment from</p>
-                                        <p className="text-2xl font-serif text-midnight">{pkg.price}</p>
+                            {/* Content */}
+                            <div className="p-8 flex flex-col flex-1">
+                                <div className="flex items-center gap-4 text-[10px] font-bold tracking-widest uppercase text-gold mb-3">
+                                    <span className="flex items-center gap-1.5"><MapPin className="w-3 h-3" /> {pkg.location}</span>
+                                    <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> {pkg.duration}</span>
+                                </div>
+                                <h3 className="text-2xl font-serif text-safari-blue mb-4 group-hover:text-gold transition-colors">
+                                    {pkg.title}
+                                </h3>
+                                <div className="mt-auto pt-6 border-t border-sand flex items-center justify-between">
+                                    <div>
+                                        <p className="text-[9px] font-bold tracking-widest text-safari-blue/40 uppercase">Starting at</p>
+                                        <p className="text-xl font-serif text-safari-blue">{pkg.price}</p>
                                     </div>
                                     <Link
                                         href={`/packages/${pkg.id}`}
-                                        className="text-xs font-bold tracking-widest uppercase text-midnight border-b border-midnight/10 pb-1 hover:border-primary hover:text-primary transition-all duration-300"
+                                        className="w-12 h-12 rounded-full border border-sand flex items-center justify-center text-safari-blue group-hover:bg-safari-blue group-hover:text-white group-hover:border-safari-blue transition-all"
                                     >
-                                        View Details
+                                        <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 </div>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
 
-                {/* View All */}
-                <div className="pt-10 flex justify-center">
+                <div className="flex justify-center pt-8">
                     <Link
                         href="/packages"
-                        className="group flex flex-col items-center gap-4 py-4"
+                        className="text-xs font-bold tracking-[0.3em] uppercase text-safari-blue border-b border-sand pb-2 hover:border-gold hover:text-gold transition-all"
                     >
-                        <span className="text-sm font-bold tracking-[0.3em] uppercase text-midnight/90 group-hover:text-primary transition-colors">
-                            Explore All Journeys
-                        </span>
-                        <div className="w-12 h-[1px] bg-midnight/10 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-primary translate-x-[-100%] group-hover:translate-x-[0%] transition-transform duration-700" />
-                        </div>
+                        View All Collections
                     </Link>
                 </div>
             </div>

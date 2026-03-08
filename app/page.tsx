@@ -1,16 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Footer } from "@/components/marketing/footer";
 import { MapPin, Moon, User } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+const heroImages = [
+  "/images/safari-3.jpg",
+  "/images/zanzibar-beach-view.jpg",
+  "/images/safari-1.jpg",
+  "/images/victoria-falls.png",
+];
+
 const packages = [
   {
     name: "Honeymoon Escape Zanzibar",
     desc: "A romantic 5N/6D getaway at Aldiana Club Zanzibar Kwanza. Includes flights, transfers, and island excursions.",
-    img: "/images/zanzibar-honeymoon.png",
+    img: "/images/zanzibar-resort-aerial.jpg",
     location: "ZANZIBAR",
     nights: 5,
     adults: 2,
@@ -20,7 +28,7 @@ const packages = [
   {
     name: "Dubai Luxury Holiday",
     desc: "Complete 3-night luxury stay with Emirates flights, Burj Khalifa tour, and Desert Safari included.",
-    img: "/images/corporate-travel.png",
+    img: "",
     location: "DUBAI",
     nights: 3,
     adults: 2,
@@ -50,7 +58,7 @@ const packages = [
   {
     name: "Easter Discover Qatar",
     desc: "Discover futuristic skylines with a 4N/5D package. Includes eVisa, Desert Safari, and Souq tours.",
-    img: "/images/qatar.png",
+    img: "",
     location: "QATAR",
     nights: 4,
     adults: 2,
@@ -66,7 +74,17 @@ const packages = [
     adults: 1,
     price: "K 3930",
     priceType: "Per Room",
-  }
+  },
+  {
+    name: "Ethiopian Airlines Special Offer",
+    desc: "Exclusive flight deals from London and Manchester. Fly with the best of Africa to your favorite global destinations.",
+    img: "",
+    location: "GLOBAL",
+    nights: 0,
+    adults: 1,
+    price: "From £420",
+    priceType: "Flight Only",
+  },
 ];
 
 const airlinePartners = [
@@ -94,49 +112,95 @@ const airlinePartners = [
 ];
 
 export default function Home() {
-  return (
-    <main className="relative min-h-screen bg-[#F8F9FA] text-[#002E5D] font-sans pb-20">
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
 
-      {/* ── SIMPLE HERO ── */}
-      <section className="relative w-full h-[60vh] md:h-[75vh] flex items-center justify-center text-center mt-20 md:mt-24">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIdx((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <main className="relative min-h-screen bg-[#F8F9FA] text-[#00204A] font-sans pb-20">
+      {/* ── SLIDING HERO ── */}
+      <section className="relative w-full h-[80vh] md:h-screen flex items-center justify-center text-center overflow-hidden">
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="absolute inset-0">
-          <Image
-            src="/images/safari-3.jpg"
-            alt="Safari Scenery"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <div className="relative z-20 px-6 w-full flex flex-col items-center">
-          <div className="relative w-72 h-32 md:w-96 md:h-40 mb-8 drop-shadow-2xl">
+        <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+
+        <AnimatePresence>
+          <motion.div
+            key={currentImageIdx}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0"
+          >
             <Image
-              src="/terratreks-logo.png"
-              alt="TerraTreks Travel Logo"
+              src={heroImages[currentImageIdx]}
+              alt="TerraTreks Scenery"
               fill
-              className="object-contain"
+              className="object-cover"
+              priority
             />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="relative z-20 px-6 w-full flex flex-col items-center pt-20 md:pt-24">
+          <div className="mb-8 text-center flex flex-col items-center">
+            <h1
+              className="text-6xl md:text-8xl lg:text-[7.5rem] font-serif font-bold tracking-tighter leading-none flex"
+              style={{
+                textShadow: "0 8px 24px rgba(0,0,0,0.7)",
+              }}
+            >
+              <span
+                className="text-[#00204A]"
+                style={{
+                  textShadow:
+                    "0 0 35px rgba(255,255,255,1), 0 0 15px rgba(255,255,255,0.8)",
+                }}
+              >
+                Terra
+              </span>
+              <span className="text-white ml-2">Treks</span>
+            </h1>
+            <div className="h-[2px] w-32 bg-[#D4AF37] my-4 shadow-xl" />
+            <p
+              className="text-2xl md:text-4xl font-sans font-bold tracking-[0.4em] text-white/95 uppercase"
+              style={{ textShadow: "0 4px 12px rgba(0,0,0,0.8)" }}
+            >
+              Travel
+            </p>
           </div>
-          <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#Daba34] drop-shadow-lg tracking-widest uppercase">
-            Book Your Domestic and International Flights With us
+          <h2
+            className="text-xl md:text-2xl font-bold mb-4 text-[#D4AF37] tracking-widest uppercase"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.8)" }}
+          >
+            Book Your Domestic and International Flights With Us
           </h2>
-          <p className="text-3xl md:text-5xl font-black mb-10 text-white drop-shadow-xl tracking-wide uppercase">
-            ADVENTURE AWAITS TODAY
+          <p
+            className="text-2xl md:text-5xl lg:text-5xl font-bold mb-10 text-white tracking-widest uppercase mt-4"
+            style={{
+              textShadow:
+                "0 4px 12px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)",
+            }}
+          >
+            Adventure Awaits Today
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/packages"
-              className="bg-[#002E5D] text-white font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#001b38] transition-all duration-300"
+              className="bg-[#00204A] text-white font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#001533] transition-all duration-300"
             >
               Explore Packages
             </Link>
             <Link
               href="/contact"
-              className="bg-[#Daba34] text-black font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#c9a92e] transition-all duration-300 uppercase"
+              className="bg-[#D4AF37] text-black font-bold py-4 px-10 rounded-full text-lg shadow-md hover:bg-[#B5952F] transition-all duration-300 uppercase"
             >
-              Book Now!!
+              Book Now
             </Link>
           </div>
         </div>
@@ -144,62 +208,77 @@ export default function Home() {
 
       {/* ── SPECIAL PACKAGES SECTION ── */}
       <section className="py-20 px-4 md:px-8 bg-[#F8F9FA] max-w-[1400px] mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-black text-[#002E5D] tracking-tight uppercase" style={{ fontWeight: 900 }}>FEATURED PACKAGES & TOURS</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">Explore exclusive deals with realistic rates. Choose from our curated local and international destinations.</p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#00204A] mb-6 tracking-tight uppercase">
+            FEATURED PACKAGES & TOURS
+          </h2>
+          <p className="text-gray-800 text-xl font-medium max-w-2xl mx-auto">
+            Explore exclusive deals with realistic rates. Choose from our
+            curated local and international destinations.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className="bg-white border border-gray-100 shadow-sm flex flex-col h-full"
+              className="group bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col h-full cursor-pointer rounded-xl overflow-hidden"
             >
               {/* Image & Badge */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
-                <Image
-                  src={pkg.img}
-                  alt={pkg.name}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#00204A]">
+                {pkg.img && (
+                  <Image
+                    src={pkg.img}
+                    alt={pkg.name}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                )}
 
                 {/* Blue location badge */}
-                <div className="absolute bottom-4 left-4 bg-[#002E5D] text-white font-bold px-4 py-2 flex items-center gap-2 text-sm shadow-sm group-hover:-translate-y-1 transition-transform">
+                <div className="absolute bottom-4 left-4 bg-[#00204A] text-white font-bold px-4 py-2 flex items-center gap-2 text-sm shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
                   <MapPin className="w-4 h-4" /> {pkg.location}
                 </div>
               </div>
 
               {/* Card Content */}
               <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-xl font-black text-[#002E5D] mb-4 uppercase line-clamp-2">
+                <h3 className="text-xl font-bold text-[#00204A] mb-4 uppercase line-clamp-2">
                   {pkg.name}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3 font-medium">
+                <p className="text-gray-800 text-base leading-relaxed mb-6 line-clamp-3 font-medium">
                   {pkg.desc}
                 </p>
 
                 {/* Icons row */}
                 <div className="flex items-center gap-6 mt-auto pb-6 border-b border-gray-100">
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <Moon className="w-5 h-5 text-[#002E5D]" />
-                    <span className="text-sm font-medium">{pkg.nights} Night</span>
+                  <div className="flex items-center gap-2 text-gray-800">
+                    <Moon className="w-5 h-5 text-[#00204A]" />
+                    <span className="text-base font-semibold">
+                      {pkg.nights} Night
+                    </span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <User className="w-5 h-5 text-[#002E5D]" />
-                    <span className="text-sm font-medium">{pkg.adults} Adult</span>
+                  <div className="flex items-center gap-2 text-gray-800">
+                    <User className="w-5 h-5 text-[#00204A]" />
+                    <span className="text-base font-semibold">
+                      {pkg.adults} Adult
+                    </span>
                   </div>
                 </div>
 
                 {/* Price and Button Row */}
                 <div className="pt-6 flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-sm text-[#002E5D] font-semibold">From</span>
-                    <span className="text-2xl font-black text-[#002E5D] uppercase">{pkg.price}</span>
+                    <span className="text-sm text-[#00204A] font-semibold">
+                      From
+                    </span>
+                    <span className="text-2xl font-bold text-[#00204A] uppercase">
+                      {pkg.price}
+                    </span>
                   </div>
                   <Link
                     href="/packages"
-                    className="bg-[#002E5D] hover:bg-[#001b38] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors flex-shrink-0"
+                    className="bg-[#00204A] hover:bg-[#001533] text-white text-sm font-bold px-6 py-3 rounded-full transition-colors flex-shrink-0"
                   >
                     {pkg.priceType}
                   </Link>
@@ -210,98 +289,119 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── REVIEWS BANNER ── */}
-      <section className="relative w-full py-24 mb-10 overflow-hidden text-center bg-[#F8F9FA]">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/safari-sunset.jpg')", opacity: 0.1 }} />
-        <div className="relative z-10 w-full bg-[#002E5D]/80 py-16 backdrop-blur-sm shadow-sm text-white">
-          <h2 className="text-4xl md:text-5xl font-black mb-2 uppercase text-white">TOP REVIEWS</h2>
-          <p className="text-lg font-medium text-white/90">FROM OUR HAPPY CLIENTS</p>
-        </div>
-      </section>
-
-      {/* ── OUR CLIENTS ── */}
-      <section className="py-16 px-4 md:px-8 max-w-[1400px] mx-auto text-left">
-        <h2 className="text-2xl md:text-3xl font-black text-[#002E5D] mb-6 uppercase">OUR CLIENTS</h2>
-        <p className="text-gray-600 text-lg mb-12 max-w-4xl">
-          The companies that we deal with are government, NGOs, non-governmental organizations, private sectors as well as individual clients. The following are some of our past and present clients:
-        </p>
-        <div className="flex flex-wrap items-center gap-12 mt-8 opacity-70">
-          {/* Client logos placeholder */}
-          <h1 className="text-4xl font-black text-blue-900 border-2 border-blue-900 px-6 py-4 rounded-xl">CRS</h1>
-          <h1 className="text-4xl font-black text-red-600 border-2 border-red-600 px-6 py-4 rounded-xl">ROSS</h1>
-          <h1 className="text-4xl font-black text-gray-800 border-2 border-gray-800 px-6 py-4 rounded-xl">Government</h1>
-        </div>
-      </section>
-
       {/* ── ASSOCIATIONS ── */}
-      <section className="pt-16 pb-8 px-4 md:px-8 bg-white text-center border-t border-gray-100">
+      <section className="py-24 px-4 md:px-8 bg-white text-center border-t border-gray-100">
         <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-2xl md:text-3xl font-black text-[#002E5D] mb-6 uppercase tracking-wider">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
             Our Associations
           </h2>
-          <p className="text-gray-500 text-lg mb-12 max-w-2xl mx-auto">
-            We are proud to be affiliated with globally recognized organizations to bring you the best travel experiences.
+          <p className="text-gray-700 text-xl font-medium mb-16 max-w-2xl mx-auto">
+            We are proud to be affiliated with globally recognized organizations
+            to bring you the best travel experiences.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {/* IATA */}
-            <div className="flex flex-col items-center gap-2">
-              <div className="relative w-32 h-16 mb-2">
-                <Image src="/iata-logo.png" alt="IATA Accredited Agent" fill className="object-contain" />
+            <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
+              <div className="relative w-32 h-16 transition-all duration-300">
+                <Image
+                  src="/iata-logo.png"
+                  alt="IATA Accredited Agent"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Accredited Agent</span>
+              <div className="h-[2px] w-8 bg-[#D4AF37]" />
+              <span className="text-xs text-gray-700 font-bold uppercase tracking-[0.2em]">
+                Accredited Agent
+              </span>
             </div>
             {/* TAAZ */}
-            <div className="flex flex-col items-center gap-2">
-              <div className="relative w-32 h-16 mb-2">
-                <Image src="/taaz-logo.png" alt="TAAZ Member" fill className="object-contain" />
+            <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
+              <div className="relative w-32 h-16 transition-all duration-300">
+                <Image
+                  src="/taaz-logo.png"
+                  alt="TAAZ Member"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Member</span>
+              <div className="h-[2px] w-8 bg-[#D4AF37]" />
+              <span className="text-xs text-gray-700 font-bold uppercase tracking-[0.2em]">
+                Member
+              </span>
             </div>
             {/* NWC */}
-            <div className="flex flex-col items-center gap-2">
-              <div className="text-5xl font-black text-[#002E5D] tracking-widest">NWC</div>
-              <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">Association</span>
+            <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
+              <div className="text-5xl font-serif font-bold text-[#00204A] tracking-tighter">
+                NWC
+              </div>
+              <div className="h-[2px] w-8 bg-[#D4AF37]" />
+              <span className="text-xs text-gray-700 font-bold uppercase tracking-[0.2em]">
+                Association
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── AIRLINE PARTNERS ── */}
-      <section className="py-16 px-4 md:px-8 bg-[#F8F9FA] text-center border-t border-gray-100">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-[#002E5D] mb-4 uppercase tracking-wider">
+      {/* ── AIRLINE PARTNERS SLIDER ── */}
+      <section className="py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
             BOOK YOUR FLIGHTS WITH US
           </h2>
-          <p className="text-gray-500 text-lg mb-12 max-w-2xl mx-auto font-medium">
-            We proudly work directly with over 20+ domestic and international airline partners. Adventure awaits today!
+          <p className="text-gray-700 text-xl font-medium max-w-2xl mx-auto">
+            We proudly work directly with over 20+ domestic and international
+            airline partners. Adventure awaits today!
           </p>
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-6 md:gap-8 items-center">
-            {airlinePartners.map((airline) => (
-              <div key={airline.name} className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-40 md:h-40 rounded-2xl hover:-translate-y-1 hover:shadow-md transition-all">
+        {/* Marquee Container */}
+        <div className="relative flex overflow-hidden">
+          <motion.div
+            className="flex gap-6 md:gap-8 whitespace-nowrap"
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 40,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {/* Double the array for seamless infinite sliding */}
+            {[...airlinePartners, ...airlinePartners].map((airline, idx) => (
+              <div
+                key={`${airline.name}-${idx}`}
+                className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-44 md:h-44 rounded-2xl flex-shrink-0"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`https://www.google.com/s2/favicons?domain=${airline.domain}&sz=128`}
                   alt={airline.name}
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain mb-3 p-1 mix-blend-multiply transition-all duration-300"
+                  className="w-12 h-12 md:w-20 md:h-20 object-contain mb-3"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    if (target.nextElementSibling) {
-                      (target.nextElementSibling as HTMLElement).style.display = 'block';
-                    }
+                    target.style.display = "none";
                   }}
                 />
-                <span className="block text-[10px] md:text-xs font-bold uppercase text-[#002E5D] text-center leading-tight">
+                <span className="block text-[10px] md:text-xs font-bold uppercase text-[#00204A] text-center leading-tight">
                   {airline.name}
                 </span>
-                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider opacity-60">Partner</span>
+                <div className="h-[2px] w-4 bg-[#D4AF37] my-2" />
+                <span className="text-[9px] text-gray-500 font-bold uppercase tracking-[0.2em] opacity-80">
+                  Partner
+                </span>
               </div>
             ))}
-          </div>
-          <p className="mt-12 text-sm text-gray-400 font-medium">
-            Flight and accommodation rates are subject to availability and T and Cs apply.
+          </motion.div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 text-center">
+          <p className="mt-20 text-sm text-gray-500 font-semibold tracking-wide uppercase max-w-xl mx-auto border-t border-gray-200 pt-8 opacity-75">
+            Flight and accommodation rates are subject to availability and T and
+            Cs apply.
           </p>
         </div>
       </section>

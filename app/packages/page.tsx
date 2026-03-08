@@ -11,155 +11,157 @@ import { LocalOffersSection } from "@/components/marketing/local-offers-section"
 
 export default function PackagesPage() {
   return (
-    <main className="relative min-h-screen bg-white">
-      {/* Cinematic Hero Header – Enhanced contrast & responsiveness */}
-      <section className="relative h-[75vh] md:h-[85vh] flex items-end overflow-hidden bg-primary">
+    <main className="relative min-h-screen bg-white text-[#0F2647]">
+      {/* ── Hero ── */}
+      <section className="relative h-[80vh] md:h-[90vh] flex items-end overflow-hidden">
         <motion.div
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 z-0"
+          transition={{ duration: 2.8, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1523805081326-6468447d9688?auto=format&fit=crop&q=80&w=2400"
-            alt="Luxury African safari landscape – Signature Journeys"
+            src="https://images.unsplash.com/photo-1523805081326-6468447d9688?auto=format&fit=crop&q=85&w=2400"
+            alt="Signature African luxury journey"
             fill
             priority
-            className="object-cover brightness-[0.7] contrast-[1.1]"
+            className="object-cover brightness-[0.62] contrast-[1.08] saturate-[0.9]"
+            quality={82}
           />
         </motion.div>
 
-        {/* Stronger overlays for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/75 to-primary/30 z-[1]" />
-        <div className="absolute inset-0 bg-black/35 z-[1]" />
-        <div className="absolute inset-0 film-grain opacity-15 z-[2]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F2647]/90 via-[#0F2647]/60 to-transparent" />
+        <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 container-wide px-6 md:px-10 pb-20 md:pb-32 pt-16 md:pt-0 flex items-end">
-          <div className="max-w-4xl space-y-8 md:space-y-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
+        <div className="relative z-10 w-full px-5 sm:px-8 pb-16 sm:pb-24 md:pb-32 max-w-6xl mx-auto">
+          <div className="max-w-4xl space-y-6 md:space-y-10">
+            <motion.span
+              initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2 }}
+              className="inline-block text-[#D4AF37] text-xs sm:text-sm font-bold tracking-[0.4em] uppercase"
             >
-              <span className="text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-white/90 drop-shadow-md">
-                The 2024 Collection
-              </span>
-            </motion.div>
+              2025 Signature Collection
+            </motion.span>
+
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white tracking-tighter leading-[0.9] drop-shadow-2xl [text-shadow:_2px_2px_12px_rgb(0_0_0_/_0.7)]"
+              transition={{ duration: 1.5, delay: 0.2 }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[0.92] tracking-tight drop-shadow-2xl"
             >
               Signature
               <br />
-              <span className="italic font-normal opacity-90">Journeys</span>
+              <span className="italic font-normal text-[#D4AF37]">Journeys</span>
             </motion.h1>
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 1.5 }}
-              className="text-white/90 text-lg md:text-2xl font-serif italic max-w-3xl border-l-4 border-primary/60 pl-6 md:pl-8 drop-shadow-md leading-relaxed"
+              transition={{ delay: 0.7, duration: 1.4 }}
+              className="text-lg sm:text-xl md:text-2xl text-white/90 font-serif italic max-w-3xl border-l-4 border-[#D4AF37]/60 pl-6 md:pl-8 leading-relaxed"
             >
-              “Every itinerary is a masterpiece of logistics and luxury, curated to reveal the soul of Africa.”
+              “Every itinerary is a masterpiece — curated to reveal the authentic soul of Africa.”
             </motion.p>
           </div>
         </div>
-
-        {/* Scroll Indicator – Hide on mobile */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-12 right-12 z-20 hidden md:flex items-center gap-6"
-        >
-          <span className="text-xs font-bold tracking-[0.4em] uppercase text-white/90 [writing-mode:vertical-rl] rotate-180">
-            Scroll to explore
-          </span>
-          <div className="w-px h-24 bg-gradient-to-b from-transparent via-white/50 to-transparent" />
-        </motion.div>
       </section>
 
-      {/* Collection Grid – Improved readability & mobile layout */}
-      <section className="section-padding py-16 md:py-24 bg-white relative overflow-hidden">
-        <div className="container-wide space-y-16 md:space-y-24 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12">
-            <div className="max-w-2xl space-y-5">
-              <p className="section-label text-primary text-sm md:text-base">Masterpiece Collection</p>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-midnight leading-tight tracking-tight">
+      {/* ── Packages Grid ── */}
+      <section className="py-16 md:py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-16 mb-16 md:mb-24">
+            <div className="max-w-3xl space-y-5 md:space-y-7">
+              <p className="text-[#D4AF37] text-sm md:text-base font-bold tracking-[0.35em] uppercase">
+                Curated Masterpieces
+              </p>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight">
                 Architected for
-                <br />
-                <span className="italic font-normal opacity-80">Discovery</span>
+                <span className="block md:inline italic text-[#D4AF37] ml-3 md:ml-4 font-normal">
+                  Discovery
+                </span>
               </h2>
             </div>
-            <div className="max-w-xs space-y-6">
-              <p className="text-midnight/80 text-base md:text-lg leading-relaxed font-medium">
-                A curated selection of the continent's most whispered-about experiences.
-              </p>
-              <div className="h-px w-full bg-midnight/10" />
-            </div>
+
+            <p className="text-[#0F2647]/80 text-base md:text-lg leading-relaxed max-w-md">
+              A handpicked selection of Africa’s most exclusive and whispered-about experiences.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-9 lg:gap-12">
             {packages.map((pkg, idx) => (
               <motion.div
                 key={pkg.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: idx * 0.08 }}
-                className="group relative flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 min-h-[520px] md:min-h-[580px]"
+                transition={{ delay: idx * 0.1, duration: 0.9 }}
+                className="group relative flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl hover:-translate-y-3 transition-all duration-500"
               >
-                {/* Image Container */}
-                <div className="relative h-80 md:h-[450px] overflow-hidden flex-shrink-0">
-                  <Image
-                    src={pkg.image}
-                    alt={`${pkg.title} – Luxury safari in ${pkg.location}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent group-hover:via-black/30 transition-all duration-700" />
+                {/* Image + Overlay */}
+                <div className="relative aspect-[4/3] md:aspect-[5/4] overflow-hidden bg-gradient-to-br from-[#0F2647] to-[#1A3A6A]">
+                  {pkg.image ? (
+                    <Image
+                      src={pkg.image}
+                      alt={`${pkg.title} – ${pkg.location}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-1000 group-hover:scale-[1.08]"
+                      quality={80}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center text-white/40 text-xl font-bold">
+                      {pkg.location}
+                    </div>
+                  )}
 
-                  {/* Top Metadata */}
-                  <div className="absolute top-6 left-6 right-6 flex justify-between items-start">
-                    <span className="px-4 py-2 bg-primary/90 text-white text-xs md:text-sm font-bold tracking-wider uppercase rounded">
-                      {pkg.tag}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+
+                  {/* Tag + Hover Arrow */}
+                  <div className="absolute top-5 left-5 right-5 flex justify-between items-start">
+                    <span className="px-4 py-2 bg-[#D4AF37] text-[#0F2647] text-xs md:text-sm font-bold uppercase rounded-full shadow-md">
+                      {pkg.tag || "Signature"}
                     </span>
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-400 transform group-hover:scale-110">
                       <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
                     </div>
                   </div>
 
-                  {/* Bottom Metadata */}
-                  <div className="absolute bottom-6 left-6 right-6 space-y-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                    <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                      <span className="flex items-center gap-2 text-white/90 text-xs md:text-sm font-bold tracking-wide uppercase">
-                        <MapPin className="w-4 h-4" />
-                        {pkg.location}
+                  {/* Bottom Info Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 translate-y-6 group-hover:translate-y-0 transition-transform duration-700">
+                    <div className="flex items-center gap-5 md:gap-6 mb-4 text-white/90 text-sm md:text-base">
+                      <span className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4" /> {pkg.location}
                       </span>
-                      <span className="flex items-center gap-2 text-white/90 text-xs md:text-sm font-bold tracking-wide uppercase">
-                        <Clock className="w-4 h-4" />
-                        {pkg.duration}
+                      <span className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" /> {pkg.duration}
                       </span>
                     </div>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white leading-tight tracking-tight drop-shadow-md">
+
+                    <h3 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight drop-shadow-md">
                       {pkg.title}
                     </h3>
                   </div>
                 </div>
 
-                {/* Pricing Strip */}
+                {/* Pricing & CTA */}
                 <div className="p-6 md:p-8 mt-auto flex items-center justify-between border-t border-gray-100">
-                  <div className="space-y-1">
-                    <p className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-500">Investment from</p>
-                    <p className="text-xl md:text-2xl font-serif text-midnight font-medium">{pkg.price}</p>
+                  <div>
+                    <p className="text-xs md:text-sm font-semibold uppercase tracking-wide text-gray-500">
+                      From
+                    </p>
+                    <p className="text-2xl md:text-3xl font-serif font-bold text-[#0F2647]">
+                      {pkg.price}
+                    </p>
                   </div>
+
                   <Link
                     href={`/contact?package=${encodeURIComponent(pkg.title)}`}
-                    className="text-sm md:text-base font-semibold tracking-wide text-midnight hover:text-primary border-b border-midnight/20 pb-1 hover:border-primary transition-all duration-300"
+                    className="group inline-flex items-center gap-2 text-sm md:text-base font-semibold text-[#0F2647] hover:text-[#D4AF37] transition-colors"
                   >
                     Inquire Now
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </motion.div>
@@ -168,35 +170,30 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Resident Specials Integration */}
       <LocalOffersSection />
 
-      {/* Call to Action Divider – Responsive & polished */}
-      <section className="py-24 md:py-40 bg-white text-center container-wide relative overflow-hidden">
-        <div className="max-w-3xl mx-auto space-y-10 md:space-y-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-primary/30 mx-auto opacity-50" />
-          </motion.div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif italic text-midnight leading-tight">
-            Looking for something <br className="hidden sm:block" />
-            <span className="text-primary font-normal not-italic">truly unique?</span>
+      {/* ── Custom CTA ── */}
+      <section className="py-20 md:py-32 bg-[#0F2647] text-white">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center space-y-8 md:space-y-12">
+          <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-[#D4AF37]/70 mx-auto" />
+
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-tight">
+            Seeking something
+            <br />
+            <span className="italic font-normal text-[#D4AF37]">truly bespoke?</span>
           </h2>
-          <p className="text-midnight/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Our private consultants are specialists in crafting completely bespoke itineraries tailored to your specific vision.
+
+          <p className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto">
+            Our private consultants specialize in creating completely custom journeys — shaped entirely around your vision, timeline and desires.
           </p>
-          <div className="pt-6 md:pt-8">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-4 text-sm md:text-base font-bold tracking-[0.3em] uppercase text-midnight hover:text-primary transition-colors"
-            >
-              Begin Custom Design
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
-          </div>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-4 bg-[#D4AF37] text-[#0F2647] font-bold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-full shadow-xl hover:bg-[#b8972e] hover:shadow-2xl transition-all duration-300"
+          >
+            Begin Your Custom Journey
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 

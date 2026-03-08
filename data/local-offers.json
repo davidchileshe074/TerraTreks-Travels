@@ -106,5 +106,38 @@
         ],
         "note": "Limited availability. Confirmation on first payment basis.",
         "footerText": "This Valentine’s, choose something unforgettable. Adventure Awaits Today — TerraTreks Travel"
+    },
+    {
+        "id": "zanzibar-honeymoon",
+        "title": "Zanzibar Honeymoon Escape",
+        "location": "Zanzibar, Tanzania",
+        "description": "Escape to the turquoise waters of Zanzibar for a romantic 5-night getaway. Whether it's strolling on white sand beaches or exploring the spice markets, this is where love finds its perfect setting.",
+        "image": "/images/zanzibar-resort-aerial.jpg",
+        "tag": "Honeymoon Special",
+        "currency": "K",
+        "rates": [
+            {
+                "type": "5 Nights Stay",
+                "price": "45,000 per couple"
+            },
+            {
+                "type": "Additional Night",
+                "price": "8,500"
+            }
+        ],
+        "inclusions": [
+            "Accommodation at Aldiana Club Zanzibar",
+            "Return flight tickets",
+            "Airport transfers",
+            "Professional island excursions",
+            "Snorkeling & Jet skiing"
+        ],
+        "experiences": [
+            "Stone Town market tours",
+            "Sunset dhow cruises",
+            "Beachfront candlelight dinners",
+            "Private island picnics"
+        ],
+        "footerText": "Celebrate your love in paradise."
     }
 ]

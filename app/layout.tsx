@@ -77,6 +77,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -140,6 +142,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

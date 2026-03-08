@@ -5,7 +5,7 @@
         "location": "Zanzibar, Tanzania",
         "duration": "5 Nights",
         "price": "K 45,000",
-        "image": "/images/zanzibar-honeymoon.png",
+        "image": "/images/zanzibar-resort-aerial.jpg",
         "tag": "Honeymoon Special",
         "categories": [
             "Romantic",
@@ -18,7 +18,7 @@
         "location": "Dubai, UAE",
         "duration": "3 Nights",
         "price": "$ 1,500",
-        "image": "/images/corporate-travel.png",
+        "image": "",
         "tag": "Luxury Escapes",
         "categories": [
             "Luxury",
@@ -57,7 +57,7 @@
         "location": "Qatar",
         "duration": "4 Nights",
         "price": "$ 635",
-        "image": "/images/qatar.png",
+        "image": "",
         "tag": "Easter Special",
         "categories": [
             "City",
@@ -87,6 +87,19 @@
         "tag": "Reconnect with Nature",
         "categories": [
             "Luxury"
+        ]
+    },
+    {
+        "id": "ethiopian-airlines-special",
+        "title": "Ethiopian Airlines Special",
+        "location": "Global",
+        "duration": "Variable",
+        "price": "From £420",
+        "image": "",
+        "tag": "Limited Time Offer",
+        "categories": [
+            "Flights",
+            "Special"
         ]
     }
 ]

@@ -4,22 +4,17 @@
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
 
-  /* ── LUCIANO INSPIRED PALETTE ── */
+  /* ── LUXURY SAFARI PALETTE ── */
+  --color-safari-blue: #00204A;    /* Deep Safari Blue */
+  --color-sand: #F6F1EB;           /* Sand Beige */
+  --color-gold: #D4AF37;           /* Gold Accent */
+  --color-midnight: #001A3D;       /* Midnight Blue */
+  
+  /* Semantic Aliases */
   --color-primary: #00204A;
-  /* Deep Navy Blue */
-  --color-gold: #D4AF37;
-  /* Metallic Gold */
-  --color-midnight: #001A3D;
-  --color-sand: #F9F9F9;
-  /* Off-white/Light Gray for subtle sections */
-  --color-sunset: #CD7F32;
-
-  /* ── SEMANTIC ALIASES ── */
   --color-secondary: #D4AF37;
   --color-accent: #CD7F32;
-  --color-savannah: #FFFFFF;
-  --color-earth: #00204A;
-
+  
   --breakpoint-xs: 480px;
 }
 
@@ -226,12 +221,12 @@
   @apply flex items-center gap-1.5 text-xs font-bold tracking-[0.1em] uppercase font-sans text-midnight/80;
 }
 
-.container-wide {
-  @apply max-w-[1400px] mx-auto px-6 md:px-10;
+.container-luxury {
+  @apply max-w-7xl mx-auto px-6;
 }
 
-.section-padding {
-  @apply py-24 md:py-32;
+.section-spacing {
+  @apply py-20;
 }
 
 /* Film grain texture overlay — using a subtle radial gradient noise instead of external image to avoid CORB */
@@ -275,4 +270,17 @@
 
 .mask-fade-x {
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
 }

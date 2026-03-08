@@ -15,169 +15,172 @@ import Link from "next/link";
 const allServices = [
   {
     title: "Flight Reservations",
-    description: "International and domestic flight bookings with flexible fare options and full travel support.",
+    description: "International & domestic bookings with real-time fares, flexible changes and full support.",
     icon: Plane,
     tag: "Global"
   },
   {
     title: "Elite Accommodation",
-    description: "Luxury lodges and boutique hotels curated for comfort and absolute privacy.",
+    description: "Handpicked luxury lodges, boutique hotels & private retreats for comfort and seclusion.",
     icon: Building2,
     tag: "Bespoke"
   },
   {
-    title: "Visa Assistance",
-    description: "Professional guidance and document support to help you navigate global requirements.",
+    title: "Visa & Permit Assistance",
+    description: "Expert guidance, document preparation and follow-up for smooth visa & entry processes.",
     icon: FileCheck,
     tag: "Expert"
   },
   {
-    title: "Tailor-Made Packages",
-    description: "Custom travel itineraries designed around your interests, schedule, and budget.",
+    title: "Tailor-Made Itineraries",
+    description: "Fully custom journeys shaped around your interests, timing, group size and budget.",
     icon: Map,
     tag: "Unique"
   },
   {
-    title: "Airport Transfers",
-    description: "Safe, timely, and comfortable transfers for stress-free arrivals and departures.",
+    title: "Private Transfers & Ground Transport",
+    description: "Reliable, comfortable and discreet airport & inter-destination transfers.",
     icon: Bus,
-    tag: "Elite"
+    tag: "Seamless"
   },
   {
-    title: "Corporate Management",
-    description: "End-to-end business travel solutions with negotiated corporate rates and coordination.",
+    title: "Corporate & Group Travel",
+    description: "End-to-end business travel management, negotiated rates and event logistics.",
     icon: Briefcase,
     tag: "B2B"
   },
   {
-    title: "Travel Insurance",
-    description: "Authorised agents offering coverage for medical, cancellation, and luggage protection.",
+    title: "Comprehensive Travel Insurance",
+    description: "Medical, cancellation, delay & baggage coverage through trusted international partners.",
     icon: ShieldPlus,
-    tag: "Secure"
+    tag: "Protected"
   },
   {
-    title: "24/7 Executive Support",
-    description: "Round-the-clock assistance for travel changes, emergencies, and concierge needs.",
+    title: "24/7 Concierge & Emergency Support",
+    description: "Round-the-clock assistance for changes, emergencies and special requests.",
     icon: Headset,
-    tag: "Support"
+    tag: "Always On"
   },
   {
-    title: "Flexible Financing",
-    description: "Convenient travel financing and flexible payment options on selected services.",
+    title: "Flexible Payment & Financing",
+    description: "Instalment plans and secure payment options on qualifying packages.",
     icon: CreditCard,
-    tag: "Finance"
+    tag: "Flexible"
   },
   {
-    title: "Event Coordination",
-    description: "Full logistics for conferences, workshops, retreats, and luxury corporate events.",
+    title: "Conference & Event Coordination",
+    description: "Complete logistics for corporate retreats, incentives, workshops and celebrations.",
     icon: Users,
     tag: "Events"
   },
   {
-    title: "Travel Advisory",
-    description: "Expert insights into safety, cultural protocols, and entry requirements.",
+    title: "Destination & Safety Advisory",
+    description: "Up-to-date insights on health, security, culture and local protocols.",
     icon: Info,
-    tag: "Insight"
+    tag: "Informed"
   },
   {
-    title: "Digital Nomad Services",
-    description: "Travel planning for remote professionals, including connectivity and long-term stays.",
+    title: "Digital Nomad & Long-Stay Planning",
+    description: "Extended-stay arrangements, reliable connectivity and work-friendly locations.",
     icon: Laptop,
-    tag: "Modern"
+    tag: "Remote"
   }
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="relative min-h-screen bg-white">
-      {/* Cinematic Hero – Improved contrast & responsiveness */}
-      <section className="relative h-[70vh] md:h-[85vh] flex items-end overflow-hidden bg-primary">
+    <main className="relative min-h-screen bg-white text-[#0F2647]">
+      {/* ── Hero ── */}
+      <section className="relative h-[75vh] md:h-[85vh] flex items-end overflow-hidden">
         <motion.div
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 z-0"
+          transition={{ duration: 2.8, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=2400"
-            alt="TerraTreks Services – Luxury Travel Experiences"
+            src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=85&w=2400"
+            alt="Luxury African travel experience"
             fill
             priority
-            className="object-cover brightness-[0.65] contrast-[1.1]"
+            className="object-cover brightness-[0.62] contrast-[1.08] saturate-[0.92]"
+            quality={82}
           />
         </motion.div>
 
-        {/* Stronger overlay layers for reliable text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-primary/40 z-[1]" />
-        <div className="absolute inset-0 bg-black/35 z-[1]" />
-        <div className="absolute inset-0 noise-overlay opacity-20 z-[2]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F2647]/90 via-[#0F2647]/65 to-transparent" />
+        <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 container-wide pb-20 md:pb-32 pt-16 md:pt-0 flex items-end">
-          <div className="max-w-4xl space-y-8 md:space-y-10">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2 }}
-            >
-              <span className="text-xs md:text-sm font-bold tracking-[0.4em] uppercase text-white/90 drop-shadow-md">
-                360° Travel Ecosystem
-              </span>
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif text-white tracking-tighter leading-[0.9] drop-shadow-2xl [text-shadow:_2px_2px_10px_rgb(0_0_0_/_0.7)]"
-            >
-              Professional
+        <div className="relative z-10 w-full px-5 sm:px-8 pb-16 sm:pb-24 md:pb-32 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.3 }}
+            className="space-y-5 sm:space-y-7"
+          >
+            <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.35em] uppercase text-white/90">
+              COMPREHENSIVE TRAVEL SOLUTIONS
+            </span>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight leading-tight drop-shadow-2xl">
+              Professional Travel
               <br />
-              <span className="italic font-normal opacity-90">Ecosystem</span>
-            </motion.h1>
-          </div>
+              <span className="italic font-normal text-[#D4AF37]/95">Ecosystem</span>
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light max-w-3xl mt-4 md:mt-6">
+              One trusted partner for flights, luxury stays, visas, transfers, insurance and 24/7 support.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Grid – Modern, readable, responsive */}
-      <section className="section-padding bg-white relative overflow-hidden py-16 md:py-24">
-        <div className="absolute top-20 left-0 opacity-[0.03] pointer-events-none select-none">
-          <span className="text-[16rem] md:text-[20rem] font-serif font-black italic">Solutions</span>
-        </div>
+      {/* ── Services Grid ── */}
+      <section className="py-16 sm:py-20 md:py-28 bg-white relative">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#0F2647] tracking-tight">
+              Every Element of Your Journey
+              <span className="block text-[#D4AF37] italic font-normal mt-2 md:mt-3">Covered with Precision</span>
+            </h2>
+          </div>
 
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
             {allServices.map((service, idx) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.06, duration: 0.9 }}
-                className="group relative bg-white p-6 md:p-8 lg:p-10 rounded-xl border border-gray-200 hover:border-primary/40 hover:shadow-xl transition-all duration-500 flex flex-col min-h-[340px] md:min-h-[360px]"
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: idx * 0.07, duration: 0.75 }}
+                className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#D4AF37]/30 transition-all duration-400 overflow-hidden flex flex-col min-h-[320px] sm:min-h-[340px]"
               >
-                <div className="space-y-6 flex-1">
-                  <div className="flex justify-between items-start">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <service.icon strokeWidth={1.5} className="w-7 h-7 md:w-8 md:h-8" />
+                <div className="p-6 sm:p-7 md:p-8 flex flex-col flex-1">
+                  <div className="flex items-start justify-between mb-5 sm:mb-6">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0F2647]/5 rounded-xl flex items-center justify-center group-hover:bg-[#0F2647] transition-colors duration-400">
+                      <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#0F2647] group-hover:text-white transition-colors" strokeWidth={1.6} />
                     </div>
-                    <span className="text-xs font-semibold tracking-wide uppercase text-gray-400">{service.tag}</span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 group-hover:text-[#0F2647]/80 transition-colors">
+                      {service.tag}
+                    </span>
                   </div>
-                  <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl font-serif text-gray-900 group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                      {service.description}
-                    </p>
+
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#0F2647] mb-3 group-hover:text-[#D4AF37] transition-colors">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-base leading-relaxed flex-grow">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+                    <Link
+                      href="/contact"
+                      className="text-sm sm:text-base font-semibold text-[#0F2647] hover:text-[#D4AF37] transition-colors flex items-center gap-2 group-hover:gap-3"
+                    >
+                      Enquire <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </Link>
                   </div>
-                </div>
-                <div className="pt-6 mt-auto flex items-center justify-between border-t border-gray-100">
-                  <Link
-                    href="/contact"
-                    className="text-sm md:text-base font-semibold text-gray-900 hover:text-primary transition-colors duration-300"
-                  >
-                    Enquire Now
-                  </Link>
-                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
                 </div>
               </motion.div>
             ))}
@@ -185,36 +188,42 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* High Impact Consultation CTA */}
-      <section className="py-24 md:py-40 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 noise-overlay opacity-30" />
-        <div className="container-wide text-center relative z-10 space-y-10 md:space-y-12">
-          <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-white/90 mx-auto" />
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-tighter leading-[0.9] max-w-5xl mx-auto drop-shadow-lg">
-            Your Strategy,
+      {/* ── Strong CTA Banner ── */}
+      <section className="py-20 md:py-32 bg-[#0F2647] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_70%,#D4AF37_0%,transparent_50%)]" />
+
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center relative z-10 space-y-8 md:space-y-10">
+          <Sparkles className="w-12 h-12 md:w-16 md:h-16 text-[#D4AF37]/80 mx-auto" />
+
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-tight">
+            Your Journey.
             <br />
-            <span className="italic font-normal opacity-90">Individually Architected</span>
+            <span className="italic font-normal text-[#D4AF37]">Architected Personally.</span>
           </h2>
-          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-            We don't just provide travel services; we design travel strategies. Our consultants are ready to handle the logistics so you can focus on the journey.
+
+          <p className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
+            We go far beyond booking — we create travel strategies tailored to your exact needs, timeline and aspirations.
           </p>
-          <div className="pt-6 md:pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8">
+
+          <div className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-8 pt-4 md:pt-6">
             <Link
               href="/contact"
-              className="bg-white text-primary rounded-lg px-8 md:px-12 py-4 md:py-6 text-sm md:text-base font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase hover:bg-gray-900 hover:text-white transition-all duration-500 shadow-xl w-full sm:w-auto"
+              className="bg-[#D4AF37] text-[#0F2647] font-bold text-base sm:text-lg px-8 md:px-12 py-4 md:py-5 rounded-full shadow-xl hover:bg-[#b8972e] hover:shadow-2xl transition-all duration-300"
             >
-              Schedule a Consultation
+              Schedule a Personal Consultation
             </Link>
+
             <a
               href="tel:+260979189370"
-              className="text-white/90 hover:text-white transition-colors text-sm md:text-base font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase"
+              className="border-2 border-white/40 text-white font-semibold text-base sm:text-lg px-8 md:px-12 py-4 md:py-5 rounded-full hover:bg-white/10 transition-all duration-300"
             >
-              Speak to an Expert
+              Call an Expert Now
             </a>
           </div>
         </div>
       </section>
-            <ProcessSteps/>
+
+      <ProcessSteps />
       <Footer />
       <WhatsAppButton />
     </main>

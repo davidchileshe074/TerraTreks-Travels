@@ -3,90 +3,76 @@ import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
     return (
-        <footer className="bg-[#002E5D] text-white py-16 px-4 md:px-8 font-sans">
-            <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-800 pb-16">
-
-                {/* Contact Us */}
-                <div className="space-y-6">
-                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-wide">Contact Us</h3>
-                    <div className="space-y-4 text-gray-400">
-                        <div className="flex items-start gap-3">
-                            <MapPin className="w-5 h-5 shrink-0 text-[#Daba34]" />
-                            <p className="text-sm">Buffalo Wings, Solwezi,<br />Zambia</p>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            <div className="flex items-center gap-3">
-                                <Phone className="w-5 h-5 text-[#Daba34]" />
-                                <div className="flex flex-col">
-                                    <a href="tel:+260979189370" className="hover:text-white transition-colors text-sm">+260 97 918 9370</a>
-                                    <a href="tel:+260764178388" className="hover:text-white transition-colors text-sm">+260 76 417 8388</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            <div className="flex items-center gap-3">
-                                <Mail className="w-5 h-5 text-[#Daba34]" />
-                                <div className="flex flex-col">
-                                    <a href="mailto:travel@terratrekstravel.com" className="hover:text-white transition-colors text-sm">travel@terratrekstravel.com</a>
-                                    <a href="mailto:anna@terratrekstravel.com" className="hover:text-white transition-colors text-sm">anna@terratrekstravel.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Reservations */}
-                <div className="space-y-6">
-                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-wide">Reservations</h3>
-                    <div className="space-y-4 text-gray-400">
-                        <p className="text-sm leading-relaxed">
-                            For booking inquiries and quick responses, reach out to our dedicated reservations team on WhatsApp.
+        <footer className="bg-safari-blue text-white py-20 overflow-hidden">
+            <div className="container-luxury">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20 border-b border-white/5 pb-20">
+                    {/* Company Column */}
+                    <div className="space-y-8">
+                        <h3 className="text-2xl font-serif">TerraTreks</h3>
+                        <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+                            Pioneering luxury safari experiences and executive travel solutions across Southern Africa. Architecture for the modern explorer.
                         </p>
-                        <a
-                            href="https://wa.me/260979189370"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-[#Daba34] hover:text-white transition-colors mt-2 uppercase font-bold text-sm tracking-wide"
-                        >
-                            <Phone className="w-4 h-4 fill-current" /> Chat with Reservations
-                        </a>
+                        <div className="flex gap-4">
+                            {[Facebook, Instagram, Mail].map((Icon, idx) => (
+                                <a key={idx} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-gold hover:border-gold transition-all duration-300">
+                                    <Icon className="w-4 h-4" />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Navigation Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-gold">The Collection</h4>
+                        <ul className="space-y-4">
+                            {["Home", "About Us", "Our Services", "Tour Packages", "Contact"].map((item) => (
+                                <li key={item}>
+                                    <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">{item}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Services Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-gold">Core Expertise</h4>
+                        <ul className="space-y-4">
+                            {["Luxury Safaris", "Executive Travel", "Romantic Escapes", "Private Aviation", "Corporate Retreats"].map((item) => (
+                                <li key={item}>
+                                    <Link href="#" className="text-sm text-white/60 hover:text-white transition-colors">{item}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Column */}
+                    <div className="space-y-8">
+                        <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-gold">Concierge</h4>
+                        <div className="space-y-6">
+                            <div className="flex items-start gap-4">
+                                <MapPin className="w-5 h-5 text-gold shrink-0" />
+                                <p className="text-sm text-white/60">Plot No. 2954, Kankasa Office Block, Solwezi, Zambia</p>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <Phone className="w-5 h-5 text-gold shrink-0" />
+                                <div className="space-y-1">
+                                    <p className="text-sm text-white/60">+260 97 918 9370</p>
+                                    <p className="text-sm text-white/60">+260 76 417 8388</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Working Hours */}
-                <div className="space-y-6">
-                    <h3 className="text-xl md:text-2xl font-black uppercase tracking-wide">Working Hours</h3>
-                    <div className="space-y-4 text-gray-400">
-                        <div className="flex justify-between text-sm py-2 border-b border-gray-800">
-                            <span>Mon - Fri</span>
-                            <span>08:00 AM - 17:00 PM</span>
-                        </div>
-                        <div className="flex justify-between text-sm py-2 border-b border-gray-800">
-                            <span>Saturday</span>
-                            <span>08:30 AM - 12:30 PM</span>
-                        </div>
-                        <div className="flex justify-between text-sm py-2 border-b border-gray-800 text-[#Daba34] font-medium">
-                            <span>Sunday & Holidays</span>
-                            <span>Closed</span>
-                        </div>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <p className="text-[10px] font-bold tracking-widest text-white/30 uppercase">
+                        © {new Date().getFullYear()} TerraTreks Limited. All Rights Reserved.
+                    </p>
+                    <div className="flex gap-8">
+                        {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+                            <Link key={item} href="#" className="text-[10px] font-bold tracking-widest text-white/30 uppercase hover:text-gold transition-colors">{item}</Link>
+                        ))}
                     </div>
-                </div>
-
-            </div>
-
-            {/* Bottom Bar: Copyright and Socials */}
-            <div className="max-w-[1400px] mx-auto pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-                <p className="text-gray-500 text-sm">
-                    &copy; {new Date().getFullYear()} TerraTreks Travels. All Rights Reserved.
-                </p>
-
-                <div className="flex items-center gap-4">
-                    <a href="#" className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#Daba34] hover:border-[#Daba34] hover:text-white transition-all text-gray-400">
-                        <Facebook className="w-4 h-4" />
-                    </a>
-                    <a href="#" className="w-10 h-10 rounded-full border border-gray-800 flex items-center justify-center hover:bg-[#Daba34] hover:border-[#Daba34] hover:text-white transition-all text-gray-400">
-                        <Instagram className="w-4 h-4" />
-                    </a>
                 </div>
             </div>
         </footer>

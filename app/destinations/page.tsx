@@ -62,6 +62,12 @@ const destinations = [
         img: "/images/lower-zambezi.png",
         desc: "Towering red dunes and surreal landscapes in the ancient Namib Desert.",
     },
+    {
+        name: "Zanzibar",
+        country: "Tanzania",
+        img: "/images/zanzibar-resort-aerial.jpg",
+        desc: "Exotic beaches, spice markets, and the historic Stone Town in the Indian Ocean.",
+    },
 ];
 
 export default function DestinationsPage() {
