@@ -38,7 +38,7 @@ const partners = [
   { name: "CRS", domain: "crs.org" },
   { name: "ROSS", domain: "ross.com" },
   { name: "Bata Zambia", domain: "bata.co.zm" },
-  { name: "NW Chamber", domain: "nwchamber.org.zm" },
+  { name: "NW Chamber", domain: "nwchamber.org.zm", localLogo: "/images/NWC logo.png" },
   { name: "Trident", domain: "trident.co.zm" },
   { name: "First Quantum", domain: "fqml.com" },
   { name: "Sandvik", domain: "sandvik.com" },
@@ -49,6 +49,10 @@ const partners = [
   { name: "Atutonke", domain: "atutonke.com" },
   { name: "NetFlow", domain: "netflow.co" },
   { name: "Reeluka", domain: "reeluka.org" },
+  { name: "Prudencia Travel", domain: "prudenciatravel.com" },
+  { name: "Best life insurance", domain: "bestlife.co.zm" },
+  { name: "Travelport", domain: "travelport.com", localLogo: "/images/Travelport_idxi6gDwib_0.png" },
+  { name: "ZTA", domain: "zambia.travel", localLogo: "/images/ZTA logo.jpeg" },
 ];
 
 export default function AboutPage() {
@@ -76,7 +80,7 @@ export default function AboutPage() {
           >
             <Image
               src={heroImages[current]}
-              alt="TerraTreks African journeys"
+              alt="Terratreks African journeys"
               fill
               className="object-cover brightness-[0.78] contrast-[1.04]"
               priority={current === 0}
@@ -97,7 +101,7 @@ export default function AboutPage() {
             >
               <div className="h-1 w-20 bg-[#D4AF37] mx-auto mb-5" />
               <span className="text-xs sm:text-sm font-bold tracking-[0.4em] uppercase text-white/90">
-                ESTABLISHED 2024 • LUSAKA
+                EST 2024 - SOLWEZI NORTHERN WESTERN ZAMBIA
               </span>
             </motion.div>
 
@@ -153,7 +157,7 @@ export default function AboutPage() {
 
           <div className="max-w-3xl mx-auto text-center text-sm sm:text-base leading-relaxed text-[#00204A]/90 space-y-6 mb-16 md:mb-24">
             <p>
-              TerraTreks Travels is a professional travel agency specialising in personalised, end-to-end travel solutions — bridging local Zambian insight with international standards.
+              Terratreks Travels is a professional travel agency specialising in personalised, end-to-end travel solutions — bridging local Zambian insight with international standards.
             </p>
             <p>
               From seamless flight bookings and luxury accommodations to fully managed itineraries, every journey is crafted with precision and care.
@@ -191,8 +195,12 @@ export default function AboutPage() {
             <p className="mt-3 opacity-80">Founded in Lusaka</p>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">IATA / TAAZ</div>
-            <p className="mt-3 opacity-80">Accredited & Member</p>
+            <div className="flex items-center justify-center gap-6 mb-3">
+              <img src="/iata-logo.png" alt="IATA" className="h-10 md:h-12 w-auto brightness-0 invert" />
+              <img src="/taaz-logo.png" alt="TAAZ" className="h-12 md:h-14 w-auto brightness-0 invert" />
+              <img src="/images/ZTA logo.jpeg" alt="ZTA" className="h-12 md:h-14 w-auto brightness-0 invert" />
+            </div>
+            <p className="opacity-80">Accredited & Member</p>
           </div>
           <div>
             <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">100+</div>
@@ -201,38 +209,94 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── VISION / MISSION ── */}
+      {/* ── VISION, MISSION, STRATEGY, OBJECTIVES ── */}
       <section className="py-20 md:py-32 bg-[#F8F9FA]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400 group"
-          >
-            <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
-              <Quote className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Vision</h3>
-            <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
-              “To transform travel through personalised expertise and genuine passion for discovery.”
-            </p>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400 group"
+            >
+              <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
+                <Quote className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Vision</h3>
+              <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
+                “To transform travel through personalised expertise and genuine passion for discovery, becoming the premier window to Africa's soul.”
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400 group"
+            >
+              <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
+                <Sparkles className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Mission</h3>
+              <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
+                “To connect global travelers to the soul of Africa through experiences that exceed every expectation, delivered with unwavering integrity.”
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400"
+            >
+              <h3 className="text-2xl font-serif font-bold mb-3 text-[#00204A]">Our Strategy</h3>
+              <p className="text-[#00204A]/80 font-serif mb-4">Terratreks focuses on delivering high-quality travel solutions through:</p>
+              <ul className="space-y-3 text-[#00204A]/80 font-serif">
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Strong global travel partnerships</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Personalised travel planning</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Competitive pricing through industry networks</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Reliable travel coordination</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Continuous customer support</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400"
+            >
+              <h3 className="text-2xl font-serif font-bold mb-5 text-[#00204A]">Our Objectives</h3>
+              <ul className="space-y-3 text-[#00204A]/80 font-serif">
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Deliver seamless travel experiences for individuals and organisations</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Promote tourism opportunities locally and internationally</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Build strong partnerships with airlines, hotels, and travel networks</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">•</span> Provide safe, reliable, and affordable travel services</li>
+              </ul>
+            </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="p-8 md:p-12 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-400 group"
+            className="p-10 md:p-16 bg-[#00204A] rounded-3xl text-white overflow-hidden relative"
           >
-            <div className="w-14 h-14 bg-[#00204A]/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00204A] transition-colors">
-              <Sparkles className="w-7 h-7 text-[#00204A] group-hover:text-white transition-colors" />
+            <div className="relative z-10 max-w-3xl">
+              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-6">What Sets Terratreks Apart</h3>
+              <ul className="space-y-4 text-white/90 text-lg font-serif">
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">✓</span> Personalised travel itineraries tailored to client needs</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">✓</span> Competitive pricing through trusted travel networks</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">✓</span> 24/7 support for travellers</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">✓</span> Experienced travel consultants</li>
+                <li className="flex gap-3"><span className="text-[#D4AF37] font-bold">✓</span> Flexible payment options for selected travel packages</li>
+              </ul>
             </div>
-            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-5">Our Mission</h3>
-            <p className="text-base md:text-lg font-serif italic text-[#00204A]/90 leading-relaxed">
-              “To connect global travelers to the soul of Africa through experiences that exceed every expectation.”
-            </p>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 rounded-full -mr-32 -mt-32 blur-3xl" />
           </motion.div>
         </div>
       </section>
@@ -265,7 +329,7 @@ export default function AboutPage() {
               >
                 <div className="h-12 sm:h-14 w-12 sm:w-14 flex items-center justify-center mb-3">
                   <img
-                    src={`https://www.google.com/s2/favicons?domain=${p.domain}&sz=128`}
+                    src={(p as any).localLogo || `https://www.google.com/s2/favicons?domain=${p.domain}&sz=128`}
                     alt={p.name}
                     className="max-h-full max-w-full object-contain opacity-80 group-hover:opacity-100 transition-opacity"
                     onError={(e) => {
@@ -282,9 +346,12 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <p className="text-center mt-12 md:mt-16 text-sm sm:text-base text-[#00204A]/70 max-w-3xl mx-auto">
-            TerraTreks Travels operates in full compliance with Zambian travel regulations and maintains active membership in recognised industry bodies.
-          </p>
+          <div className="text-center mt-12 md:mt-16 max-w-3xl mx-auto">
+            <h3 className="text-lg md:text-xl font-serif font-bold text-[#00204A] mb-3">Affiliations & Compliance</h3>
+            <p className="text-sm sm:text-base text-[#00204A]/70">
+              Terratreks Travels operates in compliance with Zambia travel regulations and works with recognised travel distribution systems and industry platforms to deliver the best travel solutions.
+            </p>
+          </div>
         </div>
       </section>
 

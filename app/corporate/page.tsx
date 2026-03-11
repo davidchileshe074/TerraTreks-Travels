@@ -154,7 +154,7 @@ export default function CorporatePage() {
                         <span className="italic font-normal opacity-80">Strategic Presence</span>
                     </h2>
                     <p className="section-desc max-w-2xl mx-auto text-white/70 mb-12">
-                        Join the most prestigious organizations in Zambia that trust TerraTreks to architect their global mobility and executive hospitality.
+                        Join the most prestigious organizations in Zambia that trust Terratreks to architect their global mobility and executive hospitality.
                     </p>
                     <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-8">
                         <Link
@@ -163,7 +163,7 @@ export default function CorporatePage() {
                         >
                             Open Corporate Account
                         </Link>
-                        <a href="tel:+260979189370" className="text-white/70 hover:text-white transition-colors text-xs font-bold tracking-[0.4em] uppercase">Speak to an Account Lead</a>
+                        <a href="tel:+260764178388" className="text-white/70 hover:text-white transition-colors text-xs font-bold tracking-0.4em uppercase">Speak to an Account Lead</a>
                     </div>
                 </div>
             </section>

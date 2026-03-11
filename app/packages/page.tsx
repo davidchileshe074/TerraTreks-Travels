@@ -21,11 +21,11 @@ export default function PackagesPage() {
           className="absolute inset-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1523805081326-6468447d9688?auto=format&fit=crop&q=85&w=2400"
-            alt="Signature African luxury journey"
+            src="/images/company teretrek image.jpg"
+            alt="Terratreks Signature Journey"
             fill
             priority
-            className="object-cover brightness-[0.62] contrast-[1.08] saturate-[0.9]"
+            className="object-cover object-[center_30%] brightness-[0.62] contrast-[1.08] saturate-[0.9]"
             quality={82}
           />
         </motion.div>

@@ -27,7 +27,7 @@ export const WhatsAppButton = () => {
 
       {/* Floating Button */}
       <motion.a
-        href="https://wa.me/260979189370"
+        href="https://wa.me/260764178388"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

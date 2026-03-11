@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
     {
-        quote: "TerraTreks transformed what could have been a routine trip into the most extraordinary experience of our lives. Every detail was perfect.",
+        quote: "Terratreks transformed what could have been a routine trip into the most extraordinary experience of our lives. Every detail was perfect.",
         name: "Sarah Mitchell",
         role: "Victoria Falls Safari",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",

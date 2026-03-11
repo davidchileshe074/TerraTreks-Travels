@@ -13,6 +13,7 @@ const navLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Tour Packages", href: "/packages" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -66,7 +67,7 @@ export const Navbar = () => {
           <Link
             href="/"
             className="flex items-center group relative z-[110]"
-            aria-label="TerraTreks Travel Home"
+            aria-label="Terratreks Travel Home"
           >
             <div
               className={cn(
@@ -76,7 +77,7 @@ export const Navbar = () => {
             >
               <Image
                 src="/terratreks-logo.png"
-                alt="TerraTreks Travel"
+                alt="Terratreks Travel"
                 fill
                 priority
                 className="object-contain object-left transition-all duration-300 saturate-150 contrast-125"
@@ -144,7 +145,7 @@ export const Navbar = () => {
             </button>
 
             <a
-              href="https://wa.me/260979189370"
+              href="https://wa.me/260764178388"
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -225,7 +226,7 @@ export const Navbar = () => {
                 className="mt-12 sm:mt-16"
               >
                 <a
-                  href="https://wa.me/260979189370"
+                  href="https://wa.me/260764178388"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-5 rounded-xl font-semibold text-lg shadow-md hover:bg-[#20b858] active:bg-[#1da851] transition-colors w-full max-w-sm mx-auto"
@@ -240,7 +241,7 @@ export const Navbar = () => {
 
               {/* Optional footer */}
               <div className="mt-auto pt-10 text-center text-sm text-gray-500">
-                © {new Date().getFullYear()} TerraTreks
+                © {new Date().getFullYear()} Terratreks
               </div>
             </div>
           </motion.div>

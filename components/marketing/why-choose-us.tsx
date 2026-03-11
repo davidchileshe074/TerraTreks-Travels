@@ -90,7 +90,7 @@ export const WhyChooseUs = () => {
                                 viewport={{ once: true }}
                                 className="section-label text-primary"
                             >
-                                The TerraTreks Advantage
+                                The Terratreks Advantage
                             </motion.p>
                             <motion.h2
                                 initial={{ opacity: 0, y: 30 }}

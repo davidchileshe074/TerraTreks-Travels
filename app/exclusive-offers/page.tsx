@@ -90,7 +90,7 @@ export default function ExclusiveOffersPage() {
               Global Partner Specials
             </motion.div>
             <h2 className="text-4xl md:text-6xl font-serif text-midnight tracking-tight">
-              Fly Better with <span className="italic">TerraTreks</span>
+              Fly Better with <span className="italic">Terratreks</span>
             </h2>
             <p className="text-midnight/60 text-lg max-w-2xl mx-auto font-medium">
               We&apos;ve secured exclusive rates with our premium airline partners. Explore starting prices from major global hubs.
@@ -229,7 +229,7 @@ export default function ExclusiveOffersPage() {
 
           <div className="pt-6 md:pt-8">
             <p className="text-xs md:text-sm font-medium tracking-wide text-white/70">
-              TerraTreks Travel © {new Date().getFullYear()} • Designed & Curated in Zambia
+              Terratreks Travel © {new Date().getFullYear()} • Designed & Curated in Zambia
             </p>
           </div>
         </div>

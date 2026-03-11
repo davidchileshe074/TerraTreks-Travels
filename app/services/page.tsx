@@ -62,8 +62,8 @@ const allServices = [
     tag: "Always On"
   },
   {
-    title: "Flexible Payment & Financing",
-    description: "Instalment plans and secure payment options on qualifying packages.",
+    title: "Flexible Payment Plans",
+    description: "Convenient travel payment options allowing clients to pay in instalments.",
     icon: CreditCard,
     tag: "Flexible"
   },
@@ -74,8 +74,8 @@ const allServices = [
     tag: "Events"
   },
   {
-    title: "Destination & Safety Advisory",
-    description: "Up-to-date insights on health, security, culture and local protocols.",
+    title: "Travel Advisory Services",
+    description: "Expert guidance on travel requirements, destinations, and safety tips.",
     icon: Info,
     tag: "Informed"
   },
@@ -129,7 +129,7 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-light max-w-3xl mt-4 md:mt-6">
-              One trusted partner for flights, luxury stays, visas, transfers, insurance and 24/7 support.
+              One trusted partner for flights, luxury stays, visas, transfers, insurance, flexible payment terms and 24/7 support.
             </p>
           </motion.div>
         </div>
@@ -214,7 +214,7 @@ export default function ServicesPage() {
             </Link>
 
             <a
-              href="tel:+260979189370"
+              href="tel:+260764178388"
               className="border-2 border-white/40 text-white font-semibold text-base sm:text-lg px-8 md:px-12 py-4 md:py-5 rounded-full hover:bg-white/10 transition-all duration-300"
             >
               Call an Expert Now

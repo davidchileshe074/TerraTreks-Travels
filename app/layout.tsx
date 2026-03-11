@@ -18,11 +18,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://terratreks.travel"),
   title: {
-    default: "TerraTreks Travel | Luxury Safari & Adventure in Zambia",
-    template: "%s | TerraTreks Travel"
+    default: "Terratreks Travel | Luxury Safari & Adventure in Zambia",
+    template: "%s | Terratreks Travel"
   },
   description:
-    "Experience the ultimate luxury safari and adventure travel with TerraTreks Travel. Based in Zambia, we offer bespoke corporate travel, romantic retreats, and thrilling safaris.",
+    "Experience the ultimate luxury safari and adventure travel with Terratreks Travel. Based in Zambia, we offer bespoke corporate travel, romantic retreats, and thrilling safaris.",
   keywords: [
     "luxury safari zambia",
     "corporate travel zambia",
@@ -33,25 +33,25 @@ export const metadata: Metadata = {
     "south luangwa safari",
     "luxury zambian safaris"
   ],
-  authors: [{ name: "TerraTreks Travel" }],
-  creator: "TerraTreks Travel",
-  publisher: "TerraTreks Travel",
+  authors: [{ name: "Terratreks Travel" }],
+  creator: "Terratreks Travel",
+  publisher: "Terratreks Travel",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "TerraTreks Travel | Luxury Safari & Adventure",
+    title: "Terratreks Travel | Luxury Safari & Adventure",
     description: "Adventure Awaits Today. Discover bespoke luxury travel experiences in Zambia and beyond.",
     url: "https://terratreks.travel",
-    siteName: "TerraTreks Travel",
+    siteName: "Terratreks Travel",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TerraTreks Travel Luxury Safari",
+        alt: "Terratreks Travel Luxury Safari",
       },
     ],
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TerraTreks Travel | Luxury Safari & Adventure",
+    title: "Terratreks Travel | Luxury Safari & Adventure",
     description: "Discover bespoke luxury travel experiences in Zambia and beyond.",
     images: ["/og-image.jpg"],
     creator: "@terratreks",
@@ -87,14 +87,14 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "name": "TerraTreks Travel",
+    "name": "Terratreks Travel",
     "image": "https://terratreks.travel/og-image.jpg",
     "@id": "https://terratreks.travel",
     "url": "https://terratreks.travel",
-    "telephone": "+260979189370",
+    "telephone": "+260764178388",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Plot No. 2954, Kankasa Office Block, Kansanshi Road",
+      "streetAddress": "Plot No. 2954, Buffalo wings Kansanshi road Mushitala",
       "addressLocality": "Solwezi",
       "addressRegion": "North-Western Province",
       "addressCountry": "ZM"

@@ -5,10 +5,12 @@ import Image from "next/image";
 
 const partners = [
     { name: "Emirates", logo: "https://www.google.com/s2/favicons?sz=128&domain=emirates.com" },
-    { name: "Qatar Airways", logo: "https://www.google.com/s2/favicons?sz=128&domain=qatarairways.com" },
+    { name: "Qatar Airways", logo: "/images/Qatar Airways_Logo_2.webp" },
     { name: "Ethiopian Airlines", logo: "https://www.google.com/s2/favicons?sz=128&domain=ethiopianairlines.com" },
-    { name: "Proflight Zambia", logo: "https://www.google.com/s2/favicons?sz=128&domain=proflight-zambia.com" },
-    { name: "Kenya Airways", logo: "https://www.google.com/s2/favicons?sz=128&domain=kenya-airways.com" },
+    { name: "Proflight Zambia", logo: "/images/proflight.png" },
+    { name: "EgyptAir", logo: "/images/egyptair-seeklogo.png" },
+    { name: "Air Botswana", logo: "/images/air-botswana.jpg" },
+    { name: "Travelport", logo: "/images/Travelport_idxi6gDwib_0.png" },
 ];
 
 export const PartnerLogos = () => {

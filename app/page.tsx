@@ -28,7 +28,7 @@ const packages = [
   {
     name: "Dubai Luxury Holiday",
     desc: "Complete 3-night luxury stay with Emirates flights, Burj Khalifa tour, and Desert Safari included.",
-    img: "",
+    img: "/images/dubai.png",
     location: "DUBAI",
     nights: 3,
     adults: 2,
@@ -36,13 +36,13 @@ const packages = [
     priceType: "Per Person",
   },
   {
-    name: "Easter Special Singapore",
-    desc: "Celebrate Easter with a 4N/5D city escape. Includes Night Safari, Gardens by the Bay, and Sands SkyPark.",
-    img: "/images/singapore.png",
-    location: "SINGAPORE",
-    nights: 4,
-    adults: 1,
-    price: "$ 570",
+    name: "Nsofu Lodge-Lower Zambezi National Park",
+    desc: "Luxury safari experience in the heart of Lower Zambezi. Professional game drives, boat cruises, and elite accommodation.",
+    img: "/images/lower-zambezi.png",
+    location: "LOWER ZAMBEZI",
+    nights: 3,
+    adults: 2,
+    price: "K 12,500",
     priceType: "Per Person",
   },
   {
@@ -58,7 +58,7 @@ const packages = [
   {
     name: "Easter Discover Qatar",
     desc: "Discover futuristic skylines with a 4N/5D package. Includes eVisa, Desert Safari, and Souq tours.",
-    img: "",
+    img: "/images/qatar.png",
     location: "QATAR",
     nights: 4,
     adults: 2,
@@ -78,7 +78,7 @@ const packages = [
   {
     name: "Ethiopian Airlines Special Offer",
     desc: "Exclusive flight deals from London and Manchester. Fly with the best of Africa to your favorite global destinations.",
-    img: "",
+    img: "/images/ethiopian-airlines-special.jpg",
     location: "GLOBAL",
     nights: 0,
     adults: 1,
@@ -88,14 +88,14 @@ const packages = [
 ];
 
 const airlinePartners = [
-  { name: "Proflight Zambia", domain: "flyzambia.com" },
+  { name: "Proflight Zambia", domain: "flyzambia.com", image: "/images/proflight.png" },
   { name: "Qantas", domain: "qantas.com" },
   { name: "RwandAir", domain: "rwandair.com" },
   { name: "Hawaiian Airlines", domain: "hawaiianairlines.com" },
   { name: "Etihad Airways", domain: "etihad.com" },
   { name: "Air Canada", domain: "aircanada.com" },
   { name: "Swissair", domain: "swiss.com" },
-  { name: "Qatar Airways", domain: "qatarairways.com" },
+  { name: "Qatar Airways", domain: "qatarairways.com", image: "/images/Qatar Airways_Logo_2.webp" },
   { name: "Emirates", domain: "emirates.com" },
   { name: "South African Airways", domain: "flysaa.com" },
   { name: "Lufthansa", domain: "lufthansa.com" },
@@ -104,7 +104,8 @@ const airlinePartners = [
   { name: "KLM", domain: "klm.com" },
   { name: "Ryanair", domain: "ryanair.com" },
   { name: "British Airways", domain: "britishairways.com" },
-  { name: "Egyptair", domain: "egyptair.com" },
+  { name: "Egyptair", domain: "egyptair.com", image: "/images/egyptair-seeklogo.png" },
+  { name: "Air Botswana", domain: "airbotswana.co.bw", image: "/images/air-botswana.jpg" },
   { name: "Turkish Airlines", domain: "turkishairlines.com" },
   { name: "Jambojet", domain: "jambojet.com" },
   { name: "Air Tanzania", domain: "airtanzania.co.tz" },
@@ -138,7 +139,7 @@ export default function Home() {
           >
             <Image
               src={heroImages[currentImageIdx]}
-              alt="TerraTreks Scenery"
+              alt="Terratreks Scenery"
               fill
               className="object-cover"
               priority
@@ -151,8 +152,7 @@ export default function Home() {
             <h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tighter leading-none flex items-baseline text-white"
             >
-              <span>Terra</span>
-              <span className="ml-3">Treks</span>
+              <span>Terratreks</span>
             </h1>
 
             <div className="h-[2px] w-28 bg-[#D4AF37] my-4 shadow-xl" />
@@ -314,12 +314,32 @@ export default function Home() {
             </div>
 
             <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
-              <div className="text-5xl font-serif font-bold text-[#00204A] tracking-tighter">
-                NWC
+              <div className="relative w-32 h-16 transition-all duration-300">
+                <Image
+                  src="/images/Travelport_idxi6gDwib_0.png"
+                  alt="Travelport Partner"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div className="h-[2px] w-8 bg-[#D4AF37]" />
               <span className="text-xs text-gray-700 font-bold uppercase tracking-[0.2em]">
-                Association
+                Global Partner
+              </span>
+            </div>
+
+            <div className="group bg-[#F8F9FA] p-8 rounded-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl flex flex-col items-center gap-4 w-64">
+              <div className="relative w-32 h-16 transition-all duration-300">
+                <Image
+                  src="/images/ZTA logo.jpeg"
+                  alt="Zambia Tourism Agency"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="h-[2px] w-8 bg-[#D4AF37]" />
+              <span className="text-xs text-gray-700 font-bold uppercase tracking-[0.2em]">
+                Tourism Agency
               </span>
             </div>
           </div>
@@ -356,7 +376,7 @@ export default function Home() {
                 className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-sm p-4 w-32 h-32 md:w-44 md:h-44 rounded-2xl flex-shrink-0"
               >
                 <img
-                  src={`https://www.google.com/s2/favicons?domain=${airline.domain}&sz=128`}
+                  src={airline.image || `https://www.google.com/s2/favicons?domain=${airline.domain}&sz=128`}
                   alt={airline.name}
                   className="w-12 h-12 md:w-20 md:h-20 object-contain mb-3"
                   onError={(e) => {

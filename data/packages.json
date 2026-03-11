@@ -18,7 +18,7 @@
         "location": "Dubai, UAE",
         "duration": "3 Nights",
         "price": "$ 1,500",
-        "image": "",
+        "image": "/images/dubai.png",
         "tag": "Luxury Escapes",
         "categories": [
             "Luxury",
@@ -26,16 +26,16 @@
         ]
     },
     {
-        "id": "easter-singapore",
-        "title": "Easter Special Singapore",
-        "location": "Singapore",
+        "id": "nsofu-lodge-special",
+        "title": "Nsofu Lodge - Lower Zambezi Special",
+        "location": "Lower Zambezi, Zambia",
         "duration": "4 Nights",
-        "price": "$ 570",
-        "image": "/images/singapore.png",
-        "tag": "Easter Special",
+        "price": "K 12,500",
+        "image": "/images/lower-zambezi.png",
+        "tag": "Luxury Safari",
         "categories": [
-            "City",
-            "Family"
+            "Wildlife",
+            "Luxury"
         ]
     },
     {
@@ -57,7 +57,7 @@
         "location": "Qatar",
         "duration": "4 Nights",
         "price": "$ 635",
-        "image": "",
+        "image": "/images/qatar.png",
         "tag": "Easter Special",
         "categories": [
             "City",

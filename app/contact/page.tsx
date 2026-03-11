@@ -32,7 +32,7 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className="inline-block text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-4"
           >
-            Contact TerraTreks
+            Contact Terratreks
           </motion.span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight tracking-tight">
             Get in
@@ -68,7 +68,7 @@ export default function ContactPage() {
               {
                 icon: Phone,
                 title: "Speak With Us",
-                items: ["+260 97 918 9370", "+260 76 417 8388"],
+                items: ["+260 76 417 8388", "+260 97 918 9370"],
                 hrefPrefix: "tel:",
               },
               {
@@ -80,7 +80,7 @@ export default function ContactPage() {
               {
                 icon: MapPin,
                 title: "Find Us",
-                items: ["Solwezi, Zambia", "Plot No. 2954, Kankasa Block"],
+                items: ["Solwezi, Zambia", "Plot No. 2954, Buffalo wings Kansanshi road Mushitala"],
               },
             ].map((contact, idx) => (
               <motion.div
@@ -162,8 +162,13 @@ export default function ContactPage() {
                   <p className="font-bold uppercase">TERRATREKS TRAVELS</p>
                 </div>
                 <div className="space-y-1">
-                  <span className="block text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">Account Number</span>
-                  <p className="font-mono font-bold tracking-wide">63112834626</p>
+                  <span className="block text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">Account Numbers</span>
+                  <p className="font-mono font-bold tracking-wide">ZMW: 63112834626</p>
+                  <p className="font-mono font-bold tracking-wide">USD: 63139929989</p>
+                </div>
+                <div className="space-y-1">
+                  <span className="block text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">Branch Code</span>
+                  <p className="font-mono font-bold tracking-wide">262823</p>
                 </div>
                 <div className="space-y-1">
                   <span className="block text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium">SWIFT / BIC</span>

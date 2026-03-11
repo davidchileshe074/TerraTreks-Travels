@@ -20,7 +20,7 @@ export async function submitContactForm(formData: FormData) {
     try {
         if (process.env.RESEND_API_KEY) {
             const { error } = await resend.emails.send({
-                from: 'TerraTreks Connect <onboarding@resend.dev>',
+                from: 'Terratreks Connect <onboarding@resend.dev>',
                 to: ['travel@terratrekstravel.com'],
                 subject: `NEW INQUIRY: ${data.name}`,
                 html: `
@@ -54,7 +54,7 @@ export async function submitContactForm(formData: FormData) {
                         ` : ''}
 
                         <hr style="border: none; border-top: 1px solid #f0f0f0; margin: 30px 0;" />
-                        <p style="font-size: 10px; color: #ccc; text-align: center;">Transmitted via TerraTreks Secure Booking at ${data.timestamp}</p>
+                        <p style="font-size: 10px; color: #ccc; text-align: center;">Transmitted via Terratreks Secure Booking at ${data.timestamp}</p>
                     </div>
                 `
             });
