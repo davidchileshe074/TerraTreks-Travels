@@ -68,7 +68,7 @@ const packages = [
   {
     name: "Protea Chisamba Safari",
     desc: "Memorable family getaway at Protea Hotel Lusaka Safari Lodge in a peaceful natural environment.",
-    img: "/images/safari-1.jpg",
+    img: "/images/protea-chisamba.jpg",
     location: "CHISAMBA",
     nights: 1,
     adults: 1,

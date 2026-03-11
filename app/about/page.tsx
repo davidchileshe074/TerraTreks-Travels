@@ -38,21 +38,28 @@ const partners = [
   { name: "CRS", domain: "crs.org" },
   { name: "ROSS", domain: "ross.com" },
   { name: "Bata Zambia", domain: "bata.co.zm" },
-  { name: "NW Chamber", domain: "nwchamber.org.zm", localLogo: "/images/NWC logo.png" },
-  { name: "Trident", domain: "trident.co.zm" },
+  { name: "North Western Chamber", domain: "nwchamber.org.zm", localLogo: "/images/NWC logo.png" },
+  { name: "Trident College", domain: "trident.co.zm" },
   { name: "First Quantum", domain: "fqml.com" },
-  { name: "Sandvik", domain: "sandvik.com" },
-  { name: "CFAO Mobility", domain: "cfao.co.zm" },
-  { name: "UCZ", domain: "uczuniversity.org" },
-  { name: "Government", domain: "grz.gov.zm" },
-  { name: "Sarens", domain: "sarens.com" },
-  { name: "Atutonke", domain: "atutonke.com" },
-  { name: "NetFlow", domain: "netflow.co" },
-  { name: "Reeluka", domain: "reeluka.org" },
-  { name: "Prudencia Travel", domain: "prudenciatravel.com" },
+  { name: "SANVIC Mining Zambia", domain: "sandvik.com" },
+  { name: "Cefao", domain: "cfao.co.zm" },
+  { name: "United Church of Zambia", domain: "uczuniversity.org" },
+  { name: "Government", domain: "grz.gov.zm", localLogo: "/images/grz-logo.png" },
+  { name: "Sarens Zambia", domain: "sarens.com" },
+  { name: "Atutonke Investments Limited", domain: "atutonke.com", localLogo: "/images/atutonke.png" },
+  { name: "NetFlow Energies Investments Limited", domain: "netflow.co" },
+  { name: "Reeluka Investments", domain: "reeluka.org" },
+  { name: "Prudencia Travel", domain: "prudenciatravel.com", localLogo: "/images/prudential.png" },
   { name: "Best life insurance", domain: "bestlife.co.zm" },
   { name: "Travelport", domain: "travelport.com", localLogo: "/images/Travelport_idxi6gDwib_0.png" },
   { name: "ZTA", domain: "zambia.travel", localLogo: "/images/ZTA logo.jpeg" },
+  { name: "Southin", domain: "southin.com", localLogo: "/images/southin.png" },
+  { name: "Batati Innovations", domain: "batati.com", localLogo: "/images/batati.png" },
+  { name: "Happy Anna Farms", domain: "happyannafarms.com", localLogo: "/images/happy-anna.png" },
+  { name: "Martin house school", domain: "martinhouse.org", localLogo: "/images/martin-house.png" },
+  { name: "International school of Lusaka", domain: "islzambia.org", localLogo: "/images/isl.png" },
+  { name: "ITS Southin Contracting Ltd", domain: "southin.com", localLogo: "/images/its-southin.png" },
+  { name: "Bwacha mining Systems", domain: "bwachamining.com", localLogo: "/images/bwacha.png" },
 ];
 
 export default function AboutPage() {
@@ -192,15 +199,15 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
             <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">2024</div>
-            <p className="mt-3 opacity-80">Founded in Lusaka</p>
+            <p className="mt-3 opacity-80">Founded in Solwezi</p>
           </div>
           <div>
-            <div className="flex items-center justify-center gap-6 mb-3">
-              <img src="/iata-logo.png" alt="IATA" className="h-10 md:h-12 w-auto brightness-0 invert" />
-              <img src="/taaz-logo.png" alt="TAAZ" className="h-12 md:h-14 w-auto brightness-0 invert" />
-              <img src="/images/ZTA logo.jpeg" alt="ZTA" className="h-12 md:h-14 w-auto brightness-0 invert" />
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-6">
+              <img src="/iata-logo.png" alt="IATA" className="h-10 sm:h-12 md:h-16 w-auto object-contain" />
+              <img src="/taaz-logo.png" alt="TAAZ" className="h-12 sm:h-14 md:h-20 w-auto object-contain" />
+              <img src="/images/ZTA logo.jpeg" alt="ZTA" className="h-12 sm:h-14 md:h-20 w-auto object-contain" />
             </div>
-            <p className="opacity-80">Accredited & Member</p>
+            <p className="opacity-90 text-sm sm:text-base font-semibold tracking-wide uppercase">Accredited & Member</p>
           </div>
           <div>
             <div className="text-3xl md:text-4xl font-bold text-[#D4AF37]">100+</div>

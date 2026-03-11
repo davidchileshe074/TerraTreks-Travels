@@ -115,7 +115,7 @@ export default function PackagesPage() {
                     </div>
                   )}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
                   {/* Tag + Hover Arrow */}
                   <div className="absolute top-5 left-5 right-5 flex justify-between items-start">

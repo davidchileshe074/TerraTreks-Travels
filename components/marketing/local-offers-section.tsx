@@ -74,7 +74,7 @@ export const LocalOffersSection = () => {
                   className="object-cover transition-transform duration-1000 group-hover:scale-[1.06]"
                   quality={82}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent" />
               </div>
 
               {/* Content */}

@@ -150,11 +150,7 @@ export function ContactForm() {
         {/* Left Panel – reduced padding on mobile */}
         <div className="lg:w-2/5 relative bg-[#0F2647] text-white p-8 sm:p-10 md:p-16 flex flex-col justify-between overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-45">
-            <img
-              src="/luxury_safari_contact_bg_1772989493468.png"
-              alt="Luxury Zambian Safari Landscape"
-              className="w-full h-full object-cover scale-105"
-            />
+            
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F2647]/90 via-[#0F2647]/50 to-transparent" />
           </div>
 
