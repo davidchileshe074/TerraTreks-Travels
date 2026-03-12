@@ -112,6 +112,17 @@ const airlinePartners = [
   { name: "Airlink", domain: "flyairlink.com" },
 ];
 
+const homeGallery = [
+  { src: "/images/homepagepicture/owner2.jpeg", title: "Leadership" },
+  { src: "/images/homepagepicture/kkai.jpeg", title: "Strategy" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0003.jpg", title: "Safari View" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0007.jpg", title: "Coastline" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0008.jpg", title: "Wildlife" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0010.jpg", title: "Moments" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0011.jpg", title: "Adventure" },
+  { src: "/images/homepagepicture/IMG-20260312-WA0015.jpg", title: "Culture" },
+];
+
 export default function Home() {
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
 
@@ -268,6 +279,58 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── OUR JOURNEY & LEADERSHIP ── */}
+      <section className="py-24 px-4 md:px-8 bg-white border-t border-gray-100">
+        <div className="max-w-[1400px] mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#00204A] mb-6 uppercase tracking-tight">
+            Our Journey & Leadership
+          </h2>
+          <p className="text-gray-700 text-lg font-medium mb-16 max-w-2xl mx-auto">
+            Meet the visionaries behind Terratreks Travels, dedicated to crafting your perfect African adventure.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {homeGallery.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="relative group overflow-hidden rounded-2xl aspect-[3/4] shadow-md"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 md:p-6 text-left">
+                  <span className="text-[#D4AF37] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                    Terratreks
+                  </span>
+                  <h3 className="text-white text-base md:text-xl font-serif font-bold italic">
+                    {item.title}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-3 bg-[#00204A] text-white font-bold py-4 px-10 rounded-full text-sm shadow-lg hover:bg-[#001533] transition-all duration-300 uppercase tracking-widest group"
+            >
+              Explore Full Gallery
+              <span className="group-hover:translate-x-1.5 transition-transform text-lg">
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 
