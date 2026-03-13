@@ -93,7 +93,7 @@ export default function ContactPage() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative space-y-5 sm:space-y-6 lg:space-y-8">
-                  <div className="w-12 h-12 sm:w-14 lg:w-16 h-12 sm:h-14 lg:h-16 rounded-xl sm:rounded-2xl bg-slate-50 flex items-center justify-center text-[#0F2647] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500 shadow-sm">
+                  <div className="w-12 h-12 sm:w-14 lg:w-16 rounded-xl sm:rounded-2xl bg-slate-50 flex items-center justify-center text-[#0F2647] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500 shadow-sm">
                     <contact.icon className="w-6 h-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 stroke-[1.6]" />
                   </div>
                   <div>
@@ -219,7 +219,7 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
-      {/* Map – reduced height on mobile */}
+      {/* Map – updated to Solwezi with provided coordinates */}
       <section className="px-5 sm:px-6 lg:px-12 pb-16 sm:pb-20 md:pb-24 lg:pb-32 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -234,7 +234,7 @@ export default function ContactPage() {
                 Visit Our Office in Solwezi
               </p>
               <a
-                href="https://maps.google.com/..." // ← replace with actual directions link
+                href="https://www.google.com/maps/dir/?api=1&destination=-12.1800534,26.4288601"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 sm:gap-3 text-[#D4AF37] font-medium text-sm sm:text-base hover:underline"
@@ -244,7 +244,7 @@ export default function ContactPage() {
             </div>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123114.39417937402!2d28.20455013915162!3d-15.41337446415715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408b04a11f78ff%3A0x6d0e82c896565017!2sLusaka%2C%20Zambia!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.8!2d26.4266859!3d-12.1800534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDEwJzQ4LjEiUyAyNsKwMjUnNDMuOSJF!5e0!3m2!1sen!2szm!4v1730000000000!5m2!1sen!2szm"
             width="100%"
             height="400"
             allowFullScreen
