@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gallery | Terratreks Travel",
     description: "Browse curated collections of amazing moments from our tours, safaris, and client experiences.",
-    url: "https://terratreks.travel/gallery",
+    url: "https://terratrekstravel.com/gallery",
   },
 };
 

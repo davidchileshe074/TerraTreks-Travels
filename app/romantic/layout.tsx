@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Romantic Getaways | Terratreks Travel",
     description: "Plan the ultimate romantic getaway or honeymoon with top luxury destinations.",
-    url: "https://terratreks.travel/romantic",
+    url: "https://terratrekstravel.com/romantic",
   },
 };
 

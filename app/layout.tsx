@@ -16,7 +16,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://terratreks.travel"),
+  metadataBase: new URL("https://terratrekstravel.com"),
   title: {
     default: "Terratreks Travel | Luxury Safari & Adventure in Zambia",
     template: "%s | Terratreks Travel"
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terratreks Travel | Luxury Safari & Adventure",
     description: "Adventure Awaits Today. Discover bespoke luxury travel experiences in Zambia and beyond.",
-    url: "https://terratreks.travel",
+    url: "https://terratrekstravel.com",
     siteName: "Terratreks Travel",
     images: [
       {
@@ -88,9 +88,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "Terratreks Travel",
-    "image": "https://terratreks.travel/og-image.jpg",
-    "@id": "https://terratreks.travel",
-    "url": "https://terratreks.travel",
+    "image": "https://terratrekstravel.com/og-image.jpg",
+    "@id": "https://terratrekstravel.com",
+    "url": "https://terratrekstravel.com",
     "telephone": "+260764178388",
     "address": {
       "@type": "PostalAddress",

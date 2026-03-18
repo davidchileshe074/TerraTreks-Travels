@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Corporate Travels | Terratreks Travel",
     description: "Tailored corporate travel solutions for business meetings, conferences, and executive retreats.",
-    url: "https://terratreks.travel/corporate",
+    url: "https://terratrekstravel.com/corporate",
   },
 };
 

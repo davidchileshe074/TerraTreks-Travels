@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tour Packages | Terratreks Travel",
     description: "Browse our extensive selection of local and international travel and safari packages.",
-    url: "https://terratreks.travel/packages",
+    url: "https://terratrekstravel.com/packages",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Destinations | Terratreks Travel",
     description: "Explore our premium destinations including Dubai, Lower Zambezi, South Luangwa, and more. Book your dream holiday today.",
-    url: "https://terratreks.travel/destinations",
+    url: "https://terratrekstravel.com/destinations",
   },
 };
 

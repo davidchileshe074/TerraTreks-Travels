@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/',
         },
-        sitemap: 'https://terratreks.travel/sitemap.xml',
+        sitemap: 'https://terratrekstravel.com/sitemap.xml',
     }
 }

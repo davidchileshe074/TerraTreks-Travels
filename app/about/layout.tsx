@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Us | Terratreks Travel",
     description: "Learn about Terratreks Travel, our mission, vision, and dedication to providing exceptional travel and luxury safari experiences in Zambia and beyond.",
-    url: "https://terratreks.travel/about",
+    url: "https://terratrekstravel.com/about",
   },
 };
 
