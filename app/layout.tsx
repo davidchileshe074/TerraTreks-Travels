@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  verification: {
+    google: "xAeCg3Doa_a7TDQ0CQZZGTv664DYAPtCU9wv8JSuagY",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Terratreks Travel | Luxury Safari & Adventure",
