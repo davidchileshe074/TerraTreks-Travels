@@ -22,7 +22,7 @@ const packages = [
     location: "ZANZIBAR",
     nights: 5,
     adults: 2,
-    price: "K 45,000",
+    price: "K 40,000",
     priceType: "Per Person",
   },
   {
