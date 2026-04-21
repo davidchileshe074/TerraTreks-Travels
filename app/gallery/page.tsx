@@ -45,7 +45,16 @@ const galleryItems = [
     { type: "image", src: "/images/egypt.png", title: "Ancient Echoes", category: "Culture" },
     { type: "image", src: "/images/gallery/owner2.jpeg", title: "Vision", category: "Gallery" },
     { type: "image", src: "/images/dubai.png", title: "Desert Futurism", category: "City" },
-    { type: "video", src: "/images/gallery/to.mp4", title: "Discovery", category: "Gallery" }
+    { type: "video", src: "/images/gallery/to.mp4", title: "Discovery", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (1).jpeg", title: "Team Lunch & Planning Session", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (2).jpeg", title: "Team Bonding Over Lunch", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (3).jpeg", title: "Travel Group Departure", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (4).jpeg", title: "Team Collaboration Meeting", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (5).jpeg", title: "Team Moments & Networking", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (6).jpeg", title: "Office Visit & Tour", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (7).jpeg", title: "Client Engagement", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (8).jpeg", title: "Shopping & Travel Preparation", category: "Gallery" },
+    { type: "image", src: "/images/gallery/TQ (9).jpeg", title: "Team Travel Preparation", category: "Gallery" },
 ];
 
 export default function GalleryPage() {
