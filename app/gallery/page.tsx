@@ -6,6 +6,10 @@ import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import Image from "next/image";
 
 const galleryItems = [
+    { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (3).jpg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (4).jpg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" },
     { type: "image", src: "/images/gallery/Ethan%20.jpeg", title: "Adventure", category: "Gallery" },
     { type: "image", src: "/images/gallery/IMG-20260312-WA0003.jpg", title: "Safari Sunset", category: "Safari" },
     { type: "image", src: "/images/safari-3.jpg", title: "The Golden Hour", category: "Safari" },
@@ -54,11 +58,8 @@ const galleryItems = [
     { type: "image", src: "/images/gallery/TQ (6).jpeg", title: "Office Visit & Tour", category: "Gallery" },
     { type: "image", src: "/images/gallery/TQ (7).jpeg", title: "Client Engagement", category: "Gallery" },
     { type: "image", src: "/images/gallery/TQ (8).jpeg", title: "Shopping & Travel Preparation", category: "Gallery" },
-    { type: "image", src: "/images/gallery/TQ (9).jpeg", title: "Team Travel Preparation", category: "Gallery" },
-    { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (3).jpg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (4).jpg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" }
+    { type: "image", src: "/images/gallery/TQ (9).jpeg", title: "Team Travel Preparation", category: "Gallery" }
+ 
     
 ];
 
