@@ -58,7 +58,7 @@ const galleryItems = [
     { type: "image", src: "/images/gallery/bangee jump falla (1).jpeg", title: "Victoria Falls Adventure", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (2).jpeg", title: "Preparing for the Jump", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (3).jpeg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (4).jpeg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (4).jpeg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" }
     
 ];
 
