@@ -55,10 +55,10 @@ const galleryItems = [
     { type: "image", src: "/images/gallery/TQ (7).jpeg", title: "Client Engagement", category: "Gallery" },
     { type: "image", src: "/images/gallery/TQ (8).jpeg", title: "Shopping & Travel Preparation", category: "Gallery" },
     { type: "image", src: "/images/gallery/TQ (9).jpeg", title: "Team Travel Preparation", category: "Gallery" },
-    { type: "image", src: "/images/gallery/bangee jump falla (1).jpeg", title: "Victoria Falls Adventure", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (2).jpeg", title: "Preparing for the Jump", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (3).jpeg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
-    { type: "image", src: "/images/gallery/bangee jump falla (4).jpeg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" }
+    { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (3).jpg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
+    { type: "image", src: "/images/gallery/bangee jump falla (4).jpg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" }
     
 ];
 
