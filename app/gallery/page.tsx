@@ -10,6 +10,16 @@ const galleryItems = [
     { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (3).jpg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (4).jpg", title: "Thrill Above the Zambezi Gorge", category: "Adventure" },
+           
+    {type: "video",src: "/images/gallery/b24.mp4",title: "Victoria Falls Bungee Jump",category: "Adventure"},
+
+
+
+
+
+
+
+    
     { type: "image", src: "/images/gallery/Ethan%20.jpeg", title: "Adventure", category: "Gallery" },
     { type: "image", src: "/images/gallery/IMG-20260312-WA0003.jpg", title: "Safari Sunset", category: "Safari" },
     { type: "image", src: "/images/safari-3.jpg", title: "The Golden Hour", category: "Safari" },
