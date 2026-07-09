@@ -7,6 +7,17 @@ import Image from "next/image";
 
 const galleryItems = [
 
+
+   {
+  type: "video",
+  src: "https://res.cloudinary.com/ieddtiuc/video/upload/v1783593912/bunjee_jump_rdwvku.mp4",
+  title: "Victoria Falls Bungee Jump",
+  category: "Adventure"
+},
+
+
+   
+
    {
   type: "video",
   src: "https://res.cloudinary.com/ieddtiuc/video/upload/v1783593915/bunjee_jump_diving_bpj2fl.mp4",
