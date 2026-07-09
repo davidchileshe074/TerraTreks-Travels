@@ -6,6 +6,17 @@ import { WhatsAppButton } from "@/components/marketing/whatsapp-button";
 import Image from "next/image";
 
 const galleryItems = [
+
+   {
+  type: "video",
+  src: "https://res.cloudinary.com/ieddtiuc/video/upload/v1783593915/bunjee_jump_diving_bpj2fl.mp4",
+  title: "Victoria Falls Bungee Jump",
+  category: "Adventure"
+},
+
+
+
+    
     { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (3).jpg", title: "Bungee Jump at Victoria Falls", category: "Adventure" },
