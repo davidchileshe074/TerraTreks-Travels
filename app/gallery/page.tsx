@@ -130,23 +130,23 @@ export default function GalleryPage() {
                             >
                                 <div className="relative aspect-[4/5] sm:aspect-auto">
                                     {item.type === "video" ? (
-                                        <video
-                                            src={item.src}
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline
-                                            className="w-full h-full sm:h-auto object-cover transition-transform duration-700 group-hover:scale-110 aspect-[4/5] sm:aspect-auto"
-                                        />
-                                    ) : (
-                                        <Image
-                                            src={item.src}
-                                            alt={item.title}
-                                            width={800}
-                                            height={1000}
-                                            className="w-full h-full sm:h-auto object-cover transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                    )}
+                                           <video
+                                               controls
+                                               preload="metadata"
+                                               className="w-full h-full sm:h-auto object-cover transition-transform duration-700 group-hover:scale-110 aspect-[4/5] sm:aspect-auto rounded-2xl"
+                                           >
+                                               <source src={item.src} type="video/mp4" />
+                                               Your browser does not support the video tag.
+                                           </video>
+                                       ) : (
+                                           <Image
+                                               src={item.src}
+                                               alt={item.title}
+                                               width={800}
+                                               height={1000}
+                                               className="w-full h-full sm:h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                           />
+                                       )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
                                         <span className="text-[#D4AF37] text-xs font-bold uppercase tracking-[0.2em] mb-2">{item.category}</span>
                                         <h3 className="text-white text-2xl font-serif font-bold">{item.title}</h3>
