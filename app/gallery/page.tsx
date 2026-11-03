@@ -26,7 +26,12 @@ const galleryItems = [
 },
 
 
-
+{
+  type: "image",
+  src: "/images/gallery/Up03.jpeg",
+  title: "TerraTreks Travel Celebration",
+  category: "Travel"
+},
     
     { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
