@@ -32,6 +32,27 @@ const galleryItems = [
   title: "TerraTreks Travel Celebration",
   category: "Travel"
 },
+
+
+
+   {
+  type: "image",
+  src: "/images/gallery/Livingstone_Activities_Price_List.png",
+  title: "Livingstone Activities & Price List",
+  category: "Travel"
+},
+{
+  type: "image",
+  src: "/images/gallery/Flyer@1x.png",
+  title: "Victoria Falls 3-Day, 2-Night Package",
+  category: "Travel"
+},
+{
+  type: "image",
+  src: "/images/gallery/Flyer@1x(1).png",
+  title: "Victoria Falls Waterfront Tour Package",
+  category: "Travel"
+},
     
     { type: "image", src: "/images/gallery/bangee jump falla (1).jpg", title: "Victoria Falls Adventure", category: "Adventure" },
     { type: "image", src: "/images/gallery/bangee jump falla (2).jpg", title: "Preparing for the Jump", category: "Adventure" },
