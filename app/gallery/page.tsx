@@ -15,7 +15,12 @@ const galleryItems = [
   category: "Adventure"
 },
 
-
+ {
+  type: "video",
+  src: "https://res.cloudinary.com/ieddtiuc/video/upload/v1793725970/UPVideo_ctbkwz.mp4",
+  title: "Beach Adventure",
+  category: "Adventure"
+},
    
 
    {
